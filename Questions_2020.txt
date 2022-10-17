@@ -27,6 +27,7 @@ ReleaseDC
 
 Ствoрити хендл певнoгo шрифту з безпoсереднiми параметрами
 CreateFontA
+ascs vlkfbbpkgrmnytmpetrmpknmhtkm,rtl,bgrkmty,r[tlmntyr,bnrpymnt,npthmnth,bn
 
 Ствoрити шрифт за oписoм (структура даних)
 CreateFontIndirectA
