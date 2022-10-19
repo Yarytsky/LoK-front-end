@@ -1,3 +1,4 @@
+import { isLabelWithInternallyDisabledControl } from "@testing-library/user-event/dist/utils";
 import axios from "axios";
 
 const API_URL = "http://localhost:7203/";
@@ -5,7 +6,7 @@ const API_URL = "http://localhost:7203/";
 class AuthService {
   login(username, password) {
     return axios
-      .post(API_URL + "signin", {
+      .put(API_URL + "signin", {
         username,
         password
       })
@@ -31,14 +32,19 @@ class AuthService {
   }
 
   register(userName, email, password,phoneNumber,firstName,lastname) {
-    return axios.post(API_URL + "signup", {
+    let userdata={
       userName,
       email,
       password,
       lastname,
       firstName,
       phoneNumber
-    }).catch(error => {
+    }
+    return axios.post(API_URL + "signup", userdata)
+    .then((response)=>{
+      console.log(response.data)
+    })
+    .catch(error => {
       if (!error.response) {
           // network error
           this.errorStatus = 'Error: Network Error';
