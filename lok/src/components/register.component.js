@@ -59,7 +59,7 @@ export default class Register extends Component {
 
 
     this.state = {
-      username: "",
+      userName: "",
       email: "",
       password: "",
       phoneNumber: "",
@@ -72,7 +72,7 @@ export default class Register extends Component {
 
   onChangeUsername(e) {
     this.setState({
-      username: e.target.value
+      userName: e.target.value
     });
   }
 
@@ -113,7 +113,7 @@ export default class Register extends Component {
 
     if (this.checkBtn.context._errors.length === 0) {
       AuthService.register(
-        this.state.username,
+        this.state.userName,
         this.state.email,
         this.state.password,
         this.state.phoneNumber,
@@ -179,7 +179,7 @@ export default class Register extends Component {
                     type="text"
                     className="form-control"
                     name="username"
-                    value={this.state.username}
+                    value={this.state.userName}
                     onChange={this.onChangeUsername}
                     validations={[required, vusername]}
                   />
@@ -261,8 +261,10 @@ export default class Register extends Component {
                 this.checkBtn = c;
               }}
             />
+           
           </Form>
         </div>
+        <button onClick={AuthService.getsmt}>ok</button>
       </div>
     );
   }

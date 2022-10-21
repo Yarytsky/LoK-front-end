@@ -124,6 +124,7 @@ class App extends Component {
             <Route path="/register" element={<Register />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/user" element={<BoardUser />} />
+            <Route path="/da" element={<AuthService />} />
           </Routes>
         </div>
       </div>

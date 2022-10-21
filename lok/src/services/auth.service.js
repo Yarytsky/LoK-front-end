@@ -1,7 +1,7 @@
 import { isLabelWithInternallyDisabledControl } from "@testing-library/user-event/dist/utils";
 import axios from "axios";
 
-const API_URL = "http://localhost:7203/";
+const API_URL = "https://localhost:7203/";
 
 class AuthService {
   login(username, password) {
@@ -27,11 +27,17 @@ class AuthService {
     
   }
 
+  getsmt(){
+    return axios.get(API_URL+"getsome")
+    .then(resp =>{
+      console.log(resp.data)
+    })
+  }
   logout() {
     localStorage.removeItem("user");
   }
 
-  register(userName, email, password,phoneNumber,firstName,lastname) {
+  async register(userName, email, password,phoneNumber,firstName,lastname) {
     let userdata={
       userName,
       email,
@@ -40,10 +46,10 @@ class AuthService {
       firstName,
       phoneNumber
     }
-    return axios.post(API_URL + "signup", userdata)
-    .then((response)=>{
-      console.log(response.data)
-    })
+    let response = await axios.post(API_URL + "signup",JSON.stringify(userdata))
+    let resp = response.data
+    return resp
+    .then(response=>response.data)
     .catch(error => {
       if (!error.response) {
           // network error
@@ -57,6 +63,15 @@ class AuthService {
   getCurrentUser() {
     return JSON.parse(localStorage.getItem('user'));;
   }
+
+  render() {
+    return(
+      <div>
+        <button onClick={this.getsmt}>ok</button>
+      </div>
+    )
+  }
+  
 }
 
 export default new AuthService();
