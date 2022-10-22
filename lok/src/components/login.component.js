@@ -25,8 +25,8 @@ class Login extends Component {
     this.onChangePassword = this.onChangePassword.bind(this);
 
     this.state = {
-      username: "",
-      password: "",
+      UserName: "",
+      Password: "",
       loading: false,
       message: ""
     };
@@ -34,13 +34,13 @@ class Login extends Component {
 
   onChangeUsername(e) {
     this.setState({
-      username: e.target.value
+      Username: e.target.value
     });
   }
 
   onChangePassword(e) {
     this.setState({
-      password: e.target.value
+      Password: e.target.value
     });
   }
 
@@ -55,11 +55,11 @@ class Login extends Component {
     this.form.validateAll();
 
     if (this.checkBtn.context._errors.length === 0) {
-      AuthService.login(this.state.username, this.state.password).then(
-        () => {
-          this.props.router.navigate("/profile");
-          window.location.reload();
-        },
+      AuthService.login(this.state.UserName, this.state.Password).then(
+        // () => {
+        //   this.props.router.navigate("/profile");
+        //   window.location.reload();
+        // },
         error => {
           const resMessage =
             (error.response &&
@@ -103,7 +103,7 @@ class Login extends Component {
                 type="text"
                 className="form-control"
                 name="username"
-                value={this.state.username}
+                value={this.state.UserName}
                 onChange={this.onChangeUsername}
                 validations={[required]}
               />
@@ -115,7 +115,7 @@ class Login extends Component {
                 type="password"
                 className="form-control"
                 name="password"
-                value={this.state.password}
+                value={this.state.Password}
                 onChange={this.onChangePassword}
                 validations={[required]}
               />

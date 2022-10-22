@@ -59,12 +59,12 @@ export default class Register extends Component {
 
 
     this.state = {
-      userName: "",
-      email: "",
-      password: "",
-      phoneNumber: "",
-      firstName: "",
-      lastname: "",
+      UserName: "",
+      Email: "",
+      Password: "",
+      PhoneNumber: "",
+      FirstName: "",
+      Lastname: "",
       successful: false,
       message: ""
     };
@@ -72,32 +72,32 @@ export default class Register extends Component {
 
   onChangeUsername(e) {
     this.setState({
-      userName: e.target.value
+      UserName: e.target.value
     });
   }
 
   onChangeEmail(e) {
     this.setState({
-      email: e.target.value
+      Email: e.target.value
     });
   }
   onChangefirstName(e) {
     this.setState({
-      firstName: e.target.value
+      FirstName: e.target.value
     });
   }  onChangelastname(e) {
     this.setState({
-      lastname: e.target.value
+      Lastname: e.target.value
     });
   }  onChangephoneNumber(e) {
     this.setState({
-      phoneNumber: e.target.value
+      PhoneNumber: e.target.value
     });
   }
 
   onChangePassword(e) {
     this.setState({
-      password: e.target.value
+      Password: e.target.value
     });
   }
 
@@ -113,12 +113,12 @@ export default class Register extends Component {
 
     if (this.checkBtn.context._errors.length === 0) {
       AuthService.register(
-        this.state.userName,
-        this.state.email,
-        this.state.password,
-        this.state.phoneNumber,
-        this.state.firstName,
-        this.state.lastname
+        this.state.UserName,
+        this.state.Email,
+        this.state.Password,
+        this.state.PhoneNumber,
+        this.state.FirstName,
+        this.state.Lastname
       ).then(
         response => {
           this.setState({
