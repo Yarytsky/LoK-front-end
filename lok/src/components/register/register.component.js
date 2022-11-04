@@ -294,7 +294,6 @@ export default class Register extends Component {
                   >
                     <option>Male</option>
                     <option>Female</option>
-                    <option>Batle Helicopter MI-26</option>
                   </select>
                   </div>
                 </div>
