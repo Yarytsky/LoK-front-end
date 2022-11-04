@@ -5,15 +5,15 @@ import CheckButton from "react-validation/build/button";
 import { isEmail } from "validator";
 import "./register.css"
 import AuthService from "../../services/auth.service";
-import logo from "/Users/roman/Projects/LOK/LoK-front-end/lok/src/components/register/img/Bobrlogo.png"
-import avatar from "/Users/roman/Projects/LOK/LoK-front-end/lok/src/components/register/img/icons/Vector.png"
-import counrty from "/Users/roman/Projects/LOK/LoK-front-end/lok/src/components/register/img/icons/country.png"
-import gender from "/Users/roman/Projects/LOK/LoK-front-end/lok/src/components/register/img/icons/gender.png"
-import phoneicon from "/Users/roman/Projects/LOK/LoK-front-end/lok/src/components/register/img/icons/phone.png"
-import password from "/Users/roman/Projects/LOK/LoK-front-end/lok/src/components/register/img/icons/password.png"
-import emailicon from "/Users/roman/Projects/LOK/LoK-front-end/lok/src/components/register/img/icons/email.png"
-import books1 from "/Users/roman/Projects/LOK/LoK-front-end/lok/src/components/register/img/img1.png"
-import books2 from "/Users/roman/Projects/LOK/LoK-front-end/lok/src/components/register/img/img2.png"
+import logo from "../../img/Bobrlogo.png"
+import avatar from "../../img/icons/Vector.png"
+import counrty from "../../img/icons/country.png"
+import gender from "../../img/icons/gender.png"
+import phoneicon from "../../img/icons/phone.png"
+import password from "../../img/icons/password.png"
+import emailicon from "../../img/icons/email.png"
+import books1 from "../../img/img1.png"
+import books2 from "../../img/img2.png"
 
 
 
