@@ -1,1 +1,18 @@
-.Login {}
+.icons2{
+    transform: translateY(20%) translateX(70%);
+    align-self:center;
+
+
+ 
+}
+.card{
+    padding-bottom: 20px;
+}
+
+::placeholder {
+    text-align: center; 
+ }
+
+ .login_link{
+    color:#929292 ;
+ }

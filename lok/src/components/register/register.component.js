@@ -194,10 +194,11 @@ export default class Register extends Component {
             {!this.state.successful && (
             <div >
             <div className="row  justify-content-center ">
-              <div className="col-12 col-md-6 ">  
-                <div className="input-group ">
-                  <img className="icons"  src={avatar}/>
-                  <div id="FirstnameValidator">
+              <div className="col-12 col-md-6 "> 
+              <div className="row  justify-content-center"> 
+                <div className="input-group col-8">
+                <img className="icons"  src={avatar}/>
+                  <div id="FirstnameValidator col-12">
                   <Input
                     type="text"
                     className="form-control"
@@ -213,7 +214,7 @@ export default class Register extends Component {
                     <span class="input-group-text" id="basic-addon1">Invalid</span>
                 </div>
 
-                <div className="input-group">
+                <div className="input-group col-8">
                 <img className="icons"  src={counrty}/>
                   <select
                     list="Country"
@@ -228,7 +229,7 @@ export default class Register extends Component {
                 </div>
 
 
-                <div className="input-group ">
+                <div className="input-group col-8">
                 <img className="icons"  src={phoneicon}/>
 
                 <div id="PhoneValidator">
@@ -247,7 +248,7 @@ export default class Register extends Component {
                   <span class="input-group-text" id="basic-addon2">Invalid</span>
                 </div>
 
-                <div className="input-group">
+                <div className="input-group col-8">
                 <img className="icons"  src={emailicon}/>
 
                 <div id="EmailValidator">
@@ -263,9 +264,11 @@ export default class Register extends Component {
                   </div>
                   <span class="input-group-text" id="basic-addon3">Invalid</span>
                 </div>
+              </div>
               </div>  
               <div className="col-12 col-md-6">
-                <div className="input-group">
+                <div className="row justify-content-center">
+                <div className="input-group col-8">
                   <img className="icons"  src={avatar}/>
 
                 <div id="LastnameValidator">
@@ -282,7 +285,7 @@ export default class Register extends Component {
                   <span class="input-group-text" id="basic-addon4">Invalid</span>                  
                 </div>
 
-                <div className="input-group">
+                <div className="input-group  col-8">
                 <img className="icons"  src={gender}/>
 
                 <div id="FirstnameValidator">
@@ -297,7 +300,7 @@ export default class Register extends Component {
                   </select>
                   </div>
                 </div>
-                <div className="input-group">
+                <div className="input-group  col-8">
                 <img className="icons"  src={password}/>
 
                 <div id="FirstnameValidator">
@@ -312,7 +315,7 @@ export default class Register extends Component {
                   />
                   </div>
                 </div>
-                <div className="input-group">
+                <div className="input-group  col-8">
                 <img className="icons"  src={password}/>
 
                 <div id="FirstnameValidator">
@@ -327,6 +330,7 @@ export default class Register extends Component {
                 </div>
 
                
+              </div>
               </div>
             </div>
             <div className="row justify-content-center">
@@ -362,11 +366,15 @@ export default class Register extends Component {
           </Form>
         </div>
       </div>
-              <img className="book1 float-start"  src={books2}></img>
-         
+              <div className="row justify-content-start">
+              <img className="book1"  src={books2}></img>
+              </div>
+          
               
+             <div className="row justify-content-end">
+             <img className="book2 col-2" src={books1}></img>
+             </div>
              
-              <img className="book2 float-end" src={books1}></img>
             
     </div>
     );

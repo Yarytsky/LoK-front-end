@@ -12,9 +12,8 @@
     border-radius: 25px;
     
 }
-.form-control{
-    max-width: 180px;
 
+.form-control{
 }
 
 .form-control:active{
@@ -34,9 +33,6 @@
 }
 
 .card{
-padding-left: 100px;
-padding-right: 100px;
-max-width: 900px;
 }
 .basic-addon1{
     display: none;
@@ -120,16 +116,15 @@ height: auto;
 }
 
 .book1{
-    width: 15%;
-    min-width: 100px;
+    width: 12%;
     height: auto;
     transform: translateY(-60%) translateX(0%);
 }
 .book2{
-    width: 20%;
-    min-width: 100px;
+    width: 15%;
     height: auto;
-    transform: translateY(-50%) translateX(330%);
+    transform: translateY(-140%);
+    padding: 0;
 }
 .FirstnameValidator {
     position: relative;
@@ -137,6 +132,7 @@ height: auto;
     position: absolute;
     transform: translateY(-50%);
   }
+
   
 .PhoneValidator{
     position: relative;

@@ -4,8 +4,17 @@ import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
 
 import AuthService from "../../services/auth.service";
-
+import logo from "../../img/Bobrlogo.png"
 import { withRouter } from '../../common/with-router';
+import "./login.css"
+
+import avatar from "../../img/icons/Vector.png"
+import password from "../../img/icons/password.png"
+import books1 from "../../img/img1.png"
+import books2 from "../../img/img2.png"
+
+
+
 
 const required = value => {
   if (!value) {
@@ -83,53 +92,69 @@ class Login extends Component {
 
   render() {
     return (
-      <div className="col-md-12">
-        <div className="card card-container">
-          <img
-            src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-            alt="profile-img"
-            className="profile-img-card"
-          />
-
+      <div className="container-fluid background ">   
+     <div className="row justify-content-center">
+        <img src={logo} className="logo"/>
+      </div>
+        <div className="row">
+        <div className="card form-bg  col-10 card-container">
+        <div className="row text-center justify-content-center title">Log in</div>
           <Form
             onSubmit={this.handleLogin}
             ref={c => {
               this.form = c;
             }}
           >
-            <div className="form-group">
-              <label htmlFor="username">Username</label>
+          <div className="row  justify-content-center ">
+            
+            <div className="input-group row col-8">
+               <img className="icons2 "  src={avatar}/>
+            <div className="col-11" >
               <Input
                 type="text"
                 className="form-control"
+                placeholder="e-mail/phonenumber"
                 name="username"
                 value={this.state.UserName}
                 onChange={this.onChangeUsername}
                 validations={[required]}
               />
             </div>
+            </div>
 
-            <div className="form-group">
-              <label htmlFor="password">Password</label>
+            <div className="input-group row col-8">
+              <img className="icons2" src={password}/>
+              <div className="col-11">
               <Input
                 type="password"
                 className="form-control"
                 name="password"
+                placeholder="password"
                 value={this.state.Password}
                 onChange={this.onChangePassword}
                 validations={[required]}
               />
+              </div>
             </div>
-
-            <div className="form-group">
+           
+          </div>
+          <div className="row justify-content-end">
+                <a className="col-2 login_link">forgot your password?</a>
+                <div className="col-3"></div>
+          </div>
+            <div  className="row justify-content-center">
               <button
-                className="btn btn-primary btn-block"
+                className="btn btn-primary btn-block col-2"
                 disabled={this.state.loading}
               >
                 {this.state.loading && (
-                  <span className="spinner-border spinner-border-sm"></span>
-                )}
-                <span>Login</span>
+                    <div className="row justify-content-center">
+                    <div className="form-group col-2 ">
+                          <button className="btn btn-primary btn-block">Login</button>
+                    </div>
+                    </div>               
+                     )}
+                <span>Continue</span>
               </button>
             </div>
 
@@ -147,8 +172,27 @@ class Login extends Component {
               }}
             />
           </Form>
+          <hr></hr>
+          <div className="row justify-content-center">
+            <a className="col6 login_link">YOU CAN ALSO SIGN IN USING THE APP</a>
+          </div>
+          <div className="row justify-content-center">
+            <a className="col6 link">If you dont  have an account</a>
+          </div>
         </div>
+
       </div>
+              <div className="row justify-content-start">
+              <img className="book1 float-start"  src={books2}></img>
+              </div>
+          
+              
+             <div className="row justify-content-end">
+             <img className="book2 col-2" src={books1}></img>
+             </div>
+
+      
+    </div>
     );
   }
 }
