@@ -65,10 +65,10 @@ class Login extends Component {
 
     if (this.checkBtn.context._errors.length === 0) {
       AuthService.login(this.state.UserName, this.state.Password).then(
-        // () => {
-        //   this.props.router.navigate("/profile");
-        //   window.location.reload();
-        // },
+        () => {
+          this.props.router.navigate("/profile");
+          window.location.reload();
+        },
         error => {
           const resMessage =
             (error.response &&
@@ -139,22 +139,15 @@ class Login extends Component {
            
           </div>
           <div className="row justify-content-end">
-                <a className="col-2 login_link">forgot your password?</a>
-                <div className="col-3"></div>
+                <a className="col-md-5 col-sm-12 text-center login_link">forgot your password?</a>
           </div>
-            <div  className="row justify-content-center">
+            <div  className="form-group  row justify-content-center">
               <button
                 className="btn btn-primary btn-block col-2"
-                disabled={this.state.loading}
+               
               >
-                {this.state.loading && (
-                    <div className="row justify-content-center">
-                    <div className="form-group col-2 ">
-                          <button className="btn btn-primary btn-block">Login</button>
-                    </div>
-                    </div>               
-                     )}
-                <span>Continue</span>
+               
+             <span>Continue</span> 
               </button>
             </div>
 
@@ -182,14 +175,14 @@ class Login extends Component {
         </div>
 
       </div>
-              <div className="row justify-content-start">
-              <img className="book1 float-start"  src={books2}></img>
+              <div className="row">
+                <div className="col  align-self-start">  <img className="book1 float-start"  src={books2}></img></div>
+            <div className="col align-self-end"><img className="book2  float-end" src={books1}></img></div>
+              
               </div>
           
               
-             <div className="row justify-content-end">
-             <img className="book2 col-2" src={books1}></img>
-             </div>
+            
 
       
     </div>

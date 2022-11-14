@@ -18,7 +18,7 @@ import books2 from "../../img/img2.png"
 
 
 const phone = value => {
-  if (!value) {
+  if (!value||!value.match(/^[0-9,+]+$/)) {
   document.getElementById("PhoneValidator").style.borderColor="#F35B04";
   document.getElementById("basic-addon2").style.display="block";
 
@@ -45,7 +45,7 @@ const email = value => {
 };
 
 const fusername = value => {
-  if (value.length < 3 || value.length > 20) {
+  if (!value||value.length < 3 || value.length > 20||!value.match(/^[a-zA-Z]+$/)) {
     document.getElementById("FirstName").style.borderColor="#F35B04";
     document.getElementById("basic-addon1").style.display="block";
   }
@@ -56,7 +56,7 @@ const fusername = value => {
   }
 };
 const lastname = value => {
-  if (value.length < 3 || value.length > 20) {
+  if (!value||value.length < 3 || value.length > 20||!value.match(/^[a-zA-Z]+$/)) {
     document.getElementById("LastnameValidator").style.borderColor="#F35B04";
     document.getElementById("basic-addon4").style.display="block";
   }
@@ -195,10 +195,10 @@ export default class Register extends Component {
             <div >
             <div className="row  justify-content-center ">
               <div className="col-12 col-md-6 "> 
-              <div className="row  justify-content-center"> 
-                <div className="input-group col-8">
+              <div className="row  "> 
+                <div className="input-group col-12">
                 <img className="icons"  src={avatar}/>
-                  <div id="FirstnameValidator col-12">
+                  <div id="col-12">
                   <Input
                     type="text"
                     className="form-control"
@@ -214,7 +214,7 @@ export default class Register extends Component {
                     <span class="input-group-text" id="basic-addon1">Invalid</span>
                 </div>
 
-                <div className="input-group col-8">
+                <div className="input-group col-10">
                 <img className="icons"  src={counrty}/>
                   <select
                     list="Country"
@@ -229,7 +229,7 @@ export default class Register extends Component {
                 </div>
 
 
-                <div className="input-group col-8">
+                <div className="input-group col-12">
                 <img className="icons"  src={phoneicon}/>
 
                 <div id="PhoneValidator">
@@ -248,7 +248,7 @@ export default class Register extends Component {
                   <span class="input-group-text" id="basic-addon2">Invalid</span>
                 </div>
 
-                <div className="input-group col-8">
+                <div className="input-group col-12">
                 <img className="icons"  src={emailicon}/>
 
                 <div id="EmailValidator">
@@ -268,7 +268,7 @@ export default class Register extends Component {
               </div>  
               <div className="col-12 col-md-6">
                 <div className="row justify-content-center">
-                <div className="input-group col-8">
+                <div className="input-group col-12">
                   <img className="icons"  src={avatar}/>
 
                 <div id="LastnameValidator">
@@ -285,7 +285,7 @@ export default class Register extends Component {
                   <span class="input-group-text" id="basic-addon4">Invalid</span>                  
                 </div>
 
-                <div className="input-group  col-8">
+                <div className="input-group  col-12">
                 <img className="icons"  src={gender}/>
 
                 <div id="FirstnameValidator">
@@ -300,7 +300,7 @@ export default class Register extends Component {
                   </select>
                   </div>
                 </div>
-                <div className="input-group  col-8">
+                <div className="input-group  col-12">
                 <img className="icons"  src={password}/>
 
                 <div id="FirstnameValidator">
@@ -315,7 +315,7 @@ export default class Register extends Component {
                   />
                   </div>
                 </div>
-                <div className="input-group  col-8">
+                <div className="input-group  col-12">
                 <img className="icons"  src={password}/>
 
                 <div id="FirstnameValidator">
@@ -366,15 +366,11 @@ export default class Register extends Component {
           </Form>
         </div>
       </div>
-              <div className="row justify-content-start">
-              <img className="book1"  src={books2}></img>
-              </div>
-          
+           <div className="row">
+                <div className="col  align-self-start">  <img className="book1 float-start"  src={books2}></img></div>
+            <div className="col align-self-end"><img className="book2  float-end" src={books1}></img></div>
               
-             <div className="row justify-content-end">
-             <img className="book2 col-2" src={books1}></img>
-             </div>
-             
+              </div>
             
     </div>
     );
