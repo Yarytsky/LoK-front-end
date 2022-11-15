@@ -105,7 +105,7 @@ class Login extends Component {
                 this.form = c;
               }}
             >
-              <div className="row  justify-content-center ">
+              <div className="justify-content-center inputsLogin">
 
                 <div className="loginInput">
                   <Input
