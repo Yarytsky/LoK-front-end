@@ -11,3 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: "Sniglet";
+  src: local("Sniglet"), url("./fonts/Sniglet/Sniglet-Regular.ttf") format("truetype")
+}
