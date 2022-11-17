@@ -1,36 +1,34 @@
-.icons2{
+.icons2 {
     transform: translateY(20%) translateX(70%);
-    align-self:center;
-
-
- 
+    align-self: center;
 }
-.card{
+
+.card {
     padding-bottom: 20px;
 }
 
 ::placeholder {
-    text-align: center; 
- }
-
-.login_link{
-    color:#929292;
+    text-align: center;
 }
 
-.loginInput{
+.login_link {
+    color: #929292;
+}
+
+.loginInput {
     height: 8vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 }
 
-.formLogin{
+.formLogin {
     border-top: 0ch;
     border-left: 0ch;
     border-right: 0ch;
-    border-bottom-width:1px;
-    border-radius:  0;
+    border-bottom-width: 1px;
+    border-radius: 0;
     display: flex;
     overflow: hidden;
     width: 60vw !important;
@@ -38,32 +36,33 @@
     max-width: 600px;
 }
 
-.formLogin:active{
+.formLogin:active {
     background-color: none;
 }
 
-.formLogin::target-text{
+.formLogin::target-text {
     text-decoration: none;
     color: none;
     border: none;
     background-color: none;
 
 }
-.formLogin:focus{
+
+.formLogin:focus {
     outline: none;
     box-shadow: none;
 }
 
-.loginCard{
+.loginCard {
     justify-content: flex-start !important;
 }
 
-.lineLogin{
+.lineLogin {
     margin-top: 4vh;
     margin-bottom: 4vh;
 }
 
-.facebookButton{
+.facebookButton {
     height: 5vh;
     width: 12vw;
     margin-top: 2vh;
@@ -72,18 +71,18 @@
     align-items: center;
     border: 0px;
     border-radius: 40px;
-    -webkit-box-shadow: 3px 3px 5px -1px rgba(133,133,133,1);
-    -moz-box-shadow: 3px 3px 5px -1px rgba(133,133,133,1);
-    box-shadow: 3px 3px 5px -1px rgba(133,133,133,1);
+    -webkit-box-shadow: 3px 3px 5px -1px rgba(133, 133, 133, 1);
+    -moz-box-shadow: 3px 3px 5px -1px rgba(133, 133, 133, 1);
+    box-shadow: 3px 3px 5px -1px rgba(133, 133, 133, 1);
     min-width: 120px;
 }
 
-.imgFacebook{
+.imgFacebook {
     height: 2.5vh;
     margin-right: 0.5vw;
 }
 
-.inputsLogin{
+.inputsLogin {
     flex-wrap: nowrap;
     flex-direction: column;
     align-items: center;

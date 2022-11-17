@@ -1,13 +1,12 @@
 @import url('http://fonts.cdnfonts.com/css/sniglet');
 
-html{
-    overflow: hidden;
-}
 
 .background {
     background: rgb(210,211,249);
     background: linear-gradient(-180deg, rgba(210,211,249,1) 0%, rgba(255,255,255,1) 100%);
     position: relative;
+    overflow: hidden;
+    height: 93vh;
 }
 
 .card-container{

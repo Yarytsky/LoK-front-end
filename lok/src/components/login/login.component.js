@@ -1,3 +1,6 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable no-unused-vars */
 import React, { Component } from "react";
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
