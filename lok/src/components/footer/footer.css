@@ -1,0 +1,39 @@
+.footer-dg{
+    background: #A5A6F3;
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+
+.social{
+    font-family: Source Sans Pro;
+font-size: 18px;
+font-weight: 400;
+line-height: 31px;
+letter-spacing: 0em;
+}
+.social-media-icons{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.footer-font-color{
+    color: #2C2564;
+}
+.contact-phone{
+    color: #ECECEE;
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+.footer-creat{
+    font-size: 12px;
+}
+
+.year{
+    font-size: 12px;
+    color: #ECECEE;
+}
+
+.footer-margin{
+    margin-top: 10px;
+}

@@ -46,7 +46,9 @@ width:auto;
 .basic-addon4{
     display: none;
 }
-
+.basic-addon5{
+    display: none;
+}
 
 .icons{
    align-self:center;
@@ -61,11 +63,7 @@ width:auto;
 
 }
 
-.container{
-    
-    padding-top: 100px;
-    padding-bottom: 100px;
-}
+
 .form-bg{
     background-color: white;
 }

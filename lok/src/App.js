@@ -9,6 +9,7 @@ import Register from "./components/register/register.component";
 import Home from "./components/home.component";
 import Profile from "./components/profile.component";
 import BoardUser from "./components/board-user.component";
+import Footer from "./components/footer/footer";
 
 class App extends Component {
   constructor(props) {
@@ -124,6 +125,7 @@ class App extends Component {
             <Route path="/user" element={<BoardUser />} />
           </Routes>
         </div>
+        <Footer></Footer>
       </div>
     );
   }

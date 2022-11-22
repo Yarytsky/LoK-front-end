@@ -36,14 +36,16 @@ class AuthService {
     localStorage.removeItem("user");
   }
 
-  async register(UserName, Email, Password,PhoneNumber,FirstName,Lastname) {
+  async register(UserName, Email, Password,PhoneNumber,FirstName,Lastname,Gender,Country) {
     let userdata={
       UserName,
       Email,
       Password,
       Lastname,
       FirstName,
-      PhoneNumber
+      PhoneNumber,
+      Country,
+      Gender
     }
     return await axios.post(API_URL + "signup",userdata)
    

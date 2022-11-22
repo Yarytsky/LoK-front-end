@@ -14,6 +14,7 @@ import password from "../../img/icons/password.png"
 import emailicon from "../../img/icons/email.png"
 import books1 from "../../img/img1.png"
 import books2 from "../../img/img2.png"
+import Footer from "../footer/footer";
 
 
 
@@ -32,7 +33,7 @@ const phone = value => {
 };
 
 const email = value => {
-  if (!isEmail(value)) {
+  if (!value) {
     document.getElementById("EmailValidator").style.borderColor="#F35B04";
     document.getElementById("basic-addon3").style.display="block";  
   
@@ -68,11 +69,9 @@ const lastname = value => {
 };
 const vpassword = value => {
   if (value.length < 6 || value.length > 40) {
-    return (
-      <div className="alert alert-danger" role="alert">
-        The password must be between 6 and 40 characters.
-      </div>
-    );
+      document.getElementById("PasswordValidator").style.borderColor="#F35B04";
+      document.getElementById("basic-addon5").style.display="block";
+    
   }
 };
 
@@ -95,6 +94,8 @@ export default class Register extends Component {
       PhoneNumber: "",
       FirstName: "",
       Lastname: "",
+      Country:"",
+      Gender: "",
       successful: false,
       message: ""
     };
@@ -103,6 +104,16 @@ export default class Register extends Component {
   onChangeUsername(e) {
     this.setState({
       UserName: e.target.value
+    });
+  }
+  onChangeCountry(e) {
+    this.setState({
+      Country: e.target.value
+    });
+  }
+  onChangeGender(e) {
+    this.setState({
+      Gender: e.target.value
     });
   }
 
@@ -148,7 +159,9 @@ export default class Register extends Component {
         this.state.Password,
         this.state.PhoneNumber,
         this.state.FirstName,
-        this.state.Lastname
+        this.state.Lastname,
+        this.state.Country,
+        this.state.Gender
       ).then(
         response => {
           this.setState({
@@ -211,7 +224,7 @@ export default class Register extends Component {
                     aria-describedby="basic-addon1"
                   />
                   </div>
-                    <span class="input-group-text" id="basic-addon1">Invalid</span>
+                    <span className="input-group-text" id="basic-addon1">Invalid</span>
                 </div>
 
                 <div className="input-group col-10">
@@ -222,6 +235,8 @@ export default class Register extends Component {
                     className="form-control dropdown"
                     name="username"
                     placeholder="Country"
+                    value={this.state.Country}
+                    onChange={this.onChangeCountry}
                     >   
                   <option>Ukraine</option>
                   <option>Poland</option>
@@ -245,7 +260,7 @@ export default class Register extends Component {
                     aria-describedby="basic-addon2"
                   />
                   </div>
-                  <span class="input-group-text" id="basic-addon2">Invalid</span>
+                  <span className="input-group-text" id="basic-addon2">Invalid</span>
                 </div>
 
                 <div className="input-group col-12">
@@ -262,7 +277,7 @@ export default class Register extends Component {
                     validations={[email]}
                   />
                   </div>
-                  <span class="input-group-text" id="basic-addon3">Invalid</span>
+                  <span className="input-group-text" id="basic-addon3">Invalid</span>
                 </div>
               </div>
               </div>  
@@ -282,28 +297,31 @@ export default class Register extends Component {
                     validations={[lastname]}
                   />
                   </div>
-                  <span class="input-group-text" id="basic-addon4">Invalid</span>                  
+                  <span className="input-group-text" id="basic-addon4">Invalid</span>                  
                 </div>
 
                 <div className="input-group  col-12">
                 <img className="icons"  src={gender}/>
 
-                <div id="FirstnameValidator">
+                <div >
                   <select
                     type="text"
                     className="form-control dropdown"
                     name="gender"
                     placeholder="Gender"
+                    value={this.state.Gender}
+                    onChange={this.onChangeGender}
                   >
                     <option>Male</option>
                     <option>Female</option>
+                    <option>Other</option>
                   </select>
                   </div>
                 </div>
                 <div className="input-group  col-12">
                 <img className="icons"  src={password}/>
 
-                <div id="FirstnameValidator">
+                <div id="PasswordValidator">
                   <Input
                     type="password"
                     className="form-control"
@@ -314,6 +332,7 @@ export default class Register extends Component {
                     validations={[vpassword]}
                   />
                   </div>
+                  <span className="input-group-text" id="basic-addon5">Invalid</span>
                 </div>
                 <div className="input-group  col-12">
                 <img className="icons"  src={password}/>
@@ -371,8 +390,8 @@ export default class Register extends Component {
             <div className="col align-self-end"><img className="book2  float-end" src={books1}></img></div>
               
               </div>
-            
     </div>
+    
     );
   }
 }
