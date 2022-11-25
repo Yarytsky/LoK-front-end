@@ -47,8 +47,7 @@ class AuthService {
       Country,
       Gender
     }
-    return await axios.post(API_URL + "signup",userdata)
-   
+    return await axios.post(API_URL + "signup", userdata)
     .then(response=>response.data)
     .catch(error => {
       if (!error.response) {
