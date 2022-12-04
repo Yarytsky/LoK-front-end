@@ -1,0 +1,110 @@
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+
+.dropdown {
+    font-family: 'Sniglet';
+  margin-top: 0;
+  padding: 0;
+  list-style: none;
+  width: 200px;
+  background: #6A5FC3;
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+border-radius: 5px;
+}
+
+.dropdown li {
+  position: relative;
+}
+
+.dropdown li a {
+width: 200px;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+}
+
+.dropdown li ul {
+  position: absolute;
+  top: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: none;
+  line-height: normal;
+  background: #A5A6F3;
+}
+
+.dropdown li ul li a {
+  text-align: left;
+  color: #ffffff;
+  font-size: 14px;
+  padding: 10px;
+  display: block;
+  white-space: nowrap;
+}
+
+.dropdown li ul li a:hover {
+    background: #6A5FC3;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 0px;  color: #ffffff;
+}
+
+.dropdown li ul li ul {
+  left: 100%;
+  top: 0;
+}
+
+ul li:hover>a {
+    background: #6A5FC3;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 0px;  color: #ffffff !important;
+}
+
+ul li:hover>ul {
+  display: block;
+}
+
+.main-bg{
+    background-image:url("../../img/BackgrondMainPage.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: left;
+    
+}
+
+.pad{
+    padding-top: 100px;
+    padding-bottom: 200px;
+}
+
+.proposal-title{
+    font-family: 'Sniglet';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 68px;
+
+    color: #000000;
+    margin-bottom: 30px;
+}
+
+.course-size{
+    min-height: 250px;
+}
+
+.pad2{
+    padding-bottom: 40px;
+}
+
+.proposals{
+    font-family: 'Source Sans Pro';
+    font-size: 30px;
+}

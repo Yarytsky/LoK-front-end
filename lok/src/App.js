@@ -10,6 +10,7 @@ import Home from "./components/home.component";
 import Profile from "./components/profile.component";
 import BoardUser from "./components/board-user.component";
 import Footer from "./components/footer/footer";
+import Header from "./components/header/header";
 
 class App extends Component {
   constructor(props) {
@@ -49,6 +50,7 @@ class App extends Component {
 
     return (
       <div>
+        <Header></Header>
         <nav className="navbar puding navbar-expand navbar-dark bg-dark">
           <Link to={"/"} className="navbar-brand">
             Lake Of knowledge

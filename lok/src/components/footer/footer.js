@@ -12,7 +12,7 @@ class Footer extends Component {
 
   render() {
     return (
-      <div className="container footer-dg text-center ">
+      <div className="container footer-bg text-center ">
         <div className="row ">
           <div className="col-12 social  align-self-center footer-font-color">We are on social networks:</div>
         </div>

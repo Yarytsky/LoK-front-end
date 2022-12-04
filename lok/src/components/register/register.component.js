@@ -232,7 +232,7 @@ export default class Register extends Component {
                   <select
                     list="Country"
                     type="text"
-                    className="form-control dropdown"
+                    className="form-control dropdown-reg"
                     name="username"
                     placeholder="Country"
                     value={this.state.Country}
@@ -306,7 +306,7 @@ export default class Register extends Component {
                 <div >
                   <select
                     type="text"
-                    className="form-control dropdown"
+                    className="form-control dropdown-reg"
                     name="gender"
                     placeholder="Gender"
                     value={this.state.Gender}
