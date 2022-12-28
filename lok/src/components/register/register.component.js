@@ -190,7 +190,7 @@ export default class Register extends Component {
     return (
 
       <div className="container-fluid background ">
-        <div className="row justify-content-center logoRow">
+        <div className="justify-content-center logoRow">
 
         <img src={logo} className="logo"/>
       </div>

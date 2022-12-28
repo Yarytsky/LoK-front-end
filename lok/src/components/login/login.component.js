@@ -93,11 +93,11 @@ class Login extends Component {
   render() {
     return (
       <div className="container-fluid background ">   
-     <div className="row justify-content-center">
+     <div className="justify-content-center logoRow">
         <img src={logo} className="logo"/>
       </div>
         <div className="row">
-        <div className="card form-bg  col-10 card-container ">
+        <div className="card form-bg  col-10 card-container loginCard">
         <div className="row text-center justify-content-center title">Log in</div>
           <Form
             onSubmit={this.handleLogin}
@@ -105,14 +105,12 @@ class Login extends Component {
               this.form = c;
             }}
           >
-          <div className="row  justify-content-center ">
+          <div className="justify-content-center inputsLogin">
             
-            <div className="input-group row col-8">
-               <img className="icons2 "  src={avatar}/>
-            <div className="col-11" >
+            <div className="loginInput">
               <Input
                 type="text"
-                className="form-control"
+                className="formLogin"
                 placeholder="e-mail/phonenumber"
                 name="username"
                 value={this.state.UserName}
@@ -120,11 +118,8 @@ class Login extends Component {
                 validations={[required]}
               />
             </div>
-            </div>
 
-            <div className="input-group row col-8">
-              <img className="icons2" src={password}/>
-              <div className="col-11">
+            <div className="loginInput">
               <Input
                 type="password"
                 className="form-control"
@@ -134,13 +129,13 @@ class Login extends Component {
                 onChange={this.onChangePassword}
                 validations={[required]}
               />
-              </div>
             </div>
            
           </div>
-          <div className="row justify-content-end">
-                <a className="col-md-5 col-sm-12 text-center login_link">forgot your password?</a>
-          </div>
+            <div className="row justify-content-end">
+                <a className="login_link">forgot your password?</a>
+                <div className="col-3"></div>
+              </div>
             <div  className="form-group  row justify-content-center">
               <button
                 className="btn btn-primary btn-block col-2"
@@ -175,11 +170,14 @@ class Login extends Component {
         </div>
 
       </div>
-              <div className="row">
-                <div className="col  align-self-start">  <img className="book1 float-start"  src={books2}></img></div>
-            <div className="col align-self-end"><img className="book2  float-end" src={books1}></img></div>
-              
-              </div>
+      <div className="row justify-content-start">
+          <img className="book1 float-start" src={books2}></img>
+        </div>
+
+
+        <div className="row justify-content-end">
+          <img className="book2" src={books1}></img>
+        </div>
           
               
             
