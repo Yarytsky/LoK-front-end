@@ -1,25 +1,29 @@
 @import url('http://fonts.cdnfonts.com/css/sniglet');
 
 
-
 .background {
     background: rgb(210,211,249);
     background: linear-gradient(-180deg, rgba(210,211,249,1) 0%, rgba(255,255,255,1) 100%);
+    position: relative;
+    overflow: hidden;
+    height: 93vh;
 }
 
 .card-container{
     box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.25);
     border-radius: 25px;
-    
+    height: 70vh;
+    justify-content: end;
 }
-.form-control{
-width:auto;
+
+#formBlock{
+    height: 50vh;
 }
 
 .form-control:active{
     background-color: none;
-
 }
+
 .form-control::target-text{
     text-decoration: none;
     color: none;
@@ -32,10 +36,8 @@ width:auto;
     box-shadow: none;
 }
 
-.card{
-}
 .basic-addon1{
-    display: none !important
+    display: none;
 }
 .basic-addon2{
     display: none;
@@ -46,9 +48,7 @@ width:auto;
 .basic-addon4{
     display: none;
 }
-.basic-addon5{
-    display: none;
-}
+
 
 .icons{
    align-self:center;
@@ -60,10 +60,12 @@ width:auto;
 
 .link:hover{
     color: #F35B04;
-
 }
 
-
+.container{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
 .form-bg{
     background-color: white;
 }
@@ -75,14 +77,21 @@ width:auto;
     border-radius:  0;
     display: flex;
     overflow: hidden;
-
+    width: 22vw !important;
+    height: 5vh;
+}
+.dropdown{
+    min-width: 180px;
+    flex-shrink: 0 !important;
+    flex-grow: 0 !important; 
+    text-align: left;
 }
 
 
+
 .logo{
-width: 15%;
-height: auto;
-margin-top: 20px;
+    width: auto;
+    height: 13vh;
 }
 
 
@@ -109,19 +118,19 @@ margin-top: 20px;
     border-radius:  0;
     color: #F35B04;
     border-color: #F35B04;
-    margin-left: 0;
 }
 
 .book1{
-    width: 30%;
-    height: auto;
-    transform: translateY(-60%) translateX(0%);
+    height: 27vh;
+    position: absolute;
+    top: 65vh;
+    left: 3vw;
 }
 .book2{
-    width: 30%;
-    height: auto;
-    transform: translateY(-60%) translateX(230%);
-    padding: 0;
+    height: 27vh;
+    position: absolute;
+    top: 65vh;
+    left: 80vw;
 }
 .FirstnameValidator {
     position: relative;
@@ -151,23 +160,44 @@ margin-top: 20px;
     transform: translateY(-50%);
 }
 
+.input-group-text{
+    position:static;
+    transform: translateX(-100%);
+    height: 5vh;
+}
 
-.form-inline {
-    width: 100%;
-  }
-  
-  .form-group {
-    width: 90%;
-  }
-  
-  .input-group {
-    width: 90% !important;
-  }
-  
-  .form-control {
-    width: 100%;
-  }
-  
-  span.input-group-addon {
-    width: 50px !important;
-  }
+.form-control::placeholder {
+    /* Firefox, Chrome, Opera */
+    text-align: left;
+}
+
+.col-8{
+    width: 15vw !important;
+    flex-shrink: 0 !important;
+    flex-grow: 0 !important; 
+}
+
+.regLeft{
+    height: 30vh;
+}
+
+.regRight{
+    height: 30vh;
+}
+
+.input-group{
+    flex-wrap: nowrap;
+    width: 30vw;
+}
+
+.logoRow{
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.row{
+    align-items: flex-start;
+}
