@@ -97,7 +97,7 @@ class Login extends Component {
         <img src={logo} className="logo"/>
       </div>
         <div className="row">
-        <div className="card form-bg  col-10 card-container">
+        <div className="card form-bg  col-10 card-container ">
         <div className="row text-center justify-content-center title">Log in</div>
           <Form
             onSubmit={this.handleLogin}

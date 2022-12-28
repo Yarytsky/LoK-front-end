@@ -5,6 +5,7 @@ import shortlogo from '../../img/shortlogo.png'
 import defaultavatar from '../../img/icons/Vector.png'
 import { Link, Routes, Route } from 'react-router-dom';
 import HomePage from '../HomePage/HomePage';
+import Account from '../account/account';
 
 class Header extends Component{
 
@@ -23,13 +24,15 @@ class Header extends Component{
               <option>En</option>
               <option>Ua</option>
           </select>
-          <img src={defaultavatar}></img>
+          <Link to={"/account"}><img src={defaultavatar}></img></Link>
 
         </div>
       </div>
       <div>
         <Routes>
         <Route path="/homepage" element={<HomePage />} />
+        <Route path="/account" element={<Account />} />
+
         </Routes>
       </div>
 </div>
