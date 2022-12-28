@@ -1,3 +1,6 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable no-unused-vars */
 import React, { Component } from "react";
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
@@ -12,7 +15,7 @@ import avatar from "../../img/icons/Vector.png"
 import password from "../../img/icons/password.png"
 import books1 from "../../img/img1.png"
 import books2 from "../../img/img2.png"
-
+import facebookLogo from "../../img/facebookLogo.png"
 
 
 
@@ -65,10 +68,10 @@ class Login extends Component {
 
     if (this.checkBtn.context._errors.length === 0) {
       AuthService.login(this.state.UserName, this.state.Password).then(
-        () => {
-          // this.props.router.navigate("/profile");
-          // window.location.reload();
-        },
+        // () => {
+        //   this.props.router.navigate("/profile");
+        //   window.location.reload();
+        // },
         error => {
           const resMessage =
             (error.response &&
@@ -92,85 +95,93 @@ class Login extends Component {
 
   render() {
     return (
-      <div className="container-fluid background ">   
-     <div className="justify-content-center logoRow">
-        <img src={logo} className="logo"/>
-      </div>
+      <div className="container-fluid background ">
+        <div className="justify-content-center logoRow">
+          <img src={logo} className="logo" />
+        </div>
         <div className="row">
-        <div className="card form-bg  col-10 card-container loginCard">
-        <div className="row text-center justify-content-center title">Log in</div>
-          <Form
-            onSubmit={this.handleLogin}
-            ref={c => {
-              this.form = c;
-            }}
-          >
-          <div className="justify-content-center inputsLogin">
-            
-            <div className="loginInput">
-              <Input
-                type="text"
-                className="formLogin"
-                placeholder="e-mail/phonenumber"
-                name="username"
-                value={this.state.UserName}
-                onChange={this.onChangeUsername}
-                validations={[required]}
-              />
-            </div>
+          <div className="card form-bg  col-10 card-container loginCard">
+            <div className="row text-center justify-content-center title">Log in</div>
+            <Form
+              onSubmit={this.handleLogin}
+              ref={c => {
+                this.form = c;
+              }}
+            >
+              <div className="justify-content-center inputsLogin">
 
-            <div className="loginInput">
-              <Input
-                type="password"
-                className="form-control"
-                name="password"
-                placeholder="password"
-                value={this.state.Password}
-                onChange={this.onChangePassword}
-                validations={[required]}
-              />
-            </div>
-           
-          </div>
-            <div className="row justify-content-end">
+                <div className="loginInput">
+                  <Input
+                    type="text"
+                    className="formLogin"
+                    placeholder="e-mail/phonenumber"
+                    name="username"
+                    value={this.state.UserName}
+                    onChange={this.onChangeUsername}
+                    validations={[required]}
+                  />
+                </div>
+
+                <div className="loginInput">
+                  <Input
+                    type="password"
+                    className="formLogin"
+                    name="password"
+                    placeholder="password"
+                    value={this.state.Password}
+                    onChange={this.onChangePassword}
+                    validations={[required]}
+                  />
+                </div>
+
+              </div>
+              <div className="row justify-content-end">
                 <a className="login_link">forgot your password?</a>
                 <div className="col-3"></div>
               </div>
-            <div  className="form-group  row justify-content-center">
-              <button
-                className="btn btn-primary btn-block col-2"
-               
-              >
-               
-             <span>Continue</span> 
-              </button>
-            </div>
-
-            {this.state.message && (
-              <div className="form-group">
-                <div className="alert alert-danger" role="alert">
-                  {this.state.message}
-                </div>
+              <div className="row justify-content-center">
+                <button
+                  className="btn btn-primary btn-block col-2"
+                  disabled={this.state.loading}
+                >
+                  {this.state.loading && (
+                    <div className="row justify-content-center">
+                      <div className="form-group col-2 ">
+                        <button className="btn btn-primary btn-block">Login</button>
+                      </div>
+                    </div>
+                  )}
+                  <span>Continue</span>
+                </button>
               </div>
-            )}
-            <CheckButton
-              style={{ display: "none" }}
-              ref={c => {
-                this.checkBtn = c;
-              }}
-            />
-          </Form>
-          <hr></hr>
-          <div className="row justify-content-center">
-            <a className="col6 login_link">YOU CAN ALSO SIGN IN USING THE APP</a>
-          </div>
-          <div className="row justify-content-center">
-            <a className="col6 link">If you dont  have an account</a>
-          </div>
-        </div>
 
-      </div>
-      <div className="row justify-content-start">
+              {this.state.message && (
+                <div className="form-group">
+                  <div className="alert alert-danger" role="alert">
+                    {this.state.message}
+                  </div>
+                </div>
+              )}
+              <CheckButton
+                style={{ display: "none" }}
+                ref={c => {
+                  this.checkBtn = c;
+                }}
+              />
+            </Form>
+            <hr className="lineLogin"></hr>
+            <div className="row justify-content-center">
+              <a className="col6 login_link">YOU CAN ALSO SIGN IN USING THE APP</a>
+            </div>
+            <div className="row justify-content-center">
+              <button className="facebookButton justify-content-center"><img src={facebookLogo} className="imgFacebook"></img>Facebook</button></div>
+            <div className="row justify-content-center">
+              <a className="col6 link">If you don't  have an account</a>
+            </div>
+          </div>
+
+        </div>
+        <div className="row justify-content-start">
           <img className="book1 float-start" src={books2}></img>
         </div>
 
@@ -178,12 +189,9 @@ class Login extends Component {
         <div className="row justify-content-end">
           <img className="book2" src={books1}></img>
         </div>
-          
-              
-            
 
-      
-    </div>
+
+      </div>
     );
   }
 }
