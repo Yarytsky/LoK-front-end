@@ -4,29 +4,41 @@ import Modal from 'react-bootstrap/Modal';
 
 function MyVerticallyCenteredModal(props) {
   return (
-      <Modal
-          {...props}
-          size="lg"
-          aria-labelledby="contained-modal-title-vcenter"
-          centered
-      >
-          <Modal.Header closeButton>
-              <Modal.Title id="contained-modal-title-vcenter">
-                  Modal heading
-              </Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-              <h4>Centered Modal</h4>
-              <p>
-                  Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-                  dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-                  consectetur ac, vestibulum at eros.
-              </p>
-          </Modal.Body>
-          <Modal.Footer>
-              <Button onClick={props.onHide}>Close</Button>
-          </Modal.Footer>
-      </Modal>
+    <Modal
+      {...props}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Body>
+        <div className = "modalBlock">
+          <div className = "modalPart">
+            <h4 className = "modalTitle">Name of the first topic <p className = "modalGrade">8/10</p></h4>
+            <p className = "modalInfo">
+              Brief information on the first topic...
+            </p>
+          </div>
+          <div className = "modalPart">
+            <h4 className = "modalTitle">Name of the second topic <p className = "modalGrade">8/10</p></h4>
+            <p className = "modalInfo">
+              Brief information on the first topic...
+            </p>
+          </div>
+          <div className = "modalPart">
+            <h4 className = "modalTitle">Name of the third topic <p className = "modalGrade">8/10</p></h4>
+            <p className = "modalInfo">
+              Brief information on the first topic...
+            </p>
+          </div>
+          <div className = "modalPart">
+            <h4 className = "modalTitle">Name of the fourth topic <p className = "modalGrade">8/10</p></h4>
+            <p className = "modalInfo">
+              Brief information on the first topic...
+            </p>
+          </div>
+        </div>
+      </Modal.Body>
+    </Modal>
   );
 }
 
@@ -34,16 +46,16 @@ function ButtonTest() {
   const [modalShow, setModalShow] = React.useState(false);
 
   return (
-      <>
-          <Button variant="primary" onClick={() => setModalShow(true)}>
-              text
-          </Button>
+    <>
+      <Button variant="primary" onClick={() => setModalShow(true)} className="buttonModal">
+        text
+      </Button>
 
-          <MyVerticallyCenteredModal
-              show={modalShow}
-              onHide={() => setModalShow(false)}
-          />
-      </>
+      <MyVerticallyCenteredModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
+    </>
   );
 }
 
@@ -56,7 +68,7 @@ class CustomSelect extends React.Component {
       showOptionList: false,
       optionsList: []
     };
-    
+
   }
 
   componentDidMount() {
@@ -72,8 +84,7 @@ class CustomSelect extends React.Component {
 
   handleClickOutside = e => {
     if (
-      !e.target.classList.contains("custom-select-option") &&
-      !e.target.classList.contains("selected-text")
+      !e.target.classList.contains("buttonModal")
     ) {
       this.setState({
         showOptionList: false
@@ -89,13 +100,11 @@ class CustomSelect extends React.Component {
     });
   };
 
-  // This method handles the setting of name in select text area
-  // and list display on selection
   handleOptionClick = e => {
     this.setState({
       showOptionList: false
     });
-    <ButtonTest/>
+
   };
 
   render() {
@@ -113,15 +122,17 @@ class CustomSelect extends React.Component {
           <ul className="select-options">
             {optionsList.map(option => {
               return (
-                <li
-                  className="custom-select-option"
-                  data-name={option.name}
-                  key={option.id}
-                  onClick={this.handleOptionClick}
-                >
-                  
-                  {option.name}
-                </li>
+                <div className="divOptions">
+                  <li
+                    className="custom-select-option"
+                    data-name={option.name}
+                    key={option.id}
+                    onClick={this.handleOptionClick}
+                  >
+
+                    {option.name}
+                  </li>
+                  <ButtonTest /></div>
               );
             })}
           </ul>

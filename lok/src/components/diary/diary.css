@@ -23,6 +23,8 @@
   width: 60vw;
   background: #FFFFFF;
   margin-bottom: 5vh;
+  min-width: 720px;
+  min-height: 360px;
 }
 .subjectBlockTitle {
   background: #FED867;
@@ -36,6 +38,7 @@
   padding-top: 0.4vh;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
+  min-height: 45px;
 }
 .subjectList {
   display: flex;
@@ -45,6 +48,7 @@
   align-items: center;
   justify-content: center;
   margin-right: 2vw;
+  min-height: 300px;
 }
 .subjectItem {
   display: flex;
@@ -81,6 +85,7 @@
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  min-height: 45px;
 }
 .selected-text:hover {
   cursor: pointer;
@@ -106,10 +111,12 @@
   margin: 0;
   padding: 0;
   text-align: left;
+  min-height: 185px;
 }
 .custom-select-option {
   list-style-type: none;
   padding: 6px 20px;
+  min-height: 45px;
   background: #D2D3F9;
   cursor: pointer;
   border: 1px solid #A5A6F3;
@@ -119,15 +126,64 @@
   -ms-user-select: none;
   user-select: none;
 }
-.custom-select-option:hover {
+.divOptions:hover .custom-select-option {
   background: #FFE599;
   color: #000000;
 }
-.custom-select-option:first-child {
+.divOptions:first-child {
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
 }
-.custom-select-option:last-child {
+.divOptions:first-child .custom-select-option {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+.divOptions:last-child {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+}
+.divOptions:last-child .custom-select-option {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.buttonModal {
+  position: absolute;
+  margin-top: -5vh;
+  opacity: 0;
+  min-width: 250px;
+}
+.modalBlock {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2vh 2vh 2vh 2vh;
+  align-items: center;
+}
+.modalBlock .modalPart {
+  width: 43%;
+  font-family: Source Sans Pro;
+  font-size: 1.1em;
+  margin-left: 7%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.modalBlock .modalPart .modalTitle {
+  font-weight: 800;
+  display: flex;
+  margin: 0px;
+}
+.modalBlock .modalPart .modalTitle .modalGrade {
+  font-size: 0.75em;
+  font-weight: 500;
+  color: #4D41AE;
+  margin-top: 7px;
+  margin-left: 4px;
+  margin-bottom: 0px;
+}
+.modalInfo {
+  margin: 0px;
+}
+.modal-content {
+  border-radius: 10px;
 }
