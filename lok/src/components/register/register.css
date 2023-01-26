@@ -37,7 +37,7 @@
 }
 
 .basic-addon1{
-    display: none;
+    display: none !important;
 }
 .basic-addon2{
     display: none;
@@ -114,6 +114,7 @@
     border-radius:  0;
     color: #F35B04;
     border-color: #F35B04;
+    display: none;
 }
 
 .book1{
