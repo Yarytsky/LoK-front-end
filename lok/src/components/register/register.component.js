@@ -219,7 +219,7 @@ export default class Register extends Component {
                       id="FirstName"
                       placeholder="Name"
                       value={this.state.FirstName}
-                      o nChange={this.onChangefirstName}
+                      onChange={this.onChangefirstName}
                       validations={[fusername]}
                       aria-label="Name"
                       aria-describedby="basic-addon1"
