@@ -5,6 +5,7 @@ import React, { Component } from "react";
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
+import { Routes, Route, Link,Navigate } from "react-router-dom";
 
 import AuthService from "../../services/auth.service";
 import logo from "../../img/Bobrlogo.png"
@@ -28,7 +29,6 @@ const required = value => {
     );
   }
 };
-
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -37,16 +37,16 @@ class Login extends Component {
     this.onChangePassword = this.onChangePassword.bind(this);
 
     this.state = {
-      UserName: "",
+      usernameOrEmail: "",
       Password: "",
       loading: false,
-      message: ""
+      message: "",
     };
   }
 
   onChangeUsername(e) {
     this.setState({
-      Username: e.target.value
+      usernameOrEmail: e.target.value
     });
   }
 
@@ -67,11 +67,11 @@ class Login extends Component {
     this.form.validateAll();
 
     if (this.checkBtn.context._errors.length === 0) {
-      AuthService.login(this.state.UserName, this.state.Password).then(
-        // () => {
-        //   this.props.router.navigate("/profile");
-        //   window.location.reload();
-        // },
+      AuthService.login(this.state.usernameOrEmail, this.state.Password).then(
+        () => {
+          this.props.router.navigate("/homepage");
+          window.location.reload();
+        },
         error => {
           const resMessage =
             (error.response &&
@@ -102,6 +102,7 @@ class Login extends Component {
         <div className="row">
           <div className="card form-bg  col-10 card-container loginCard">
             <div className="row text-center justify-content-center title">Log in</div>
+
             <Form
               onSubmit={this.handleLogin}
               ref={c => {
@@ -116,7 +117,7 @@ class Login extends Component {
                     className="formLogin"
                     placeholder="e-mail/phonenumber"
                     name="username"
-                    value={this.state.UserName}
+                    value={this.state.usernameOrEmail}
                     onChange={this.onChangeUsername}
                     validations={[required]}
                   />
@@ -145,11 +146,8 @@ class Login extends Component {
                   disabled={this.state.loading}
                 >
                   {this.state.loading && (
-                    <div className="row justify-content-center">
-                      <div className="form-group col-2 ">
-                        <button className="btn btn-primary btn-block">Login</button>
-                      </div>
-                    </div>
+                    <span className="spinner-border spinner-border-sm"></span>
+
                   )}
                   <span>Continue</span>
                 </button>
@@ -176,7 +174,7 @@ class Login extends Component {
             <div className="row justify-content-center">
               <button className="facebookButton justify-content-center"><img src={facebookLogo} className="imgFacebook"></img>Facebook</button></div>
             <div className="row justify-content-center">
-              <a className="col6 link">If you don't  have an account</a>
+              <Link to={"/register"} className="col6 link">If you don't  have an account</Link>
             </div>
           </div>
 

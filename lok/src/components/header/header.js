@@ -8,6 +8,8 @@ import { Link, Routes, Route } from 'react-router-dom';
 import HomePage from '../HomePage/HomePage';
 import Account from '../account/account';
 import Diary from "../diary/diary";
+import ProposalsPage from '../ProposalsPage/ProposalsPage';
+import Footer from '../footer/footer';
 
 class Header extends Component {
 
@@ -15,29 +17,52 @@ class Header extends Component {
     return (
       <div>
         <div className='container header-bg text-center'>
-          <div className='row align-items-center'>
-            <img className='header-logo' src={shortlogo}></img>
-            <Link to={"/homepage"} className='col-1 home-link'>Home</Link>
-            <Link to={"/diary"}>Diary</Link>
-            <select
-              type='text'
-              name='language'
-              className='col-md-1 col-2 offset-6 offset-md-8 language-selector right'
-            >
-              <option>En</option>
-              <option>Ua</option>
-            </select>
-            <Link to={"/account"}><img src={defaultavatar}></img></Link>
+          
+          <nav className="navbar navbar-expand-lg bg-body-tertiary">
+            <div className="container-fluid">
+              <Link to={"/homepage"} className="navbar-brand">
+                <img className='header-logo' src={shortlogo}></img>
+              </Link>
 
-          </div>
+              <Link to={"/homepage"} className="navbar-brand home-link" >Home</Link>
+              <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
+              </button>
+              <div className="collapse navbar-collapse" id="navbarNav">
+                <ul className="navbar-nav">
+                  <li className="nav-item">
+                    <Link to={"/diary"} className="nav-link active home-link" aria-current="page" >Diary</Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link to={"/proposals"} className="nav-link home-link">
+                      Proposals
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+              <select
+                type='text'
+                name='language'
+                className='col-md-1 col-2 offset-6 offset-md-8 language-selector right'
+              >
+                <option>En</option>
+                <option>Ua</option>
+              </select>
+              <Link to={"/account"}><img src={defaultavatar}></img></Link>
+
+            </div>
+          </nav>
         </div>
         <div>
           <Routes>
             <Route path="/homepage" element={<HomePage />} />
             <Route path="/account" element={<Account />} />
             <Route path="/diary" element={<Diary />} />
+            <Route path="/proposals" element={<ProposalsPage />} />
+
           </Routes>
         </div>
+
       </div>
     )
   }

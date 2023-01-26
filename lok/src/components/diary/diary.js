@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { Component } from 'react';
 import "./diary.css"
 import CustomSelect from "./customSelect";
+import Footer from "../footer/footer";
+import Header from "../header/header";
 
 
 
@@ -33,162 +35,164 @@ class Diary extends Component {
 
     render() {
         return (
-            <div className="container-fluid background diaryContainer">
-                <div>
-                    <div className='text-center diaryTitle'>Diary</div>
-                    <hr className='col-4 diaryLine'></hr></div>
+            <div>
+                <Header></Header>
+                <div className="container-fluid background diaryContainer">
+                    <div>
+                        <div className='text-center diaryTitle'>Diary</div>
+                        <hr className='col-4 diaryLine'></hr></div>
 
-                <div className='subjectBlock'>
-                    <div className='subjectBlockTitle'>
-                        Semester subject
+                    <div className='subjectBlock'>
+                        <div className='subjectBlockTitle'>
+                            Semester subject
+                        </div>
+                        <div className='subjectList'>
+                            <div className="subjectItem">
+                                <div className='subjectTitle'>1 sub</div>
+                                <div className='subjectSelect'>
+                                    <CustomSelect
+                                        defaultText="Project management"
+                                        optionsList={projectManagement}
+                                    />
+                                </div>
+                            </div>
+                            <div className="subjectItem">
+                                <div className='subjectTitle'>2 sub</div>
+                                <div className='subjectSelect'>
+                                    <CustomSelect
+                                        defaultText="Project management"
+                                        optionsList={projectManagement}
+                                    />
+                                </div>
+                            </div>
+                            <div className="subjectItem">
+                                <div className='subjectTitle'>3 sub</div>
+                                <div className='subjectSelect'>
+                                    <CustomSelect
+                                        defaultText="Project management"
+                                        optionsList={projectManagement}
+                                    />
+                                </div>
+                            </div><div className="subjectItem">
+                                <div className='subjectTitle'>4 sub</div>
+                                <div className='subjectSelect'>
+                                    <CustomSelect
+                                        defaultText="Project management"
+                                        optionsList={projectManagement}
+                                    />
+                                </div>
+                            </div><div className="subjectItem">
+                                <div className='subjectTitle'>5 sub</div>
+                                <div className='subjectSelect'>
+                                    <CustomSelect
+                                        defaultText="Project management"
+                                        optionsList={projectManagement}
+                                    />
+                                </div>
+                            </div><div className="subjectItem">
+                                <div className='subjectTitle'>6 sub</div>
+                                <div className='subjectSelect'>
+                                    <CustomSelect
+                                        defaultText="Project management"
+                                        optionsList={projectManagement}
+                                    />
+                                </div>
+                            </div><div className="subjectItem">
+                                <div className='subjectTitle'>7 sub</div>
+                                <div className='subjectSelect'>
+                                    <CustomSelect
+                                        defaultText="Project management"
+                                        optionsList={projectManagement}
+                                    />
+                                </div>
+                            </div><div className="subjectItem">
+                                <div className='subjectTitle'>8 sub</div>
+                                <div className='subjectSelect'>
+                                    <CustomSelect
+                                        defaultText="Project management"
+                                        optionsList={projectManagement}
+                                    />
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div className='subjectList'>
-                        <div className="subjectItem">
-                            <div className='subjectTitle'>1 sub</div>
-                            <div className='subjectSelect'>
-                                <CustomSelect
-                                    defaultText="Project management"
-                                    optionsList={projectManagement}
-                                />
-                            </div>
+                    <div className='subjectBlock'>
+                        <div className='subjectBlockTitle'>
+                            Semester subject
                         </div>
-                        <div className="subjectItem">
-                            <div className='subjectTitle'>2 sub</div>
-                            <div className='subjectSelect'>
-                                <CustomSelect
-                                    defaultText="Project management"
-                                    optionsList={projectManagement}
-                                />
+                        <div className='subjectList'>
+                            <div className="subjectItem">
+                                <div className='subjectTitle'>1 sub</div>
+                                <div className='subjectSelect'>
+                                    <CustomSelect
+                                        defaultText="Project management"
+                                        optionsList={projectManagement}
+                                    />
+                                </div>
                             </div>
-                        </div>
-                        <div className="subjectItem">
-                            <div className='subjectTitle'>3 sub</div>
-                            <div className='subjectSelect'>
-                                <CustomSelect
-                                    defaultText="Project management"
-                                    optionsList={projectManagement}
-                                />
+                            <div className="subjectItem">
+                                <div className='subjectTitle'>2 sub</div>
+                                <div className='subjectSelect'>
+                                    <CustomSelect
+                                        defaultText="Project management"
+                                        optionsList={projectManagement}
+                                    />
+                                </div>
                             </div>
-                        </div><div className="subjectItem">
-                            <div className='subjectTitle'>4 sub</div>
-                            <div className='subjectSelect'>
-                                <CustomSelect
-                                    defaultText="Project management"
-                                    optionsList={projectManagement}
-                                />
-                            </div>
-                        </div><div className="subjectItem">
-                            <div className='subjectTitle'>5 sub</div>
-                            <div className='subjectSelect'>
-                                <CustomSelect
-                                    defaultText="Project management"
-                                    optionsList={projectManagement}
-                                />
-                            </div>
-                        </div><div className="subjectItem">
-                            <div className='subjectTitle'>6 sub</div>
-                            <div className='subjectSelect'>
-                                <CustomSelect
-                                    defaultText="Project management"
-                                    optionsList={projectManagement}
-                                />
-                            </div>
-                        </div><div className="subjectItem">
-                            <div className='subjectTitle'>7 sub</div>
-                            <div className='subjectSelect'>
-                                <CustomSelect
-                                    defaultText="Project management"
-                                    optionsList={projectManagement}
-                                />
-                            </div>
-                        </div><div className="subjectItem">
-                            <div className='subjectTitle'>8 sub</div>
-                            <div className='subjectSelect'>
-                                <CustomSelect
-                                    defaultText="Project management"
-                                    optionsList={projectManagement}
-                                />
+                            <div className="subjectItem">
+                                <div className='subjectTitle'>3 sub</div>
+                                <div className='subjectSelect'>
+                                    <CustomSelect
+                                        defaultText="Project management"
+                                        optionsList={projectManagement}
+                                    />
+                                </div>
+                            </div><div className="subjectItem">
+                                <div className='subjectTitle'>4 sub</div>
+                                <div className='subjectSelect'>
+                                    <CustomSelect
+                                        defaultText="Project management"
+                                        optionsList={projectManagement}
+                                    />
+                                </div>
+                            </div><div className="subjectItem">
+                                <div className='subjectTitle'>5 sub</div>
+                                <div className='subjectSelect'>
+                                    <CustomSelect
+                                        defaultText="Project management"
+                                        optionsList={projectManagement}
+                                    />
+                                </div>
+                            </div><div className="subjectItem">
+                                <div className='subjectTitle'>6 sub</div>
+                                <div className='subjectSelect'>
+                                    <CustomSelect
+                                        defaultText="Project management"
+                                        optionsList={projectManagement}
+                                    />
+                                </div>
+                            </div><div className="subjectItem">
+                                <div className='subjectTitle'>7 sub</div>
+                                <div className='subjectSelect'>
+                                    <CustomSelect
+                                        defaultText="Project management"
+                                        optionsList={projectManagement}
+                                    />
+                                </div>
+                            </div><div className="subjectItem">
+                                <div className='subjectTitle'>8 sub</div>
+                                <div className='subjectSelect'>
+                                    <CustomSelect
+                                        defaultText="Project management"
+                                        optionsList={projectManagement}
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className='subjectBlock'>
-                    <div className='subjectBlockTitle'>
-                        Semester subject
-                    </div>
-                    <div className='subjectList'>
-                        <div className="subjectItem">
-                            <div className='subjectTitle'>1 sub</div>
-                            <div className='subjectSelect'>
-                                <CustomSelect
-                                    defaultText="Project management"
-                                    optionsList={projectManagement}
-                                />
-                            </div>
-                        </div>
-                        <div className="subjectItem">
-                            <div className='subjectTitle'>2 sub</div>
-                            <div className='subjectSelect'>
-                                <CustomSelect
-                                    defaultText="Project management"
-                                    optionsList={projectManagement}
-                                />
-                            </div>
-                        </div>
-                        <div className="subjectItem">
-                            <div className='subjectTitle'>3 sub</div>
-                            <div className='subjectSelect'>
-                                <CustomSelect
-                                    defaultText="Project management"
-                                    optionsList={projectManagement}
-                                />
-                            </div>
-                        </div><div className="subjectItem">
-                            <div className='subjectTitle'>4 sub</div>
-                            <div className='subjectSelect'>
-                                <CustomSelect
-                                    defaultText="Project management"
-                                    optionsList={projectManagement}
-                                />
-                            </div>
-                        </div><div className="subjectItem">
-                            <div className='subjectTitle'>5 sub</div>
-                            <div className='subjectSelect'>
-                                <CustomSelect
-                                    defaultText="Project management"
-                                    optionsList={projectManagement}
-                                />
-                            </div>
-                        </div><div className="subjectItem">
-                            <div className='subjectTitle'>6 sub</div>
-                            <div className='subjectSelect'>
-                                <CustomSelect
-                                    defaultText="Project management"
-                                    optionsList={projectManagement}
-                                />
-                            </div>
-                        </div><div className="subjectItem">
-                            <div className='subjectTitle'>7 sub</div>
-                            <div className='subjectSelect'>
-                                <CustomSelect
-                                    defaultText="Project management"
-                                    optionsList={projectManagement}
-                                />
-                            </div>
-                        </div><div className="subjectItem">
-                            <div className='subjectTitle'>8 sub</div>
-                            <div className='subjectSelect'>
-                                <CustomSelect
-                                    defaultText="Project management"
-                                    optionsList={projectManagement}
-                                />
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <Footer></Footer>
             </div>
-
-
 
         )
 

@@ -1,17 +1,22 @@
 import { isLabelWithInternallyDisabledControl, wait } from "@testing-library/user-event/dist/utils";
 import axios from "axios";
+import jwt_decode from "jwt-decode"; 
+
+
 
 const API_URL = "https://localhost:7203/";
 class AuthService {
-  async login(UserName, Password) {
+  async login(usernameOrEmail, Password) {
     return await axios
-      .post(API_URL + "signin", {
-        UserName,
+      .post(API_URL + "auth/signin", {
+        usernameOrEmail,
         Password
       })
       .then(response => {
         if (response.data.accessToken) {
-          localStorage.setItem("user", JSON.stringify(response.data));
+          var decoded = jwt_decode(response.data.accessToken)
+          localStorage.setItem("user", JSON.stringify(decoded))
+
         }
 
         return response.data;
@@ -26,12 +31,7 @@ class AuthService {
     
   }
 
-  getsmt(){
-    return axios.get(API_URL+"getsome")
-    .then(resp =>{
-      console.log(resp.data)
-    })
-  }
+
   logout() {
     localStorage.removeItem("user");
   }
@@ -47,7 +47,7 @@ class AuthService {
       Country,
       Gender
     }
-    return await axios.post(API_URL + "signup", userdata)
+    return await axios.post(API_URL + "auth/signup", userdata)
     .then(response=>response.data)
     .catch(error => {
       if (!error.response) {
@@ -60,7 +60,7 @@ class AuthService {
   }
 
   getCurrentUser() {
-    return JSON.parse(localStorage.getItem('user'));;
+   return JSON.parse(localStorage.getItem('user'));    
   }
   
 }

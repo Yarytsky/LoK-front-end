@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './HomePage.css';
+import Header from '../header/header';
+import Footer from '../footer/footer';
 
 class HomePage extends Component{
 
@@ -31,6 +33,8 @@ class HomePage extends Component{
 
   render(){
     return(
+      <div>
+      <Header></Header>
       <div className='container '>
         <div className='row  pad justify-content-center main-bg'>
           <div className='col-4 course-size'>
@@ -132,7 +136,8 @@ class HomePage extends Component{
         
 
       </div>
-
+      <Footer></Footer>
+</div>
     )}
 }
 

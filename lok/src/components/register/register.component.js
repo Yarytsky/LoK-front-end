@@ -15,6 +15,7 @@ import emailicon from "../../img/icons/email.png"
 import books1 from "../../img/img1.png"
 import books2 from "../../img/img2.png"
 import Footer from "../footer/footer";
+import { Link } from "react-router-dom";
 
 
 
@@ -88,7 +89,7 @@ export default class Register extends Component {
 
 
     this.state = {
-      // UserName: "Ivan",
+      UserName: "",
       Email: "",
       Password: "",
       PhoneNumber: "",
@@ -329,7 +330,6 @@ export default class Register extends Component {
                     placeholder="Password"
                     value={this.state.Password}
                     onChange={this.onChangePassword}
-                    validations={[vpassword]}
                   />
                   </div>
                   <span className="input-group-text" id="basic-addon5">Invalid</span>
@@ -358,7 +358,7 @@ export default class Register extends Component {
             </div>
             </div>
            <hr></hr>
-           <div className="row text-center"><a className="col-12 link">If you have account</a></div>
+           <div className="row text-center"><Link to={"/"} className="col-12 link">If you have account</Link></div>
             </div>  
             )}
 

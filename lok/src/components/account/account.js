@@ -4,14 +4,21 @@ import { withRouter } from '../../common/with-router';
 import profilePic from "../../img/profilePic.jpg";
 import "./account.css"
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import Footer from "../footer/footer";
+import Header from "../header/header";
+import axios from "axios";
 
 const dataAttendance = [{ name: 'May', att: "21" }, { name: "Jun", att: "45" }, { name: "Jul", att: "65" }, { name: "Aug", att: "85" }, { name: "Sep", att: "84" }, { name: "Oct", att: "100" }, { name: "Nov", att: "65" }];
 const dataProgress = [{ name: 'May', gpa: "2" }, { name: "Jun", gpa: "4.5" }, { name: "Jul", gpa: "9" }, { name: "Aug", gpa: "8" }, { name: "Sep", gpa: "8" }, { name: "Oct", gpa: "8" }, { name: "Nov", gpa: "8" }];
-
+const API_URL = "https://localhost:7203/";
 class Account extends Component {
 
+
+    
     render() {
         return (
+<div>
+            <Header></Header>
             <div className="containerAccount">
                 <div className="accountPageTitle">
                     Profile
@@ -21,29 +28,29 @@ class Account extends Component {
                     <div className="accountAllInfo">
                         <div className="accountSepInfo">
                             <div className="accountInfoText accountNameRole">
-                                <div className="accountName">Sample Test</div>
-                                <div className="accountRole">(student)</div>
+                                <div className="accountName">{this.props.userdata.lastname} {this.props.userdata.firstName}</div>
+                                <div className="accountRole">({this.props.userdata.role})</div>
                             </div>
                             <div className="accountInfoText accountRegisterDate">Registration date: 17.11.2022</div></div>
                         <div className="accountInfoText">
                             <div className="accountSubinfoTitle">Phone number:</div>
-                            <div className="accountSubinfoMain">+38000000000</div>
+                            <div className="accountSubinfoMain">{this.props.userdata.phoneNumber}</div>
                         </div>
                         <div className="accountInfoText">
                             <div className="accountSubinfoTitle">E-mail:</div>
-                            <div className="accountSubinfoMain">sample@gmail.com</div>
+                            <div className="accountSubinfoMain">{this.props.userdata.email}</div>
                         </div>
                         <div className="accountInfoText">
                             <div className="accountSubinfoTitle">Country:</div>
-                            <div className="accountSubinfoMain">Ukraine</div>
+                            <div className="accountSubinfoMain">{this.props.userdata.country}</div>
                         </div>
                         <div className="accountInfoText">
                             <div className="accountSubinfoTitle">Gender:</div>
-                            <div className="accountSubinfoMain">Woman</div>
+                            <div className="accountSubinfoMain">{this.props.userdata.gender}</div>
                         </div>
                         <div className="accountInfoText">
                             <div className="accountSubinfoTitle">Absence:</div>
-                            <div className="accountSubinfoMain">14</div>
+                            <div className="accountSubinfoMain">{this.props.userdata.attendance}</div>
                         </div>
                     </div>
                 </div>
@@ -85,6 +92,8 @@ class Account extends Component {
                         </div>
                     </div>
                 </div>
+            </div>
+            <Footer></Footer>
             </div>
         );
     }
