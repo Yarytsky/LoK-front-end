@@ -36,9 +36,8 @@ class AuthService {
     localStorage.removeItem("user");
   }
 
-  async register(UserName, Email, Password,PhoneNumber,FirstName,Lastname,Gender,Country) {
+  async register(Email, Password,PhoneNumber,FirstName,Lastname,Gender,Country) {
     let userdata={
-      UserName,
       Email,
       Password,
       Lastname,

@@ -89,7 +89,6 @@ export default class Register extends Component {
 
 
     this.state = {
-      UserName: "",
       Email: "",
       Password: "",
       PhoneNumber: "",
@@ -155,7 +154,6 @@ export default class Register extends Component {
 
     if (this.checkBtn.context._errors.length === 0) {
       AuthService.register(
-        this.state.UserName,
         this.state.Email,
         this.state.Password,
         this.state.PhoneNumber,
