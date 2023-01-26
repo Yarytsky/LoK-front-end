@@ -43,8 +43,8 @@ class AuthService {
       Lastname,
       FirstName,
       PhoneNumber,
+      Gender,
       Country,
-      Gender
     }
     return await axios.post(API_URL + "auth/signup", userdata)
     .then(response=>response.data)

@@ -15,6 +15,8 @@ class Account extends Component {
 
 
     
+
+    
     render() {
         return (
 <div>
@@ -31,7 +33,7 @@ class Account extends Component {
                                 <div className="accountName">{this.props.userdata.lastname} {this.props.userdata.firstName}</div>
                                 <div className="accountRole">({this.props.userdata.role})</div>
                             </div>
-                            <div className="accountInfoText accountRegisterDate">Registration date: 17.11.2022</div></div>
+                            <div className="accountInfoText accountRegisterDate">Registration date: {this.props.userdata.creationDate}</div></div>
                         <div className="accountInfoText">
                             <div className="accountSubinfoTitle">Phone number:</div>
                             <div className="accountSubinfoMain">{this.props.userdata.phoneNumber}</div>

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
+import Select from "react-validation/build/select";
 import CheckButton from "react-validation/build/button";
 import { isEmail } from "validator";
 import "./register.css"
@@ -86,7 +87,8 @@ export default class Register extends Component {
     this.onChangephoneNumber= this.onChangephoneNumber.bind(this);
     this.onChangefirstName= this.onChangefirstName.bind(this);
     this.onChangelastname= this.onChangelastname.bind(this);
-
+    this.onChangeCountry = this.onChangeCountry.bind(this);
+    this.onChangeGender = this.onChangeGender.bind(this);
 
     this.state = {
       Email: "",
@@ -159,8 +161,9 @@ export default class Register extends Component {
         this.state.PhoneNumber,
         this.state.FirstName,
         this.state.Lastname,
+        this.state.Gender,
         this.state.Country,
-        this.state.Gender
+       
       ).then(
         response => {
           this.setState({
@@ -228,7 +231,7 @@ export default class Register extends Component {
 
                 <div className="input-group col-8">
                 <img className="icons"  src={counrty}/>
-                  <select
+                  <Select
                     list="Country"
                     type="text"
                     className="form-control dropdown-reg"
@@ -237,9 +240,9 @@ export default class Register extends Component {
                     value={this.state.Country}
                     onChange={this.onChangeCountry}
                     >   
-                  <option>Ukraine</option>
-                  <option>Poland</option>
-                  </select>            
+                  <option value="Ukraine">Ukraine</option>
+                  <option value="Poland">Poland</option>
+                  </Select>            
                 </div>
 
 
@@ -281,8 +284,8 @@ export default class Register extends Component {
               </div>
               </div>  
               <div className="col-12 col-md-6">
-                <div className="row justify-content-center">
-                <div className="input-group col-8">
+                <div className="row regRight justify-content-center">
+                <div className="input-group  col-8">
                   <img className="icons"  src={avatar}/>
 
                 <div id="LastnameValidator">
@@ -303,7 +306,7 @@ export default class Register extends Component {
                 <img className="icons"  src={gender}/>
 
                 <div >
-                  <select
+                  <Select
                     type="text"
                     className="form-control dropdown-reg"
                     name="gender"
@@ -311,10 +314,10 @@ export default class Register extends Component {
                     value={this.state.Gender}
                     onChange={this.onChangeGender}
                   >
-                    <option>Male</option>
-                    <option>Female</option>
-                    <option>Other</option>
-                  </select>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                  </Select>
                   </div>
                 </div>
                 <div className="input-group  col-8">
