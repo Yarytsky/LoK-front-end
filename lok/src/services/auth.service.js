@@ -1,4 +1,3 @@
-import { isLabelWithInternallyDisabledControl, wait } from "@testing-library/user-event/dist/utils";
 import axios from "axios";
 import jwt_decode from "jwt-decode"; 
 
@@ -44,7 +43,7 @@ class AuthService {
       FirstName,
       PhoneNumber,
       Gender,
-      Country,
+      Country
     }
     return await axios.post(API_URL + "auth/signup", userdata)
     .then(response=>response.data)
