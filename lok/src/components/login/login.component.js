@@ -5,7 +5,7 @@ import React, { Component } from "react";
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
-import { Routes, Route, Link,Navigate } from "react-router-dom";
+import { Routes, Route, Link, Navigate } from "react-router-dom";
 
 import AuthService from "../../services/auth.service";
 import logo from "../../img/Bobrlogo.png"
@@ -68,9 +68,15 @@ class Login extends Component {
 
     if (this.checkBtn.context._errors.length === 0) {
       AuthService.login(this.state.usernameOrEmail, this.state.Password).then(
-        () => {
-          this.props.router.navigate("/homepage");
-          window.location.reload();
+        (e) => {
+          if (!(e === undefined)) {
+            this.props.router.navigate("/homepage");
+            window.location.reload();
+          }
+          else{
+            window.location.reload();
+            alert("You entered wrong e-mail/phone number or password!")
+          }
         },
         error => {
           const resMessage =
@@ -172,9 +178,9 @@ class Login extends Component {
               <a className="col6 login_link">YOU CAN ALSO SIGN IN USING THE APP</a>
             </div>
             <div className="row justify-content-center">
-              <button className="facebookButton justify-content-center"><img src={facebookLogo} className="imgFacebook"></img>Facebook</button></div>
+              <button className="facebookButton"><img src={facebookLogo} className="imgFacebook"></img>Facebook</button></div>
             <div className="row justify-content-center">
-              <Link to={"/register"} className="col6 link">If you don't  have an account</Link>
+              <Link to={"/register"} className="col6 link">If you don't have an account</Link>
             </div>
           </div>
 

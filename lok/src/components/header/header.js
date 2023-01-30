@@ -17,14 +17,15 @@ class Header extends Component {
     return (
       <div>
         <div className='container header-bg text-center'>
-          
+
           <nav className="navbar navbar-expand-lg bg-body-tertiary">
             <div className="container-fluid">
-              <Link to={"/homepage"} className="navbar-brand">
+              <div><Link to={"/homepage"} className="navbar-brand">
                 <img className='header-logo' src={shortlogo}></img>
               </Link>
 
-              <Link to={"/homepage"} className="navbar-brand home-link" >Home</Link>
+                <Link to={"/homepage"} className="navbar-brand home-link" >Home</Link></div>
+
               <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
               </button>
@@ -39,17 +40,18 @@ class Header extends Component {
                     </Link>
                   </li>
                 </ul>
-              </div>
-              <select
-                type='text'
-                name='language'
-                className='col-md-1 col-2 offset-6 offset-md-8 language-selector right'
-              >
-                <option>En</option>
-                <option>Ua</option>
-              </select>
-              <Link to={"/account"}><img src={defaultavatar}></img></Link>
+              </div><div>
+                <select
+                  type='text'
+                  name='language'
+                  className='col-md-1 col-2 offset-6 offset-md-8 language-selector right'
+                >
+                  <option>En</option>
+                  <option>Ua</option>
+                </select>
+                <Link to={"/account"} className = "profileLink"><img src={defaultavatar}></img></Link>
 
+              </div>
             </div>
           </nav>
         </div>

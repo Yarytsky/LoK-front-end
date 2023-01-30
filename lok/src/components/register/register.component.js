@@ -89,7 +89,7 @@ export default class Register extends Component {
   }
 
   invalidCheckName(e) {
-    if (!e.target.value || e.target.value.length < 3 || e.target.value.length > 20 || !e.target.value.match(/^[a-zA-Z]+$/)) {
+    if (!e.target.value || e.target.value.length < 3 || e.target.value.length > 20 || !(e.target.value.match(/^[a-zA-Z]+$/) || e.target.value.match(/^[а-яА-ЯіІ]+$/))) {
       document.getElementById("FirstName").style.borderColor = "#F35B04";
       document.getElementById("basic-addon1").style.display = "block";
     }
@@ -101,7 +101,7 @@ export default class Register extends Component {
   }
 
   invalidCheckLastName(e) {
-    if (!e.target.value || e.target.value.length < 3 || e.target.value.length > 20 || !e.target.value.match(/^[a-zA-Z]+$/)) {
+    if (!e.target.value || e.target.value.length < 3 || e.target.value.length > 20 || !(e.target.value.match(/^[a-zA-Z]+$/) || e.target.value.match(/^[а-яА-ЯіІ]+$/))) {
       document.getElementById("lastname").style.borderColor = "#F35B04";
       document.getElementById("basic-addon4").style.display = "block";
     }
@@ -224,7 +224,7 @@ export default class Register extends Component {
                 <div id="formBlock">
                   <div className="row  justify-content-center ">
                     <div className="col-12 col-md-6 ">
-                      <div className="row regLeft justify-content-center">
+                      <div className=" regLeft justify-content-center">
                         <div className="input-group col-8" >
                           <img className="icons" src={avatar} />
                           <div id="FirstnameValidator col-12" onBlur={this.invalidCheckName}>
@@ -296,8 +296,8 @@ export default class Register extends Component {
                         </div>
                       </div>
                     </div>
-                    <div className="col-12 col-md-6">
-                      <div className="row regRight justify-content-center">
+                    <div className="col-md-6">
+                      <div className="regRight justify-content-center">
                         <div className="input-group  col-8">
                           <img className="icons" src={avatar} />
 
@@ -373,7 +373,7 @@ export default class Register extends Component {
                     </div>
                   </div>
                   <hr></hr>
-                  <div className="row text-center"><Link to={"/"} className="col-12 link">If you have account</Link></div>
+                  <div className="row text-center"><Link to={"/"} className="col-12 link">If you have an account</Link></div>
                 </div>
               )}
 

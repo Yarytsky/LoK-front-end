@@ -35,7 +35,7 @@ class HomePage extends Component{
     return(
       <div>
       <Header></Header>
-      <div className='container '>
+      <div className='container homeContainer'>
         <div className='row  pad justify-content-center main-bg'>
           <div className='col-4 course-size'>
           <ul className="dropdown " id='course1' onMouseEnter={this.howerCourse1} onMouseLeave={this.leaveCourse1}>

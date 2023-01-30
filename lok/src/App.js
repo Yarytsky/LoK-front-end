@@ -3,7 +3,6 @@ import { Routes, Route, Link, UNSAFE_DataRouterContext } from "react-router-dom"
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import axios from "axios";
-
 import AuthService from "./services/auth.service";
 import Login from "./components/login/login.component";
 import Register from "./components/register/register.component";
@@ -19,6 +18,7 @@ import Account from "./components/account/account";
 
 const user = AuthService.getCurrentUser();
 const API_URL = "https://localhost:7203/";
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -32,19 +32,14 @@ class App extends Component {
   }
 
   async componentDidMount() {
-     const user = AuthService.getCurrentUser();
-     const response = await axios.get(API_URL+"user/getuser/"+user.id)
-
+    const user = AuthService.getCurrentUser();
+    const response = await axios.get(API_URL + "user/getuser/" + user.id);
     if (response) {
       this.setState({
         currentUser: response.data,
       });
-
     }
-    
   }
-
- 
 
   logOut() {
     AuthService.logout();
@@ -66,8 +61,8 @@ class App extends Component {
             <Route path="/register" element={<Register />} />
             <Route path="/user" element={<BoardUser />} />
             <Route path="/diary" element={<Diary />} />
-            <Route path="/proposals" element={<ProposalsPage/>}/>
-            <Route path="/account" element={<Account userdata={this.state.currentUser}/>} />
+            <Route path="/proposals" element={<ProposalsPage />} />
+            <Route path="/account" element={<Account userdata={this.state.currentUser} />} />
           </Routes>
         </div>
       </div>

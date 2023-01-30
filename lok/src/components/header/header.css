@@ -15,7 +15,10 @@
     background-color: #A5A6F3;
     color: none;
     border: none;
-    max-width: 70px;
+    min-width: 70px;
+    margin: 0px;
+    margin-right: 25px;
+    width: 6vw;
 }
 
 .language-selector::target-text{
@@ -30,4 +33,8 @@
     text-decoration: none;
     color: black;
 
+}
+
+.profilelink{
+    margin-left: 10px;
 }

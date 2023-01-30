@@ -14,6 +14,7 @@
     border-radius: 25px;
     min-height: 70vh;
     justify-content: end;
+    min-width: 750px;
 }
 
 #formBlock{
@@ -75,6 +76,7 @@
     overflow: hidden;
     width: 22vw !important;
     height: 5vh;
+    min-width: 225px;
 }
 .dropdown{
     min-width: 180px;
@@ -127,7 +129,7 @@
     height: 27vh;
     position: absolute;
     top: 65vh;
-    left: 80vw;
+    right: 1vw;
 }
 .FirstnameValidator {
     position: relative;
@@ -176,15 +178,24 @@
 
 .regLeft{
     height: 30vh;
+    min-width: 330px;
+    flex-wrap: wrap !important;
+    align-items: flex-start;
+    display: flex;
 }
 
 .regRight{
     height: 30vh;
+    min-width: 330px;
+    flex-wrap: wrap !important;
+    align-items: flex-start;
+    display: flex;
 }
 
 .input-group{
     flex-wrap: nowrap;
     width: 30vw;
+    min-width: 220px;
 }
 
 .logoRow{
@@ -195,6 +206,15 @@
     justify-content: center;
 }
 
-.row{
+.row .justify-content-center{
     align-items: flex-start;
+    
+}
+
+.col-12 .col-md-6{
+    min-width: 360px;
+}
+
+.row{
+    flex-wrap: nowrap !important;
 }

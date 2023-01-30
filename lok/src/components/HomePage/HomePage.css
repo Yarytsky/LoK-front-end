@@ -5,6 +5,11 @@
   -webkit-box-sizing: border-box;
 }
 
+.homeContainer{
+  
+  background: url("../../img/BackgrondMainPage.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
 
 .dropdown {
   font-family: 'Sniglet';
@@ -68,10 +73,10 @@ ul li:hover>ul {
 }
 
 .main-bg {
-  background-image: url("../../img/BackgrondMainPage.jpg");
+  /* background-image: url("../../img/BackgrondMainPage.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: left;
+  background-position: left; */
 
 }
 

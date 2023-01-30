@@ -32,6 +32,7 @@
   box-shadow: 0px 0px 15px 0px #00000040;
   font-family: 'Source Sans Pro';
   font-style: normal;
+  min-width: 620px;
 }
 .accountInfoBlock .accountPic {
   height: 18vh;
@@ -89,6 +90,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-width: 620px;
 }
 .accountGraphBlock .accountGraphTitle {
   height: 7vh;

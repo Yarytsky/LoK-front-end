@@ -75,6 +75,7 @@
     -moz-box-shadow: 3px 3px 5px -1px rgba(133, 133, 133, 1);
     box-shadow: 3px 3px 5px -1px rgba(133, 133, 133, 1);
     min-width: 120px;
+    justify-content: center;
 }
 
 .imgFacebook {
