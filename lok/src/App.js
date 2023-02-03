@@ -17,7 +17,7 @@ import Diary from "./components/diary/diary";
 import Account from "./components/account/account";
 
 const user = AuthService.getCurrentUser();
-const API_URL = "https://localhost:7203/";
+const API_URL = "https://lakeofknolage.azurewebsites.net/";
 
 class App extends Component {
   constructor(props) {

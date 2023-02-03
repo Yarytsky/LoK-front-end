@@ -10,7 +10,6 @@ import axios from "axios";
 
 const dataAttendance = [{ name: 'May', att: "21" }, { name: "Jun", att: "45" }, { name: "Jul", att: "65" }, { name: "Aug", att: "85" }, { name: "Sep", att: "84" }, { name: "Oct", att: "100" }, { name: "Nov", att: "65" }];
 const dataProgress = [{ name: 'May', gpa: "2" }, { name: "Jun", gpa: "4.5" }, { name: "Jul", gpa: "9" }, { name: "Aug", gpa: "8" }, { name: "Sep", gpa: "8" }, { name: "Oct", gpa: "8" }, { name: "Nov", gpa: "8" }];
-const API_URL = "https://localhost:7203/";
 class Account extends Component {
     render() {
         return (
