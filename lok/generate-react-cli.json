@@ -18,6 +18,13 @@
       "withStory": false,
       "withLazy": false
     },
+    "adminboard": {
+      "path": "src/adminboard",
+      "withStyle": true,
+      "withTest": false,
+      "withStory": false,
+      "withLazy": false
+    },
     "service": {
       "path": "src/services",
       "withStyle": true,

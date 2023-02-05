@@ -1,22 +1,18 @@
 import React, { Component } from "react";
-import { Routes, Route, Link, UNSAFE_DataRouterContext } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import axios from "axios";
 import AuthService from "./services/auth.service";
 import Login from "./components/login/login.component";
 import Register from "./components/register/register.component";
-import Home from "./components/home.component";
-import Profile from "./components/profile.component";
-import BoardUser from "./components/board-user.component";
-import Footer from "./components/footer/footer";
-import Header from "./components/header/header";
+import Termspage from "./adminboard/termspage/termspage";
 import ProposalsPage from "./components/ProposalsPage/ProposalsPage";
 import HomePage from "./components/HomePage/HomePage";
 import Diary from "./components/diary/diary";
 import Account from "./components/account/account";
+import Mainmenu from "./adminboard/mainmenu/mainmenu";
 
-const user = AuthService.getCurrentUser();
 const API_URL = "https://localhost:7203/";
 
 class App extends Component {
@@ -57,12 +53,14 @@ class App extends Component {
         <div>
           <Routes>
             <Route path="/" element={<Login />} />
+            <Route path="/admin/*" element={<Mainmenu />} />
             <Route path="/homepage" element={<HomePage />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/user" element={<BoardUser />} />
             <Route path="/diary" element={<Diary />} />
             <Route path="/proposals" element={<ProposalsPage />} />
             <Route path="/account" element={<Account userdata={this.state.currentUser} />} />
+            <Route path='/admin/termmenu' element={<Termspage />} />
+
           </Routes>
         </div>
       </div>
