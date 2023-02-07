@@ -19,18 +19,14 @@ class Mainmenu extends Component {
             </div>
             <hr className='admin-underline'></hr>
             <div className='menu'>
-              <Link className='menu-item center' to={"/admin/termmenu"}>Terms</Link>
-              <div className='menu-item center'>Groups</div>
+              <Link className='menu-item center admin-link' to={"/admin/termmenu"}>Terms</Link>
+              <Link className='menu-item center admin-link' to={"/admin/groups"}>Groups</Link>
               <div className='menu-item center'>Subjects</div>
-              <div className='menu-item center'>Teachers</div>
+              <Link className='menu-item center admin-link' to={'/admin/teachers'}>Teachers</Link>
               <div className='menu-item center'>Students</div>
             </div>
 
-            <Routes>
-              <Route path='/admin/termmenu' element={<Termspage />} />
-
-
-            </Routes>
+           
 
           </div>
         </div>

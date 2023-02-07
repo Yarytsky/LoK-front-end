@@ -43,3 +43,12 @@ line-height: 60px;
 .admin-underline{
     background-color: #A5A6F3;
 }
+
+.admin-link{
+    color: black;
+}
+
+.admin-link:hover{
+    color: black;
+    text-decoration: none;
+}
