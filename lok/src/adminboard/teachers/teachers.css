@@ -1,1 +1,37 @@
-.Teachers {}
+.teacher-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.verified-teachers{
+    flex-grow: 1;
+    margin-top: 4vh;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    flex-direction: column;
+    align-self: start;
+    gap: 10px;
+}
+
+.unverified-teachers{
+    flex-grow: 1;
+    margin-top: 10vh;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    flex-direction: column;
+    align-self: start;
+    gap: 10px;
+}
+
+.unverified-box{
+    box-sizing: border-box;
+    width: 90%;
+    border-radius: 5px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    border: 3px solid #A5A6F3;
+    border-radius: 5px;
+}
