@@ -369,7 +369,7 @@ export default class Register extends Component {
                   </div>
                   <div className="row justify-content-center">
                     <div className="form-group col-3 ">
-                      <button className="btn btn-primary btn-block">Sign Up</button>
+                      <button className="btn-reg btn-primary btn-block">Sign Up</button>
                     </div>
                   </div>
                   <hr></hr>

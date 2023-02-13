@@ -17,6 +17,32 @@ function EditGroup(props) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  function chooseMain(){
+    document.getElementById("main-btn").style.background="#D2D3F9"
+    document.getElementById("main-btn").style.border="2px solid #000000"
+    document.getElementById("main-btn").style.zIndex="9"
+    document.getElementById("main-btn").style.paddingRight="10px"
+    document.getElementById("sub-btn").style.marginLeft="0px"
+    document.getElementById("sub-btn").style.backgroundColor="#E8E8E8"
+    document.getElementById("sub-btn").style.border="1px solid #000000"
+    document.getElementById("sub-btn").style.marginLeft="50px"
+    document.getElementById("sub-btn").style.zIndex="0"
+    document.getElementById("sub-btn").style.paddingLeft="20px"
+  }
+
+  function chooseSub(){
+    document.getElementById("main-btn").style.background="#E8E8E8"
+    document.getElementById("main-btn").style.border="1px solid #000000"
+    document.getElementById("main-btn").style.zIndex="0"
+    document.getElementById("main-btn").style.paddingRight="50px"
+    document.getElementById("sub-btn").style.marginLeft="50px"
+    document.getElementById("sub-btn").style.backgroundColor="#D2D3F9"
+    document.getElementById("sub-btn").style.border="2px solid #000000"
+    document.getElementById("sub-btn").style.marginLeft="50px"
+    document.getElementById("sub-btn").style.zIndex="9"
+    document.getElementById("sub-btn").style.paddingLeft="0px"
+  }
+
 
   return (
     <>
@@ -25,7 +51,7 @@ function EditGroup(props) {
       </button>
       <Modal
         {...props}
-        size="lg"
+        className='modal-add-group'
         aria-labelledby="contained-modal-title-vcenter"
         centered
         show={show} onHide={handleClose}
@@ -34,38 +60,41 @@ function EditGroup(props) {
           <div className='editgroupcontainer'>
             <div>Group name:</div>
             <div className='input-box'>
-              <input className='edit-input'/>
-              <ButtonGroup aria-label="Basic example">
-                <Button variant="secondary">Main</Button>
-                <Button variant="secondary">Sub</Button>
-              </ButtonGroup>
+              <input className='edit-input' />
+              <div className='button-group'>
+                <button id='main-btn' onClick={chooseMain}>Main</button>
+                <button  id='sub-btn' onClick={chooseSub}>Sub</button>
+              </div>
             </div>
             <div>Choose the subject: </div>
-            <select>
+            <select className='modal-select'>
               <option>123</option>
               <option>123</option>
               <option>123</option>
             </select>
             <div>Choose the main groups: </div>
-            <ButtonGroup aria-label="Basic example">
-              <Button variant="secondary">1 Course</Button>
-              <Button variant="secondary">2 Course</Button>
-              <Button variant="secondary">3 Course</Button>
-              <Button variant="secondary">4 Course</Button>
+            <div className='course-box'>
+              <button variant="secondary" className='group-choose'>1 Course</button>
+              <button variant="secondary" className='group-choose'>2 Course</button>
+              <button variant="secondary" className='group-choose'>3 Course</button>
+              <button variant="secondary" className='group-choose'>4 Course</button>
 
-            </ButtonGroup>
-            <div>
-              <div>
-                4cs - 11
-              </div>
             </div>
-            <div>
-              <Button variant="secondary" onClick={handleClose}>
+            <div className='groups-table'>
+              <div className='course'>4cs - 11</div>
+              <div className='course'>4cs - 12</div>
+              <div className='course'>4cs - 13</div>
+              <div className='course'>4cs - 14</div>
+              <div className='course'>4cs - 15</div>
+
+            </div>
+            <div className='modal-group-footer'>
+              <button variant="secondary" className='mod-f-btn save-btn' onClick={handleClose}>
                 Save
-              </Button>
-              <Button variant="primary" onClick={handleClose}>
+              </button>
+              <button variant="primary" className='mod-f-btn cansel-btn'  onClick={handleClose}>
                 Cancel
-              </Button>
+              </button>
             </div>
           </div>
 
@@ -78,6 +107,9 @@ function EditGroup(props) {
 
 
 class Groups extends React.Component {
+
+
+
 
   render() {
     return (
