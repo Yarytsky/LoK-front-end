@@ -1,0 +1,233 @@
+.verified-teachers {
+  flex-grow: 1;
+  margin-top: 4vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  align-self: start;
+  gap: 10px;
+  height: 60vh;
+}
+.studentbox {
+  height: 7vh;
+  min-height: 63px;
+}
+.studentbox:hover {
+  cursor: pointer;
+}
+.unverified-teachers {
+  margin-top: 6vh;
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  flex-direction: column;
+  align-self: start;
+  gap: 10px;
+}
+.unverified-box {
+  box-sizing: border-box;
+  width: 90%;
+  height: 7vh;
+  display: flex;
+  align-items: center;
+  border: 3px solid #A5A6F3;
+  border-radius: 5px;
+  max-height: 63px;
+}
+.unverified-box:hover {
+  cursor: pointer;
+}
+.studentUserDetailsAdmin {
+  min-width: 470px;
+  display: none;
+  flex-direction: column;
+  width: 50vw;
+  border: 3px solid #A5A6F3;
+  height: 35vh !important;
+  border-radius: 10px;
+  margin-top: 10vh;
+  margin-left: 4vw;
+}
+.profileInfoAdmin {
+  display: flex;
+  background: #D2D3F9;
+  height: 17vh;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+.profileInfoPicAdmin {
+  width: 12vw;
+  height: 12vw;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 10px;
+  margin-left: 10px;
+  max-width: 143px;
+  max-height: 143px;
+  min-height: 110px;
+  min-width: 110px;
+}
+.infoAdmin {
+  display: flex;
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  color: #2c2c2c;
+  line-height: 32px;
+}
+.ageInfoAdmin {
+  color: #4e4d4d;
+  margin-left: 5px;
+}
+.profileInfoNameAdmin {
+  font-size: 1.5em;
+  display: flex;
+}
+.verificationCheckmarkAdmin {
+  font-size: 0.7em;
+  color: #12B200;
+  margin-left: 15px;
+  line-height: 36px;
+}
+.verificationCrossAdmin {
+  font-size: 0.7em;
+  color: #F33D04;
+  margin-left: 15px;
+  line-height: 36px;
+}
+.verificationCrossAdmin img {
+  margin-right: 5px;
+}
+.verificationCheckmarkAdmin img {
+  margin-right: 5px;
+}
+.infoIconAdmin {
+  margin-right: 10px;
+}
+.profileDetailsAdmin {
+  margin-top: 10px;
+}
+.subjectTitleAdmin {
+  font-family: Source Sans Pro;
+  font-size: 1.3em;
+  font-weight: 600;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-left: 10px;
+}
+.subjectListAdmin {
+  list-style: none;
+  color: #4D4D4D;
+  font-family: Source Sans Pro;
+  font-size: 1.2em;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+}
+.subjectListAdmin li::before {
+  content: "⬤";
+  color: #A5A6F3;
+  font-weight: bold;
+  display: inline-block;
+  width: 1.3em;
+  margin-left: -1em;
+}
+.subjectTeacherInfoAdmin {
+  display: flex;
+  height: 13vh;
+  justify-content: space-between;
+}
+.addButtonDivAdmin {
+  display: flex;
+  align-items: flex-end;
+}
+.addSubjectAdmin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  font-family: Source Sans Pro;
+  font-size: 1.1em;
+  font-weight: 600;
+  letter-spacing: 0em;
+  width: 10vw;
+  height: 4vh;
+  background-color: #FED867;
+  min-width: 100px;
+}
+.addSubjectAdmin:hover {
+  cursor: pointer;
+}
+.backButtonAdmin {
+  position: absolute;
+  left: 5vw;
+  margin-top: 6vh;
+  font-size: 1.4em;
+  display: flex !important;
+  align-items: center;
+  font-family: Source Sans Pro;
+  font-weight: 600;
+}
+.backButtonAdmin:hover {
+  cursor: pointer;
+}
+.backButtonAdmin img {
+  margin-right: 10px;
+}
+.verificationButtonAdmin {
+  position: absolute;
+  top: 75vh;
+  left: 25vw;
+  height: 7vh;
+  width: 15vw;
+  background: #7678ED;
+  color: #FCFCFC;
+  font-family: Source Sans Pro;
+  font-size: 1.5em;
+  font-weight: 600;
+  letter-spacing: 0em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+.verificationButtonAdmin:hover {
+  cursor: pointer;
+}
+.studentDetailsTitleAdmin {
+  font-family: Source Sans Pro;
+  font-size: 1.5em;
+  font-weight: 600;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-left: 3vw;
+  margin-top: 1vw;
+}
+.studentDetailsGroupsAdmin .studentDetailAdmin {
+  min-width: 135px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 12vw;
+  margin-left: 3vw;
+  font-family: Source Sans Pro;
+  font-size: 1.2em;
+  font-weight: 600;
+  letter-spacing: 0em;
+  color: #4D4D4D;
+  border-bottom: #A5A6F3 2px solid;
+}
+.studentDetailsGroupsAdmin .studentDetailAdmin div {
+  width: 4vw;
+  font-weight: 300 !important;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-width: 30px;
+}
+.lastStudentDetailSub {
+  margin-left: auto;
+}

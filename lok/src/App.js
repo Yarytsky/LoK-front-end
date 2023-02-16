@@ -14,6 +14,7 @@ import Account from "./components/account/account";
 import Mainmenu from "./adminboard/mainmenu/mainmenu";
 import Groups from "./adminboard/groups/groups";
 import Teachers from "./adminboard/teachers/teachers";
+import Students from "./adminboard/students/students";
 
 const API_URL = "https://localhost:7203/";
 
@@ -64,6 +65,7 @@ class App extends Component {
             <Route path='/admin/termmenu' element={<Termspage />} />
             <Route path='/admin/groups' element={<Groups />} />
             <Route path='/admin/teachers' element={<Teachers />} />
+            <Route path='/admin/students' element={<Students />} />
 
 
           </Routes>
