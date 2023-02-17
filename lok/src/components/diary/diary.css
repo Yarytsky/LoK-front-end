@@ -127,15 +127,15 @@
   -ms-user-select: none;
   user-select: none;
 }
-.divOptions:hover .custom-select-option {
+.divOptions:hover .custom-select-option{
   background: #FFE599;
   color: #000000;
 }
-.divOptions:first-child {
+.divOptions:first-child{
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
 }
-.divOptions:first-child .custom-select-option {
+.divOptions:first-child .custom-select-option{
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
 }

@@ -3,11 +3,13 @@
     flex-direction: row;
     width: 95vw;
     min-width: 960px;
+    margin-bottom: 2vh;
+    height: fit-content;
 }
 
 .verticalLineAdmin {
     width: 3px;
-    height: 50vh;
+    height: auto;
     margin-top: 13vh;
     background-color: #A5A6F3;
 }

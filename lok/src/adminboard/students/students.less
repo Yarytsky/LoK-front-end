@@ -51,10 +51,11 @@
     flex-direction: column;
     width: 50vw;
     border: 3px solid #A5A6F3;
-    height: 35vh !important;
+    height: fit-content;
     border-radius: 10px;
     margin-top: 10vh;
     margin-left: 4vw;
+    padding-bottom: 2vh;
 }
 
 .profileInfoAdmin {
@@ -155,9 +156,9 @@
     margin-left: -1em;
 }
 
-.subjectTeacherInfoAdmin {
+.studentGroupInfoAdmin {
     display: flex;
-    height: 13vh;
+    height: fit-content;
     justify-content: space-between;
 }
 
@@ -166,24 +167,23 @@
     align-items: flex-end;
 }
 
-.addSubjectAdmin {
+.editGroupAdmin {
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 10px;
-    margin-bottom: 10px;
     margin-right: 10px;
     font-family: Source Sans Pro;
     font-size: 1.1em;
     font-weight: 600;
     letter-spacing: 0em;
-    width: 10vw;
+    width: 7vw;
     height: 4vh;
     background-color: #FED867;
     min-width: 100px;
 }
 
-.addSubjectAdmin:hover {
+.editGroupAdmin:hover {
     cursor: pointer;
 }
 
@@ -269,4 +269,26 @@
 
 .lastStudentDetailSub {
     margin-left: auto;
+}
+
+.editStudentMenuAdmin{
+    display: none;
+    width: 50vw;
+    margin-left: 4vw;
+    margin-top: 3vh;
+    margin-bottom: 4vh;
+    flex-direction: column;
+    border: 3px solid #A5A6F3;
+    border-radius: 10px;
+}
+
+.editMenuChoiceAdmin{
+    display: flex;
+}
+
+.subgroupTypeChoice{
+    display: flex;
+    div{
+        margin-left: 1vw;
+    }
 }
