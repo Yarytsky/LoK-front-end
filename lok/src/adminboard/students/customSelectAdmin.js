@@ -32,8 +32,8 @@ class CustomSelectAdmin extends React.Component {
   // select text and list area
   handleClickOutside = e => {
     if (
-      !e.target.classList.contains("custom-select-option") &&
-      !e.target.classList.contains("selected-text")
+      !e.target.classList.contains("custom-select-optionAdmin") &&
+      !e.target.classList.contains("selected-textAdmin")
     ) {
       this.setState({
         showOptionList: false
@@ -63,19 +63,19 @@ class CustomSelectAdmin extends React.Component {
     const { optionsList } = this.props;
     const { showOptionList, defaultSelectText } = this.state;
     return (
-      <div className="custom-select-container adminSelect">
+      <div className="custom-select-containerAdmin">
         <div
-          className={showOptionList ? "selected-text active" : "selected-text"}
+          className={showOptionList ? "selected-textAdmin active" : "selected-textAdmin"}
           onClick={this.handleListDisplay}
         >
           {defaultSelectText}
         </div>
         {showOptionList && (
-          <ul className="select-options">
+          <ul className="select-optionsAdmin">
             {optionsList.map(option => {
               return (
                 <li
-                  className="custom-select-option"
+                  className="custom-select-optionAdmin"
                   data-name={option.name}
                   key={option.id}
                   onClick={this.handleOptionClick}

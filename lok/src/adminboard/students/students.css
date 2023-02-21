@@ -38,7 +38,7 @@
   cursor: pointer;
 }
 .studentUserDetailsAdmin {
-  min-width: 470px;
+  min-width: 560px;
   display: none;
   flex-direction: column;
   width: 50vw;
@@ -240,13 +240,149 @@
   flex-direction: column;
   border: 3px solid #A5A6F3;
   border-radius: 10px;
+  padding: 2.5vh;
+  min-width: 560px;
+}
+.editMenuTitle {
+  font-family: Source Sans Pro;
+  font-size: 1.6em;
+  font-weight: 600;
+  letter-spacing: 0em;
+  text-align: left;
 }
 .editMenuChoiceAdmin {
   display: flex;
+  font-family: Source Sans Pro;
+  font-size: 1.3em;
+  font-weight: 600;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #4D4D4D;
+  width: 15vw;
+  justify-content: space-between;
+  margin-top: 1.7vh;
+  min-width: 190px;
+  flex-wrap: wrap;
 }
 .subgroupTypeChoice {
   display: flex;
+  width: 80px;
 }
 .subgroupTypeChoice div {
   margin-left: 1vw;
+}
+.custom-select-containerAdmin {
+  display: inline-block;
+  min-width: 70px;
+  text-align: center;
+  position: relative;
+}
+.selected-textAdmin {
+  background-color: #E8E8E8;
+  padding: 6px 20px;
+  height: 1vh;
+  padding-top: 0.3vh;
+  font-family: Source Sans Pro;
+  font-size: 1em;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  min-height: 30px;
+  border: 1px solid #2c2c2c;
+}
+.selected-textAdmin:hover {
+  cursor: pointer;
+}
+.selected-textAdmin::after {
+  content: "";
+  position: absolute;
+  right: 10px;
+  top: 1.5vh;
+  border: 7px solid transparent;
+  border-color: #2c2c2c transparent transparent transparent;
+}
+.selected-textAdmin.active::after {
+  top: 0.5vh;
+  border-color: transparent transparent #2c2c2c transparent;
+}
+.select-optionsAdmin {
+  position: absolute;
+  width: 100%;
+  border-collapse: separate;
+  top: 3.1vh;
+  z-index: 100;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  min-height: 185px;
+}
+.custom-select-optionAdmin {
+  font-size: 1em;
+  list-style-type: none;
+  padding: 6px 20px;
+  min-height: 30px;
+  background-color: #E8E8E8;
+  cursor: pointer;
+  border: 1px solid #888888;
+  height: 1vh;
+  padding-top: 0vh;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.subgroupChoiceTable {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10vw;
+}
+.subgroupChoiceTable .tableRowAdmin {
+  display: flex;
+}
+.subgroupChoiceTable .tableRowAdmin .tableOptionAdmin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #2c2c2c;
+  font-family: Source Sans Pro;
+  font-size: 0.9em;
+  font-weight: 600;
+  letter-spacing: 0em;
+  text-align: left;
+  width: 5vw;
+  height: 4vh;
+  min-width: 65px;
+}
+.subgroupChoiceTable .tableRowAdmin .tableOptionAdmin:hover {
+  cursor: pointer;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.editMenuButtonsAdmin {
+  display: flex;
+  justify-content: center;
+  margin-top: 3vh;
+}
+.editMenuButtonsAdmin .editMenuButton {
+  background-color: #FFE599;
+  width: 7vw;
+  height: 4vh;
+  font-family: Source Sans Pro;
+  font-size: 1.1em;
+  font-weight: 600;
+  letter-spacing: 0em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.editMenuButtonsAdmin .editMenuButton:hover {
+  cursor: pointer;
+}
+.editMenuButtonsAdmin .editMenuButton:first-child {
+  margin-right: 3vw;
+  background: #FECA34;
 }

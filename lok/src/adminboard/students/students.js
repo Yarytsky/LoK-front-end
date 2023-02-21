@@ -42,7 +42,6 @@ class Students extends React.Component {
       unverifiedTeachers.style.display = "none";
       userDetailsAdmin.style.display = "flex";
       target.style = "background-color: white; border: 3px solid #A5A6F3";
-      editStudentMenuAdmin.style.display = "flex";
     }
     else {
       verifiedTeachers.style = "flex-grow: 1;";
@@ -102,10 +101,27 @@ class Students extends React.Component {
         userDetailsAdminVer.style.display = "none";
         target.style = "background-color: #D2D3F9; border: none";
         verticalLineAdmin.style.display = "block";
-        editStudentMenuAdmin.style.display = "none"
+        editStudentMenuAdmin.style.display = "none";
       }
     }
   }
+
+  tableOptionChange = (e) => {
+    let option = e.target;
+    let allOptions = document.getElementsByClassName("tableOptionAdmin");
+    for(var i = 0; i< allOptions.length; i++){
+      if(allOptions[i].style.backgroundColor === "rgb(210, 211, 249)"){
+        allOptions[i].style.backgroundColor = "white";
+      }
+    }
+    option.style = "background-color: #D2D3F9;";
+  }
+
+  showEditMenu = (e) => {
+    let editStudentMenuAdmin = document.getElementsByClassName("editStudentMenuAdmin")[0];
+    editStudentMenuAdmin.style.display = "flex";
+  }
+
 
   render() {
     return (
@@ -180,16 +196,32 @@ class Students extends React.Component {
                     </div>
                   </div>
                   <div className="addButtonDivAdmin">
-                    <div className='editGroupAdmin'>Edit</div>
+                    <div className='editGroupAdmin' onClick={this.showEditMenu}>Edit</div>
                   </div>
                 </div>
               </div>
               <div className='editStudentMenuAdmin'>
                 <div className='editMenuTitle'>Edit details</div>
                 <div className='editMenuChoicesAdmin'>
-                  <div className='editMenuChoiceAdmin'>Course: <div className='editStudentDropdown'><CustomSelectAdmin defaultText = "1" optionsList = {courseSelect}></CustomSelectAdmin></div></div>
-                  <div className='editMenuChoiceAdmin'>Main group: <div className='editStudentDropdown'><CustomSelectAdmin defaultText = "1" optionsList = {courseSelect}></CustomSelectAdmin></div></div>
-                  <div className='editMenuChoiceAdmin'>Subgroups: <div className='subgroupTypeChoice'><div>Design</div><div>Management</div><div>Programming</div><div>Other</div></div><div className='subgroupChoiceTable'></div></div>
+                  <div className='editMenuChoiceAdmin'>Course: <div className='editStudentDropdown'><CustomSelectAdmin defaultText="1" optionsList={courseSelect}></CustomSelectAdmin></div></div>
+                  <div className='editMenuChoiceAdmin'>Main group: <div className='editStudentDropdown'><CustomSelectAdmin defaultText="1" optionsList={courseSelect}></CustomSelectAdmin></div></div>
+                  <div className='editMenuChoiceAdmin'>Subgroups: <div className='subgroupTypeChoice'><div>Design</div><div>Management</div><div>Programming</div><div>Other</div></div>
+                    <div className='subgroupChoiceTable'>
+                      <div className='tableRowAdmin'><div className = "tableOptionAdmin" onClick={this.tableOptionChange}>3DT-11</div>
+                      <div className = "tableOptionAdmin" onClick={this.tableOptionChange}>3DD-11</div>
+                      <div className = "tableOptionAdmin" onClick={this.tableOptionChange}>3DD-11</div></div>
+                      <div className='tableRowAdmin'><div className = "tableOptionAdmin" onClick={this.tableOptionChange}>3DD-11</div>
+                      <div className = "tableOptionAdmin" onClick={this.tableOptionChange}>3DD-11</div>
+                      <div className = "tableOptionAdmin" onClick={this.tableOptionChange}>3DD-11</div></div>
+                      <div className='tableRowAdmin'><div className = "tableOptionAdmin" onClick={this.tableOptionChange}>3DD-11</div>
+                      <div className = "tableOptionAdmin" onClick={this.tableOptionChange}>3DD-11</div>
+                      <div className = "tableOptionAdmin" onClick={this.tableOptionChange}>3DD-11</div></div>
+                    </div>
+                  </div>
+                </div>
+                <div className='editMenuButtonsAdmin'>
+                  <div className='editMenuButton'>Save</div>
+                  <div className='editMenuButton'>Cancel</div>
                 </div>
               </div>
             </div>
