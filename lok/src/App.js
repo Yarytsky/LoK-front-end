@@ -17,7 +17,7 @@ import Teachers from "./adminboard/teachers/teachers";
 import Students from "./adminboard/students/students";
 import EditGroup from "./adminboard/EditGroup/EditGroup";
 
-const API_URL = "https://localhost:7203/";
+const API_URL = "https://lokserver.azurewebsites.net/";
 
 class App extends Component {
   constructor(props) {
