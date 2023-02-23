@@ -176,7 +176,7 @@ export default class Register extends Component {
         this.state.FirstName,
         this.state.Lastname,
         this.state.Gender,
-        this.state.Country,
+        this.state.Country
 
       ).then(
         response => {

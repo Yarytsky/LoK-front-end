@@ -22,15 +22,14 @@
     flex-direction: row;
     align-items: center;
 
-    margin-left: 4vh;
 }
 
 .main-group-label{
-    flex-grow: 1;
+    flex-grow: 6;
 }
 
 .sub-group-label{
-    flex-grow: 1;
+    flex-grow: 4;
 }
 
 .add-group-btn{

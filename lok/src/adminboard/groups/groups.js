@@ -7,6 +7,7 @@ import profilePic from "../../img/profilePic.jpg";
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import { Link } from 'react-router-dom';
 
 
 function EditGroup(props) {
@@ -134,7 +135,7 @@ class Groups extends React.Component {
             <hr className='admin-underline'></hr>
             <div className='groups-container'>
               <div className='main-groups'>
-                <div className='main-item'><p className='group-text'>4cs - 11</p></div>
+                <Link to={"/admin/groups/editgroup"} className='main-item admin-link'><p className='group-text'>4cs - 11</p></Link>
                 <div className='main-item'><p className='group-text'>4cs - 11</p></div>
                 <div className='main-item'><p className='group-text'>4cs - 11</p></div>
                 <div className='main-item'><p className='group-text'>4cs - 11</p></div>
