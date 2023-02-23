@@ -3,12 +3,12 @@ import jwt_decode from "jwt-decode";
 
 
 
-const API_URL = "https://localhost:7203/";
+const API_URL = "https://lokserver.azurewebsites.net/";
 class AuthService {
-  async login(usernameOrEmail, Password) {
+  async login(PhoneOrEmail, Password) {
     return await axios
       .post(API_URL + "auth/signin", {
-        usernameOrEmail,
+        PhoneOrEmail,
         Password
       })
       .then(response => {

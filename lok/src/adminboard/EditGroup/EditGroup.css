@@ -1,0 +1,40 @@
+.lables-ed{
+    display: flex;
+}
+
+.back-label{
+    flex-grow: 1;
+    text-align: center;
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 25px;
+
+    color: #000000;
+}
+
+.group-label{
+    text-align: center;
+    flex-grow: 15;
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 40px;
+
+    color: #000000;
+}
+
+
+.back-btn{
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.current-group-sidebar{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
