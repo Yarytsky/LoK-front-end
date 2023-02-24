@@ -16,7 +16,7 @@ import Groups from "./adminboard/groups/groups";
 import Teachers from "./adminboard/teachers/teachers";
 import EditGroup from "./adminboard/EditGroup/EditGroup";
 
-const API_URL = "https://localhost:7203/";
+const API_URL = "https://lokserver.azurewebsites.net/";
 
 class App extends Component {
   constructor(props) {
@@ -66,8 +66,7 @@ class App extends Component {
             <Route path='/admin/groups' element={<Groups />} />
             <Route path='/admin/teachers' element={<Teachers />} />
             <Route path='/admin/groups/editgroup' element={<EditGroup />} />
-
-
+            <Route path='/admin/groups/editgroup' element={<EditGroup />} />
           </Routes>
         </div>
       </div>

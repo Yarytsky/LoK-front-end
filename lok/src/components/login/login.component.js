@@ -142,13 +142,12 @@ class Login extends Component {
                 </div>
 
               </div>
-              <div className="row justify-content-end">
+              <div className="row justify-content-center">
                 <a className="login_link">forgot your password?</a>
-                <div className="col-3"></div>
               </div>
               <div className="row justify-content-center">
                 <button
-                  className="btn btn-primary btn-block col-2"
+                  className="btn btn-primary btn-block login-btn"
                   disabled={this.state.loading}
                 >
                   {this.state.loading && (
@@ -178,7 +177,7 @@ class Login extends Component {
               <a className="col6 login_link">YOU CAN ALSO SIGN IN USING THE APP</a>
             </div>
             <div className="row justify-content-center">
-              <button className="facebookButton"><img src={facebookLogo} className="imgFacebook"></img>Facebook</button></div>
+              <button className="facebookButton"><img src={facebookLogo} className="imgFacebook"></img>Facebook(in progress)</button></div>
             <div className="row justify-content-center">
               <Link to={"/register"} className="col6 link">If you don't have an account</Link>
             </div>

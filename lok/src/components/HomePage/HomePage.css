@@ -26,6 +26,10 @@
   position: relative;
 }
 
+.z{
+  z-index: 99;
+}
+
 .dropdown li a {
   width: 200px;
   color: #ffffff;

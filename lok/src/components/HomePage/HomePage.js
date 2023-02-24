@@ -38,10 +38,10 @@ class HomePage extends Component{
       <div className='container homeContainer'>
         <div className='row  pad justify-content-center main-bg'>
           <div className='col-4 course-size'>
-          <ul className="dropdown " id='course1' onMouseEnter={this.howerCourse1} onMouseLeave={this.leaveCourse1}>
+          <ul className="dropdown " id='course1' >
             <li><a href="#">Course 1</a>
-              <ul>
-                  <li><a href="#">Term 1</a>
+              <ul className='z'>
+                  <li className='z'><a href="#">Term 1</a>
                       <ul>
                           <li><a href="">Subject 1</a></li>
                           <li><a href="">Subject 2</a></li>
@@ -58,7 +58,7 @@ class HomePage extends Component{
               </ul>
             </li>
           </ul>
-          <ul className="dropdown " id='course2' onMouseEnter={this.howerCourse2} onMouseLeave={this.leaveCourse2}>
+          <ul className="dropdown " id='course2' >
             <li><a href="#">Course 2</a>
               <ul>
                   <li><a href="#">Term 1</a>
@@ -78,7 +78,7 @@ class HomePage extends Component{
               </ul>
             </li>
           </ul>
-          <ul className="dropdown " id='course3' onMouseEnter={this.howerCourse3} onMouseLeave={this.leaveCourse3}>
+          <ul className="dropdown " id='course3' >
             <li><a href="#">Course 3</a>
               <ul>
                   <li><a href="#">Term 1</a>
