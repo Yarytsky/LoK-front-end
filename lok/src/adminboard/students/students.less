@@ -301,12 +301,17 @@
     letter-spacing: 0em;
     text-align: left;
     color: #4D4D4D;
-    width: 15vw;
+    width: 19vw;
     justify-content: space-between;
     margin-top: 1.7vh;
     min-width: 190px;
     flex-wrap: wrap;
 
+}
+
+.subgroupsMenu{
+    width: 15vw;
+    
 }
 
 .subgroupTypeChoice {
@@ -341,6 +346,15 @@
     user-select: none;
     min-height: 30px;
     border: 1px solid #2c2c2c;
+    width: 9vw;
+}
+
+.courseDropdown{
+    width: 9vw !important;
+}
+
+.groupDropdown{
+    width: 9vw;
 }
 
 .selected-textAdmin:hover {
@@ -389,7 +403,7 @@
 }
 
 .subgroupChoiceTable {
-    display: flex;
+    display: none;
     flex-direction: column;
     margin-left: 10vw;
 
@@ -417,6 +431,13 @@
             -ms-user-select: none;
             user-select: none;
         }
+    }
+}
+
+.subgroupTypeChoice{
+    font-weight: 400;
+    .subgroupType:hover{
+        cursor: pointer;
     }
 }
 
