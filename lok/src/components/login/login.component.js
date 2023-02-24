@@ -101,7 +101,7 @@ class Login extends Component {
 
   render() {
     return (
-      <div className="container-fluid background ">
+      <div className="background ">
         <div className="justify-content-center logoRow">
           <img src={logo} className="logo" />
         </div>
@@ -140,11 +140,11 @@ class Login extends Component {
                     validations={[required]}
                   />
                 </div>
-
-              </div>
-              <div className="row justify-content-center">
+                <div className="end">
                 <a className="login_link">forgot your password?</a>
               </div>
+              </div>
+             
               <div className="row justify-content-center">
                 <button
                   className="btn btn-primary btn-block login-btn"
@@ -173,24 +173,22 @@ class Login extends Component {
               />
             </Form>
             <hr className="lineLogin"></hr>
-            <div className="row justify-content-center">
+            <div className="center">
               <a className="col6 login_link">YOU CAN ALSO SIGN IN USING THE APP</a>
             </div>
             <div className="row justify-content-center">
               <button className="facebookButton"><img src={facebookLogo} className="imgFacebook"></img>Facebook(in progress)</button></div>
-            <div className="row justify-content-center">
+            <div className="center">
               <Link to={"/register"} className="col6 link">If you don't have an account</Link>
             </div>
           </div>
 
         </div>
-        <div className="row justify-content-start">
-          <img className="book1 float-start" src={books2}></img>
-        </div>
+       
 
-
-        <div className="row justify-content-end">
-          <img className="book2" src={books1}></img>
+        <div className="books">
+          <img className="book2" src={books2}></img>
+          <img className="book1" src={books1}></img>
         </div>
 
 

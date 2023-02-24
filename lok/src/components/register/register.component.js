@@ -147,8 +147,8 @@ export default class Register extends Component {
     }
   }
 
-  invalidCheckConfirmPassword(e){
-    if (e.target.value !== this.state.Password){
+  invalidCheckConfirmPassword(e) {
+    if (e.target.value !== this.state.Password) {
       document.getElementById("confPassword").style.borderColor = "#F35B04";
       document.getElementById("basic-addon6").style.display = "block";
     }
@@ -205,7 +205,7 @@ export default class Register extends Component {
   render() {
     return (
 
-      <div className="container-fluid background ">
+      <div className="background ">
         <div className="justify-content-center logoRow">
 
           <img src={logo} className="logo" />
@@ -223,9 +223,9 @@ export default class Register extends Component {
               {!this.state.successful && (
                 <div id="formBlock">
                   <div className="reg-form">
-                    <div className="reg-1 col-12 col-md-6 col-sm-6">
-                      <div className=" regLeft">
-                        <div className="input-group col-8" >
+                    <div className="col-12 col-md-6 col-sm-6">
+                      <div className="regLeft">
+                        <div className="input-group col-12" >
                           <img className="icons" src={avatar} />
                           <div id="FirstnameValidator" onBlur={this.invalidCheckName}>
                             <Input
@@ -242,7 +242,7 @@ export default class Register extends Component {
                           <span className="input-group-text" id="basic-addon1">Invalid</span>
                         </div>
 
-                        <div className="input-group col-8">
+                        <div className="input-group col-12">
                           <img className="icons" src={counrty} />
                           <Select
                             list="Country"
@@ -259,7 +259,7 @@ export default class Register extends Component {
                         </div>
 
 
-                        <div className="input-group col-8">
+                        <div className="input-group col-12">
                           <img className="icons" src={phoneicon} />
 
                           <div id="PhoneValidator" onBlur={this.invalidCheckPhone}>
@@ -278,7 +278,7 @@ export default class Register extends Component {
                           <span className="input-group-text" id="basic-addon2">Invalid</span>
                         </div>
 
-                        <div className="input-group col-8">
+                        <div className="input-group col-12">
                           <img className="icons" src={emailicon} />
 
                           <div id="EmailValidator" onBlur={this.invalidCheckEmail}>
@@ -296,9 +296,9 @@ export default class Register extends Component {
                         </div>
                       </div>
                     </div>
-                    <div className="reg-1 col-12 col-md-6 col-sm-6">
+                    <div className="col-12 col-md-6 col-sm-6">
                       <div className="regRight">
-                        <div className="input-group  col-8">
+                        <div className="input-group  col-12">
                           <img className="icons" src={avatar} />
 
                           <div id="LastnameValidator" onBlur={this.invalidCheckLastName}>
@@ -315,23 +315,23 @@ export default class Register extends Component {
                           <span className="input-group-text" id="basic-addon4">Invalid</span>
                         </div>
 
-                        <div className="input-group  col-8">
+                        <div className="input-group  col-12">
                           <img className="icons" src={gender} />
 
-                            <Select
-                              type="text"
-                              className="form-control dropdown-reg"
-                              name="gender"
-                              placeholder="Gender"
-                              value={this.state.Gender}
-                              onChange={this.onChangeGender}
-                            >
-                              <option value="Male">Male</option>
-                              <option value="Female">Female</option>
-                              <option value="Other">Other</option>
-                            </Select>
+                          <Select
+                            type="text"
+                            className="form-control dropdown-reg"
+                            name="gender"
+                            placeholder="Gender"
+                            value={this.state.Gender}
+                            onChange={this.onChangeGender}
+                          >
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                          </Select>
                         </div>
-                        <div className="input-group  col-8">
+                        <div className="input-group  col-12">
                           <img className="icons" src={password} />
 
                           <div id="PasswordValidator" onBlur={this.invalidCheckPassword}>
@@ -347,7 +347,7 @@ export default class Register extends Component {
                           </div>
                           <span className="input-group-text" id="basic-addon5">Invalid</span>
                         </div>
-                        <div className="input-group  col-8">
+                        <div className="input-group  col-12">
                           <img className="icons" src={password} />
 
                           <div id="FirstnameValidator" onBlur={this.invalidCheckConfirmPassword}>
@@ -367,7 +367,7 @@ export default class Register extends Component {
                   </div>
                   <div className="row justify-content-center">
                     <div className="signup-btn">
-                      <button className="btn-reg btn-primary btn-block">Sign Up</button>
+                      <button className="signup-btn1">Sign Up</button>
                     </div>
                   </div>
                   <hr></hr>
@@ -398,8 +398,10 @@ export default class Register extends Component {
             </Form>
           </div>
         </div>
-        <img className="book1" src={books2}></img>
-        <img className="book2" src={books1}></img>
+        <div className="books">
+          <img className="book2" src={books2}></img>
+          <img className="book1" src={books1}></img>
+        </div>
       </div>
 
     );
