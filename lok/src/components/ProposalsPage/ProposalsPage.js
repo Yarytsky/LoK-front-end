@@ -20,12 +20,17 @@ class ProposalsPage extends Component {
       <div>
         <Header></Header>
         <div className="container-fluid background ">
-          <div className='text-center proposals-title'>Proposals from partners</div>
-          <hr className='col-4 underline-proposals'></hr>
-          <div className='row justify-content-center'>
+          <div className='prop-title'>
+            <div className='text-center proposals-title'>Proposals from partners</div>
+
+          </div>
+          <div className='center'>
+            <hr className='underline-proposals'></hr>
+          </div>
+          <div className='prop-container'>
 
 
-            <div className="card proposal-card col-12 col-md-3 col-xxl-2">
+            <div className="card proposal-card ">
               <img src={Proposal1} className="card-img-top" alt="..." />
               <div className="card-body">
                 <img src={sigmalogo} className="mx-auto d-block p-logo" alt="..." />
@@ -40,7 +45,7 @@ class ProposalsPage extends Component {
               </div>
             </div>
 
-            <div className="card proposal-card col-12 col-md-3 col-xxl-2">
+            <div className="card proposal-card ">
               <img src={Proposal2} className="card-img-top" alt="..." />
               <div className="card-body">
                 <img src={softservelogo} className="mx-auto d-block p-logo" alt="..." />
@@ -55,7 +60,7 @@ class ProposalsPage extends Component {
               </div>
             </div>
 
-            <div className="card proposal-card col-12 col-md-3 col-xxl-2">
+            <div className="card proposal-card ">
               <img src={Proposal3} className="card-img-top" alt="..." />
               <div className="card-body">
                 <img src={ubisoftlogo} className="mx-auto d-block p-logo" alt="..." />

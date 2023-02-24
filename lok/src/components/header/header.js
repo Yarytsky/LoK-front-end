@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React, { Component,useState } from 'react';
+import React, { Component, useState } from 'react';
 import PropTypes from 'prop-types';
 import './header.css';
 import shortlogo from '../../img/shortlogo.png'
@@ -12,7 +12,14 @@ import ProposalsPage from '../ProposalsPage/ProposalsPage';
 import Footer from '../footer/footer';
 import burger from "../../img/icons/burger.png"
 import Offcanvas from 'react-bootstrap/Offcanvas';
-
+import home from "../../img/burger/Vectorhome.png"
+import acc from "../../img/burger/Vectoracc.png"
+import calend from "../../img/burger/Vectorcalendar.png"
+import diary from "../../img/burger/Vectordiary.png"
+import proposals from "../../img/burger/Vectorproposal.png"
+import subject from "../../img/burger/Vectorsubject.png"
+import settings from "../../img/burger/Vectorsettings.png"
+import logout from "../../img/burger/Vectorlogout.png"
 
 function BurgerMenu() {
   const [show, setShow] = useState(false);
@@ -23,13 +30,37 @@ function BurgerMenu() {
   return (
     <>
       <img className='burger-icon' src={burger} onClick={handleShow}></img>
-      <Offcanvas show={show} onHide={handleClose}>
+      <Offcanvas className="burger" show={show} onHide={handleClose}>
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+          <Offcanvas.Title className='bur-head'>
+            <div>
+              <img className='bur-logo' src={shortlogo}></img>
+
+            </div>
+            <div className='bur-acc'>
+              <div className='bur-name'>
+                Diana Barabash
+              </div>
+              <div className='bur-email'>
+                dianabar@gmail.com
+              </div>
+            </div>
+          </Offcanvas.Title>
         </Offcanvas.Header>
-        <Offcanvas.Body>
-          Some text as placeholder. In real life you can have the elements you
-          have chosen. Like, text, images, lists, etc.
+        <Offcanvas.Body className='bur-da'>
+          <div className='bur-menu'>
+            <Link to={"/homepage"} className='bur-itm home-link'><img className='bur-icons' src={home} /><div className="itm-text">Home</div></Link>
+            <Link to={"/account"} className='bur-itm home-link'><img className='bur-icons' src={acc} /><div className="itm-text">Account</div></Link>
+            <div className='bur-itm home-link'><img className='bur-icons' src={calend} /><div className="itm-text">Calendar</div></div>
+            <Link to={"/diary"} className='bur-itm home-link'><img className='bur-icons' src={diary} /><div className="itm-text">Diary</div></Link>
+            <Link to={"/proposals"} className='bur-itm home-link'><img className='bur-icons' src={proposals} /><div className="itm-text">Proposals</div></Link>
+            <div className='bur-itm home-link'><img className='bur-icons' src={subject} /><div className="itm-text">Your subjects</div></div>
+          </div>
+          <div className='bur-foot'>
+            <div className='bur-itm home-link'><img className='bur-icons' src={settings} /><div className="itm-text">Settings</div></div>
+            <div className='bur-itm home-link'><img className='bur-icons' src={logout} /><div className="itm-text">Logout</div></div>
+
+          </div>
         </Offcanvas.Body>
       </Offcanvas>
     </>
@@ -40,7 +71,7 @@ function BurgerMenu() {
 
 class Header extends Component {
 
-  
+
 
 
 
@@ -48,31 +79,36 @@ class Header extends Component {
     return (
       <div>
         <div className='container header-bg text-center'>
-          <nav className="navbar">
-            <BurgerMenu/>
+          <div className="bar">
+            <div className='homenavbar'>
 
-              <div><Link to={"/homepage"} className="navbar-brand">
+            <BurgerMenu />
+            <div>
+              <Link to={"/homepage"} className="navbar-brand">
                 <img className='header-logo' src={shortlogo}></img>
               </Link>
 
-                <Link to={"/homepage"} className="navbar-brand home-link" >Home</Link></div>
-                    <Link to={"/diary"} className="nav-link active home-link" aria-current="page" >Diary</Link>
-                    <Link to={"/proposals"} className="nav-link home-link">
-                      Proposals
-                    </Link>
-              <div>
-                <select
-                  type='text'
-                  name='language'
-                  className='col-md-1 col-2 offset-6 offset-md-8 language-selector right'
-                >
-                  <option>En</option>
-                  <option>Ua</option>
-                </select>
-                <Link to={"/account"} className = "profileLink"><img src={defaultavatar}></img></Link>
+              <Link to={"/homepage"} className="navbar-brand home-link hide" >Home</Link>
+            </div>
+            <Link to={"/diary"} className="nav-link active home-link hide" aria-current="page" >Diary</Link>
+            <Link to={"/proposals"} className="nav-link home-link hide">
+              Proposals
+            </Link>
+            </div>
 
-              </div>
-          </nav>
+            <div className='lang-acc hide'>
+              <select
+                type='text'
+                name='language'
+                className='col-md-1 col-2 offset-6 offset-md-8 language-selector right'
+              >
+                <option>En</option>
+                <option>Ua</option>
+              </select>
+              <Link to={"/account"} className="profileLink"><img src={defaultavatar}></img></Link>
+
+            </div>
+          </div>
         </div>
         <div>
           <Routes>

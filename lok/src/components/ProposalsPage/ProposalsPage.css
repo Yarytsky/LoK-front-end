@@ -4,12 +4,12 @@
     color: #000000;    
     margin-bottom: 30px;
     margin-top: 30px;
-    min-width: 400px;
     font-family: 'Sniglet', sans-serif;
 }
 
 .underline-proposals{
     background-color: #A5A6F3;
+    width: 50%;
 }
 
 
@@ -18,6 +18,8 @@
     border-radius: 10px;
     margin-left: 5px;
     margin-right: 5px;
+    width: 20%;
+    min-width: 300px;
 
 }
 
@@ -31,4 +33,24 @@
 
 .p-logo{
     margin-bottom:  20px; ;
+}
+
+.prop-title{
+    display: flex;
+    justify-content: center;
+}
+
+.prop-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 575px) {
+    .prop-containe{
+       flex-direction: column;
+    }
 }
