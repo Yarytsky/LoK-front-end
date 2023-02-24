@@ -66,11 +66,7 @@ class App extends Component {
             <Route path='/admin/termmenu' element={<Termspage />} />
             <Route path='/admin/groups' element={<Groups />} />
             <Route path='/admin/teachers' element={<Teachers />} />
-
-            <Route path='/admin/students' element={<Students />} />
-
             <Route path='/admin/groups/editgroup' element={<EditGroup />} />
-
           </Routes>
         </div>
       </div>

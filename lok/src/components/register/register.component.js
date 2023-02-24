@@ -222,12 +222,12 @@ export default class Register extends Component {
             >
               {!this.state.successful && (
                 <div id="formBlock">
-                  <div className="row  justify-content-center ">
-                    <div className="col-12 col-md-6 ">
-                      <div className=" regLeft justify-content-center">
+                  <div className="reg-form">
+                    <div className="reg-1 col-12 col-md-6 col-sm-6">
+                      <div className=" regLeft">
                         <div className="input-group col-8" >
                           <img className="icons" src={avatar} />
-                          <div id="FirstnameValidator col-12" onBlur={this.invalidCheckName}>
+                          <div id="FirstnameValidator" onBlur={this.invalidCheckName}>
                             <Input
                               type="text"
                               className="form-control"
@@ -296,8 +296,8 @@ export default class Register extends Component {
                         </div>
                       </div>
                     </div>
-                    <div className="col-md-6">
-                      <div className="regRight justify-content-center">
+                    <div className="reg-1 col-12 col-md-6 col-sm-6">
+                      <div className="regRight">
                         <div className="input-group  col-8">
                           <img className="icons" src={avatar} />
 
@@ -318,7 +318,6 @@ export default class Register extends Component {
                         <div className="input-group  col-8">
                           <img className="icons" src={gender} />
 
-                          <div >
                             <Select
                               type="text"
                               className="form-control dropdown-reg"
@@ -331,7 +330,6 @@ export default class Register extends Component {
                               <option value="Female">Female</option>
                               <option value="Other">Other</option>
                             </Select>
-                          </div>
                         </div>
                         <div className="input-group  col-8">
                           <img className="icons" src={password} />
@@ -368,7 +366,7 @@ export default class Register extends Component {
                     </div>
                   </div>
                   <div className="row justify-content-center">
-                    <div className="form-group col-3 ">
+                    <div className="signup-btn">
                       <button className="btn-reg btn-primary btn-block">Sign Up</button>
                     </div>
                   </div>

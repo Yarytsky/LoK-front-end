@@ -23,6 +23,12 @@
 
 }
 
+.login-btn{
+    margin-top: 20px;
+    width: 80%;
+    max-width: 300px;
+}
+
 .formLogin {
     border-top: 0ch;
     border-left: 0ch;
@@ -64,7 +70,8 @@
 
 .facebookButton {
     height: 5vh;
-    width: 12vw;
+    max-width: 230px;
+    width: 70%;
     margin-top: 2vh;
     margin-bottom: 2vh;
     display: flex;
