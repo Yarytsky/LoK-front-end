@@ -185,7 +185,7 @@ class Students extends React.Component {
                 <div className='titleterms'>Students</div>
               </div>
               <hr className='admin-underline'></hr>
-              <div className='studentbox' onClick={this.showDetailsVerified}><img src={profilePic} className="picAdmin"></img>Meshkova Inna</div>
+              <div className='studentbox' onClick={this.showDetailsVerified} ><img src={profilePic} className="picAdmin"></img>Meshkova Inna</div>
 
             </div>
             <div className='verticalLineAdmin'></div>

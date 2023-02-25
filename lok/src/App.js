@@ -16,6 +16,7 @@ import Groups from "./adminboard/groups/groups";
 import Teachers from "./adminboard/teachers/teachers";
 import Students from "./adminboard/students/students";
 import EditGroup from "./adminboard/EditGroup/EditGroup";
+import Subjects from "./adminboard/subjects/subjects"
 
 const API_URL = "https://lokserver.azurewebsites.net/";
 
@@ -66,6 +67,8 @@ class App extends Component {
             <Route path='/admin/termmenu' element={<Termspage />} />
             <Route path='/admin/groups' element={<Groups />} />
             <Route path='/admin/teachers' element={<Teachers />} />
+            <Route path='/admin/students' element={<Students />} />
+            <Route path='/admin/subjects' element={<Subjects />} />
             <Route path='/admin/groups/editgroup' element={<EditGroup />} />
           </Routes>
         </div>

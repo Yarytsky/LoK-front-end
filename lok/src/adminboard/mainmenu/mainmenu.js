@@ -21,7 +21,7 @@ class Mainmenu extends Component {
             <div className='menu'>
               <Link className='menu-item center admin-link' to={"/admin/termmenu"}>Terms</Link>
               <Link className='menu-item center admin-link' to={"/admin/groups"}>Groups</Link>
-              <div className='menu-item center'>Subjects</div>
+              <Link className='menu-item center admin-link' to={'/admin/subjects'}>Subjects</Link>
               <Link className='menu-item center admin-link' to={'/admin/teachers'}>Teachers</Link>
               <Link className='menu-item center admin-link' to={'/admin/students'}>Students</Link>
             </div>

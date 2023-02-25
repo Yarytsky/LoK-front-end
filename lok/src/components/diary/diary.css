@@ -173,6 +173,7 @@
   font-weight: 800;
   display: flex;
   margin: 0px;
+  align-items: baseline;
 }
 .modalBlock .modalPart .modalTitle .modalGrade {
   font-size: 0.75em;
