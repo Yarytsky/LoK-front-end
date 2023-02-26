@@ -12,6 +12,7 @@
     height: auto;
     margin-top: 13vh;
     background-color: #A5A6F3;
+    min-height: 400px;
 }
 
 .adminContainer {

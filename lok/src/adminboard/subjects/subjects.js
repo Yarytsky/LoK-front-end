@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React from 'react';
+import React, { useState } from "react";
+
 import PropTypes from 'prop-types';
 import './subjects.css';
 import { Route, Link, Routes, useNavigate } from 'react-router-dom';
@@ -12,6 +13,74 @@ import checkmark from "../../img/checkmark.png"
 import backArrow from "../../img/backArrow.png"
 import cross from "../../img/cross.png"
 import Footer from "../../components/footer/footer";
+import CustomSelectSubject from './CustomSelectSubject';
+
+
+
+
+function Search() {
+    
+    const itemList = [
+      "Data storage",
+      "Orange",
+      "Banana",
+      "Cherry",
+      "Milk",
+      "Peanuts",
+      "Butter",
+      "Tomato"
+    ];
+  
+    const [filteredList, setFilteredList] = new useState(itemList);
+  
+    const filterBySearch = (event) => {
+      // Access input value
+      const query = event.target.value;
+      // Create copy of item list
+      var updatedList = [...itemList];
+      // Include all elements which includes the search query
+      updatedList = updatedList.filter((item) => {
+        return item.toLowerCase().indexOf(query.toLowerCase()) !== -1;
+      });
+      // Trigger render with updated values
+      setFilteredList(updatedList);
+    };
+    const showDetailsVerified = (e) => {
+        x += 1;
+        let verifiedTeachers = document.getElementsByClassName("verified-teachers")[0];
+        let unverifiedTeachers = document.getElementsByClassName("unverified-teachers")[0];
+        let userDetailsAdmin = document.getElementsByClassName("subjectDetailsAdmin")[0];
+        let editStudentMenuAdmin = document.getElementsByClassName("editStudentMenuAdmin")[0];
+        target = e.target;
+        if (x % 2 === 1) {
+            verifiedTeachers.style = "flex-grow: 0; width: 35vw";
+            unverifiedTeachers.style.display = "none";
+            userDetailsAdmin.style.display = "flex";
+            target.style = "background-color: #A5A6F3; border: 3px solid #A5A6F3";
+        }
+        else {
+            verifiedTeachers.style = "flex-grow: 1;";
+            unverifiedTeachers.style.display = "flex";
+            userDetailsAdmin.style.display = "none";
+            target.style = "background-color: #D2D3F9; border: none";
+            editStudentMenuAdmin.style.display = "none";
+        }
+    }
+    return (
+      <div className="searchSubject">
+        <div className="search-header">
+          <input id="search-box" onChange={filterBySearch} placeholder = "Search"/>
+        </div>
+        <div id="item-list">
+          <ol>
+            {filteredList.map((item, index) => (
+              <div className='studentbox subjectNameAdmin' key={index} onClick={showDetailsVerified}>{item}</div>
+            ))}
+          </ol>
+        </div>
+      </div>
+    );
+  }
 
 let courseSelect = [
     { id: 1, name: "1" },
@@ -31,28 +100,7 @@ let y = 0;
 let target;
 class Subjects extends React.Component {
 
-    showDetailsVerified = (e) => {
-        x += 1;
-        let verifiedTeachers = document.getElementsByClassName("verified-teachers")[0];
-        let unverifiedTeachers = document.getElementsByClassName("unverified-teachers")[0];
-        let userDetailsAdmin = document.getElementsByClassName("subjectDetailsAdmin")[0];
-        let editStudentMenuAdmin = document.getElementsByClassName("editStudentMenuAdmin")[0];
-        target = e.target;
-        if (x % 2 === 1) {
-            verifiedTeachers.style = "flex-grow: 0; width: 35vw";
-            unverifiedTeachers.style.display = "none";
-            userDetailsAdmin.style.display = "flex";
-            target.style = "background-color: white; border: 3px solid #A5A6F3";
-        }
-        else {
-            verifiedTeachers.style = "flex-grow: 1;";
-            unverifiedTeachers.style.display = "flex";
-            userDetailsAdmin.style.display = "none";
-            target.style = "background-color: #D2D3F9; border: none";
-            editStudentMenuAdmin.style.display = "none";
-        }
-    }
-
+    
     showDetailsUnverified = (e) => {
         y += 1;
         let verifiedTeachers = document.getElementsByClassName("verified-teachers")[0];
@@ -164,6 +212,8 @@ class Subjects extends React.Component {
         editStudentMenuAdmin.style.display = "none";
     }
 
+    
+
 
     render() {
         return (
@@ -176,55 +226,28 @@ class Subjects extends React.Component {
                     <hr className='admin-underline'></hr>
                     <div className='teacher-container'>
                         <div className='backButtonAdmin' onClick={this.back}><img src={backArrow}></img>Back</div>
-                        <div className='verified-teachers'>
+                        <div className='verified-teachers subjectsListAdmin'>
                             <div className='center'>
 
                                 <div className='titleterms'>Subjects</div>
                             </div>
                             <hr className='admin-underline'></hr>
-                            <div className='studentbox subjectNameAdmin' onClick={this.showDetailsVerified}>Data storage</div>
+                            <Search/>
 
                         </div>
                         <div className='verticalLineAdmin'></div>
-                        <div className='subjectDetailsAdmin'>
-                            <div className='subjectInfoAdmin'>
-                                <div className='subjectTitleAdmin'>Data storage</div>
-                                <div className='studentDetailsTitleAdmin'>Details</div>
-                                <div>
-                                    <div className="subjectDetailAdmin">Teacher: <div><img src={profilePic}></img>Anna Soloviy</div></div>
-                                    <div className="subjectDetailAdmin groupNameSubjectAdmin">Group name: <div>DS</div></div>
-                                    <div className="subjectDetailAdmin groupsSubjectAdmin">Groups: <div>4CS-31</div><div>4CS-32</div></div></div>
-                                <div className="addButtonDivAdmin editSubjectAdmin">
-                                    <div className='editGroupAdmin'>Edit</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='unverified-teachers'>
-                            <div className='titleterms'>Teachers</div>
-                            <div className='unverified-box' onClick={this.showDetailsUnverified}><img src={profilePic} className="picAdmin"></img>Meshkova Inna</div>
-                            <div className='unverified-box' onClick={this.showDetailsUnverified}><img src={profilePic} className="picAdmin"></img>Meshkova Inna</div>
-
-                        </div>
                         <div>
-                            <div className='studentUserDetailsAdmin'>
-                                <div className='profileInfoAdmin'>
-                                    <img src={profilePic} className="profileInfoPicAdmin"></img>
-                                    <div className='profileDetailsAdmin'>
-                                        <div className='profileInfoNameAdmin'><b>Meshkova Inna</b><div className="verificationCheckmarkAdmin"><img src={checkmark}></img>(verified)</div></div>
-                                        <div className='birthdayInfoAdmin infoAdmin'><img src={calendar} className="infoIconAdmin"></img>24 July 1989<div className='ageInfoAdmin'>(36 years)</div></div>
-                                        <div className='phoneInfoAdmin infoAdmin'><img src={phone} className="infoIconAdmin"></img>+380 (97) 234 78 56</div>
-                                        <div className='emailInfoAdmin infoAdmin'><img src={envelope} className="infoIconAdmin"></img>anna.soloviy@itstep.org</div>
-                                    </div>
-                                </div>
-                                <div className="studentGroupInfoAdmin">
+                            <div className='subjectDetailsAdmin'>
+                                <div className='subjectInfoAdmin'>
+                                    <div className='subjectTitleAdmin'>Data storage</div>
+                                    <div className='studentDetailsTitleAdmin'>Details</div>
                                     <div>
-                                        <div className='studentDetailsTitleAdmin'>Details</div>
-                                        <div className='studentDetailsGroupsAdmin'>
-                                            <div className="studentDetailAdmin">Course: <div>2</div></div>
-                                            <div className="studentDetailAdmin">Main group: <div>3CS-21</div></div>
-                                            <div className="studentDetailAdmin">Subgroups: <div>3DD-21</div><div className='lastStudentDetailSub'>AT</div></div>
+                                        <div className='contSubAdmin'>
+                                            <div className="subjectDetailAdmin">Teacher: <div><img src={profilePic}></img>Anna Soloviy</div></div>
                                         </div>
-                                    </div>
+                                        <div className='contSubAdmin'>
+                                            <div className="subjectDetailAdmin groupNameSubjectAdmin">Group name: <div>DS</div></div></div>
+                                        <div className="subjectDetailAdmin groupsSubjectAdmin">Groups: <div>4CS-31</div><div>4CS-32</div></div></div>
                                     <div className="addButtonDivAdmin editSubjectAdmin">
                                         <div className='editGroupAdmin' onClick={this.showEditMenu}>Edit</div>
                                     </div>
@@ -233,14 +256,11 @@ class Subjects extends React.Component {
                             <div className='editStudentMenuAdmin'>
                                 <div className='editMenuTitle'>Edit details</div>
                                 <div className='editMenuChoicesAdmin'>
+                                    <div className='editMenuChoiceAdmin'>Course: <div className='editStudentDropdown courseDropdown'><CustomSelectSubject defaultText="1" optionsList={courseSelect}></CustomSelectSubject></div></div>
+                                    <div className='editMenuChoiceAdmin'>Main group: <div className='editStudentDropdown groupDropdown'><CustomSelectSubject defaultText="3CS-21" optionsList={mainGroup}></CustomSelectSubject></div></div>
+
                                     <div className='editMenuChoiceAdmin subgroupsMenu'>Subgroups: <div className='subgroupTypeChoice'><div className='subgroupType' onClick={this.changeSubgroupType}>Design</div><div className='subgroupType' onClick={this.changeSubgroupType}>Management</div><div className='subgroupType' onClick={this.changeSubgroupType}>Programming</div><div className='subgroupType' onClick={this.changeSubgroupType}>Other</div></div>
                                         <div className='subgroupChoiceTable subChoiceDesign'>
-                                            <div className='tableRowAdmin'><div className="tableOptionAdmin" onClick={this.tableOptionChange}>3DD-11</div>
-                                                <div className="tableOptionAdmin" onClick={this.tableOptionChange}>3DD-11</div>
-                                                <div className="tableOptionAdmin" onClick={this.tableOptionChange}>3DD-11</div></div>
-                                            <div className='tableRowAdmin'><div className="tableOptionAdmin" onClick={this.tableOptionChange}>3DD-11</div>
-                                                <div className="tableOptionAdmin" onClick={this.tableOptionChange}>3DD-11</div>
-                                                <div className="tableOptionAdmin" onClick={this.tableOptionChange}>3DD-11</div></div>
                                             <div className='tableRowAdmin'><div className="tableOptionAdmin" onClick={this.tableOptionChange}>3DD-11</div>
                                                 <div className="tableOptionAdmin" onClick={this.tableOptionChange}>3DD-11</div>
                                                 <div className="tableOptionAdmin" onClick={this.tableOptionChange}>3DD-11</div></div>
@@ -249,32 +269,14 @@ class Subjects extends React.Component {
                                             <div className='tableRowAdmin'><div className="tableOptionAdmin" onClick={this.tableOptionChange}>3M-11</div>
                                                 <div className="tableOptionAdmin" onClick={this.tableOptionChange}>3M-11</div>
                                                 <div className="tableOptionAdmin" onClick={this.tableOptionChange}>3DD-11</div></div>
-                                            <div className='tableRowAdmin'><div className="tableOptionAdmin" onClick={this.tableOptionChange}>3DD-11</div>
-                                                <div className="tableOptionAdmin" onClick={this.tableOptionChange}>3DD-11</div>
-                                                <div className="tableOptionAdmin" onClick={this.tableOptionChange}>3DD-11</div></div>
-                                            <div className='tableRowAdmin'><div className="tableOptionAdmin" onClick={this.tableOptionChange}>3DD-11</div>
-                                                <div className="tableOptionAdmin" onClick={this.tableOptionChange}>3DD-11</div>
-                                                <div className="tableOptionAdmin" onClick={this.tableOptionChange}>3DD-11</div></div>
                                         </div>
                                         <div className='subgroupChoiceTable subChoiceProgramming'>
                                             <div className='tableRowAdmin'><div className="tableOptionAdmin" onClick={this.tableOptionChange}>AT</div>
                                                 <div className="tableOptionAdmin" onClick={this.tableOptionChange}>3DD-11</div>
                                                 <div className="tableOptionAdmin" onClick={this.tableOptionChange}>3DD-11</div></div>
-                                            <div className='tableRowAdmin'><div className="tableOptionAdmin" onClick={this.tableOptionChange}>3DD-11</div>
-                                                <div className="tableOptionAdmin" onClick={this.tableOptionChange}>3DD-11</div>
-                                                <div className="tableOptionAdmin" onClick={this.tableOptionChange}>3DD-11</div></div>
-                                            <div className='tableRowAdmin'><div className="tableOptionAdmin" onClick={this.tableOptionChange}>3DD-11</div>
-                                                <div className="tableOptionAdmin" onClick={this.tableOptionChange}>3DD-11</div>
-                                                <div className="tableOptionAdmin" onClick={this.tableOptionChange}>3DD-11</div></div>
                                         </div>
                                         <div className='subgroupChoiceTable subChoiceOther'>
                                             <div className='tableRowAdmin'><div className="tableOptionAdmin" onClick={this.tableOptionChange}>HZ</div>
-                                                <div className="tableOptionAdmin" onClick={this.tableOptionChange}>3DD-11</div>
-                                                <div className="tableOptionAdmin" onClick={this.tableOptionChange}>3DD-11</div></div>
-                                            <div className='tableRowAdmin'><div className="tableOptionAdmin" onClick={this.tableOptionChange}>3DD-11</div>
-                                                <div className="tableOptionAdmin" onClick={this.tableOptionChange}>3DD-11</div>
-                                                <div className="tableOptionAdmin" onClick={this.tableOptionChange}>3DD-11</div></div>
-                                            <div className='tableRowAdmin'><div className="tableOptionAdmin" onClick={this.tableOptionChange}>3DD-11</div>
                                                 <div className="tableOptionAdmin" onClick={this.tableOptionChange}>3DD-11</div>
                                                 <div className="tableOptionAdmin" onClick={this.tableOptionChange}>3DD-11</div></div>
                                         </div>
@@ -285,6 +287,12 @@ class Subjects extends React.Component {
                                     <div className='editMenuButton' onClick={this.cancelEditing}>Cancel</div>
                                 </div>
                             </div>
+                        </div>
+                        <div className='unverified-teachers'>
+                            <div className='titleterms'>Teachers</div>
+                            <div className='unverified-box' ><img src={profilePic} className="picAdmin"></img>Meshkova Inna</div>
+                            <div className='unverified-box'><img src={profilePic} className="picAdmin"></img>Meshkova Inna</div>
+
                         </div>
                     </div>
                 </div>
