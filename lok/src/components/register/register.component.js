@@ -279,8 +279,8 @@ export default class Register extends Component {
                           >
                             <option value="Student">Student</option>
                             <option value="Teacher">Teacher</option>
-                            <option value="Teacher">Hr</option>
-                            <option value="Teacher">Admin</option>
+                            <option value="Hr">Hr</option>
+                            <option value="Admin">Admin</option>
                           </Select>
                         </div>
 
