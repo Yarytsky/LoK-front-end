@@ -112,3 +112,41 @@ ul li:hover>ul {
   font-family: 'Source Sans Pro';
   font-size: 30px;
 }
+
+
+.course-choose{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 4;
+}
+
+.cont-cours{
+  display: flex;
+  flex-direction: row;
+}
+
+.cor{
+  flex-grow: 8;
+}
+
+
+@media screen and (max-width: 575px) {
+ .cor{
+  flex-grow: 0;
+ }
+}
+
+.proposals-container{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+
+@media screen and (max-width: 575px) {
+  .proposals-container{
+    flex-direction: column;
+  }
+ }

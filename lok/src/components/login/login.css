@@ -29,6 +29,11 @@
     max-width: 300px;
 }
 
+.end{
+    display: flex;
+    justify-content: end;
+    margin-right: 80px;
+}
 .formLogin {
     border-top: 0ch;
     border-left: 0ch;

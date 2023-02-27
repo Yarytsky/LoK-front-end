@@ -17,8 +17,9 @@ import Teachers from "./adminboard/teachers/teachers";
 import Students from "./adminboard/students/students";
 import EditGroup from "./adminboard/EditGroup/EditGroup";
 import Subjects from "./adminboard/subjects/subjects"
+import Header from "./components/header/header";
 
-const API_URL = "https://lokserver.azurewebsites.net/";
+const API_URL = "https://localhost:7203/";
 
 class App extends Component {
   constructor(props) {
@@ -36,10 +37,14 @@ class App extends Component {
     const user = AuthService.getCurrentUser();
     const response = await axios.get(API_URL + "user/getuser/" + user.id);
     if (response) {
+      console.log(response);
       this.setState({
-        currentUser: response.data,
+        currentUser: response.data
+        
       });
+
     }
+    
   }
 
   logOut() {

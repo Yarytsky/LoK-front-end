@@ -40,7 +40,11 @@ class Diary extends Component {
                 <div className="container-fluid background diaryContainer">
                     <div>
                         <div className='text-center diaryTitle'>Diary</div>
-                        <hr className='col-4 diaryLine'></hr></div>
+                        <div className="center">
+                            <hr className='diaryLine'></hr>
+
+                        </div>
+                    </div>
 
                     <div className='subjectBlock'>
                         <div className='subjectBlockTitle'>
@@ -118,7 +122,7 @@ class Diary extends Component {
                     </div>
                     <div className='subjectBlock'>
                         <div className='subjectBlockTitle'>
-                            Semester subject
+                            Selected proposals from partners
                         </div>
                         <div className='subjectList'>
                             <div className="subjectItem">

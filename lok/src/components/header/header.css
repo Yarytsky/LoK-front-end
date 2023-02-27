@@ -8,7 +8,7 @@
 .header-logo{
     max-height: 40px;
     max-width: 40px;
-    margin-left: 30px;
+    
 }
 
 .language-selector{
@@ -27,6 +27,7 @@
 
 .home-link{
     color: black;
+    text-decoration: none;
 }
 
 .home-link:hover{
@@ -37,4 +38,117 @@
 
 .profilelink{
     margin-left: 10px;
+}
+
+.bar{
+    display: flex;
+    align-items: center;
+}
+
+.homenavbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+    flex-grow: 8;
+}
+
+.lang-acc{
+    flex-grow: 1;
+}
+
+.burger-icon{
+    margin-left: 10px;
+}
+
+.burger{
+    background: #D2D3F9;
+    width: 291px !important;
+}
+
+.bur-head{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bur-acc{
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.bur-email{
+    font-family: 'Open Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 19px;
+}
+
+
+.bur-name{
+    font-family: 'Open Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 22px;
+color: #09090A;
+}
+
+.bur-logo{
+    width: 70%;
+}
+
+
+.bur-menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.bur-itm{
+    width: 248px;
+    height: 45px;
+    display: flex;
+    background: #FBFBFB;
+    border-radius: 5px;
+    align-items: center;
+}
+
+.itm-text{
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.bur-icons{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+.bur-foot{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.bur-da{
+    display: flex;
+    flex-direction: column;
+    row-gap:  100px;
+}
+
+@media screen and (max-width: 575px) {
+    .hide{
+        display:none;
+    }
 }
