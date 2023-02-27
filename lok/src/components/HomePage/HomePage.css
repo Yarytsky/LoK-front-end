@@ -26,8 +26,14 @@
   position: relative;
 }
 
+
+@media screen and (max-width: 575px) {
+  .sub-drop{
+      width: 80px !important;
+  }
+}
 .z{
-  z-index: 99;
+  z-index: 99 !important;
 }
 
 .dropdown li a {

@@ -14,7 +14,7 @@
 .language-selector{
     background-color: #A5A6F3;
     color: none;
-    border: none;
+    border: 1px solid black;
     min-width: 70px;
     margin: 0px;
     margin-right: 25px;
@@ -144,7 +144,7 @@ color: #09090A;
 .bur-da{
     display: flex;
     flex-direction: column;
-    row-gap:  100px;
+    justify-content: space-between;
 }
 
 @media screen and (max-width: 575px) {

@@ -15,7 +15,9 @@ letter-spacing: 0em;
     margin-left: 5px;
     margin-right: 5px;
 }
-
+.z-1{
+    z-index: 0 !important;
+}
 .footer-font-color{
     color: #2C2564;
 }

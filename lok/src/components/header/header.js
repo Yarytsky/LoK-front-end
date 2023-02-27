@@ -20,6 +20,7 @@ import proposals from "../../img/burger/Vectorproposal.png"
 import subject from "../../img/burger/Vectorsubject.png"
 import settings from "../../img/burger/Vectorsettings.png"
 import logout from "../../img/burger/Vectorlogout.png"
+import profilePic from "../../img/profilePic.jpg";
 
 function BurgerMenu(props) {
   const [show, setShow] = useState(false);
@@ -85,19 +86,19 @@ class Header extends Component {
                 <img className='header-logo' src={shortlogo}></img>
               </Link>
 
-              <Link to={"/homepage"} className="navbar-brand home-link hide" >Home</Link>
             </div>
+            <Link to={"/homepage"} className="navbar-brand home-link hide" >Home</Link>
             <Link to={"/diary"} className="nav-link active home-link hide" aria-current="page" >Diary</Link>
             <Link to={"/proposals"} className="nav-link home-link hide">
               Proposals
             </Link>
             </div>
 
-            <div className='lang-acc hide'>
+            <div className='lang-acc'>
               <select
                 type='text'
                 name='language'
-                className='col-md-1 col-2 offset-6 offset-md-8 language-selector right'
+                className='col-md-1 col-2 offset-6 offset-md-8 language-selector right hide'
               >
                 <option>En</option>
                 <option>Ua</option>

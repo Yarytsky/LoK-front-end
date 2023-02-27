@@ -45,15 +45,15 @@ class HomePage extends Component {
                   <ul className='z'>
                     <li className='z'><a href="#">Term 1</a>
                       <ul>
-                        <li><a href="">Subject 1</a></li>
-                        <li><a href="">Subject 2</a></li>
+                        <li ><a className='sub-drop' href="">Subject 1</a></li>
+                        <li><a className='sub-drop' href="">Subject 2</a></li>
 
                       </ul>
                     </li>
                     <li><a href="#">Term 2</a>
                       <ul>
-                        <li><a href="">Subject 1</a></li>
-                        <li><a href="">Subject 2</a></li>
+                        <li><a className='sub-drop' href="">Subject 1</a></li>
+                        <li><a className='sub-drop' href="">Subject 2</a></li>
 
                       </ul>
                     </li>
@@ -65,15 +65,15 @@ class HomePage extends Component {
                   <ul className='z'>
                     <li><a href="#">Term 1</a>
                       <ul className='z'>
-                        <li><a href="">Subject 1</a></li>
-                        <li><a href="">Subject 2</a></li>
+                        <li><a className='sub-drop' href="">Subject 1</a></li>
+                        <li><a className='sub-drop' href="">Subject 2</a></li>
 
                       </ul>
                     </li>
                     <li><a href="#">Term 2</a>
                       <ul className='z'>
-                        <li><a href="">Subject 1</a></li>
-                        <li><a href="">Subject 2</a></li>
+                        <li><a className='sub-drop' href="">Subject 1</a></li>
+                        <li><a className='sub-drop' href="">Subject 2</a></li>
 
                       </ul>
                     </li>
@@ -85,15 +85,15 @@ class HomePage extends Component {
                   <ul className='z'>
                     <li><a href="#">Term 1</a>
                       <ul className='z'>
-                        <li><a href="">Subject 1</a></li>
-                        <li><a href="">Subject 2</a></li>
+                        <li><a className='sub-drop' href="">Subject 1</a></li>
+                        <li><a className='sub-drop' href="">Subject 2</a></li>
 
                       </ul>
                     </li>
                     <li><a href="#">Term 2</a>
                       <ul className='z'>
-                        <li><a href="">Subject 1</a></li>
-                        <li><a href="">Subject 2</a></li>
+                        <li><a className='sub-drop' href="">Subject 1</a></li>
+                        <li><a className='sub-drop' href="">Subject 2</a></li>
 
                       </ul>
                     </li>
@@ -105,15 +105,15 @@ class HomePage extends Component {
                   <ul className='z'>
                     <li><a href="#">Term 1</a>
                       <ul className='z'>
-                        <li><a href="">Subject 1</a></li>
-                        <li><a href="">Subject 2</a></li>
+                        <li><a className='sub-drop' href="">Subject 1</a></li>
+                        <li><a className='sub-drop' href="">Subject 2</a></li>
 
                       </ul>
                     </li>
                     <li><a href="#">Term 2</a>
                       <ul className='z'>
-                        <li><a href="">Subject 1</a></li>
-                        <li><a href="">Subject 2</a></li>
+                        <li><a className='sub-drop' href="">Subject 1</a></li>
+                        <li><a className='sub-drop' href="">Subject 2</a></li>
 
                       </ul>
                     </li>

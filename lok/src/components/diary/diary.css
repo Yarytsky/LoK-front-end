@@ -67,6 +67,11 @@
   display: flex;
   margin: 1vh;
 }
+
+.bot{
+  margin-bottom: 200px;
+}
+
 .subjectTitle {
   margin-right: 0.5vw;
   padding-top: 1vh;

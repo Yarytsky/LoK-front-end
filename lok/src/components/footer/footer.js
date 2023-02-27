@@ -12,7 +12,7 @@ class Footer extends Component {
 
   render() {
     return (
-      <div className="footer-bg text-center foote11">
+      <div className="footer-bg text-center foote11 z-1">
         <div className="foote11">
           <div className=" social  footer-font-color">We are on social networks:</div>
         </div>

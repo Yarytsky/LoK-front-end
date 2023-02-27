@@ -37,7 +37,7 @@ class Diary extends Component {
         return (
             <div>
                 <Header></Header>
-                <div className="container-fluid background diaryContainer">
+                <div className="z container-fluid background diaryContainer">
                     <div>
                         <div className='text-center diaryTitle'>Diary</div>
                         <div className="center">
@@ -120,7 +120,7 @@ class Diary extends Component {
                             </div>
                         </div>
                     </div>
-                    <div className='subjectBlock'>
+                    <div className='subjectBlock bot'>
                         <div className='subjectBlockTitle'>
                             Selected proposals from partners
                         </div>
