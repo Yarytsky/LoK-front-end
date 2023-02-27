@@ -38,6 +38,7 @@ class HomePage extends Component {
         <Header></Header>
         <div className='container homeContainer'>
           <div className='cont-cours pad main-bg'>
+            
             <div className='course-size course-choose'>
               <ul className="dropdown " id='course1' >
                 <li><a href="#">Course 1</a>

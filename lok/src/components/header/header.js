@@ -21,7 +21,7 @@ import subject from "../../img/burger/Vectorsubject.png"
 import settings from "../../img/burger/Vectorsettings.png"
 import logout from "../../img/burger/Vectorlogout.png"
 
-function BurgerMenu() {
+function BurgerMenu(props) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -42,7 +42,6 @@ function BurgerMenu() {
                 Diana Barabash
               </div>
               <div className='bur-email'>
-                dianabar@gmail.com
               </div>
             </div>
           </Offcanvas.Title>
@@ -67,12 +66,10 @@ function BurgerMenu() {
   );
 }
 
-
-
 class Header extends Component {
-
-
-
+// s(){
+//   console.log(this.props.userdata)
+// }
 
 
   render() {
@@ -82,7 +79,7 @@ class Header extends Component {
           <div className="bar">
             <div className='homenavbar'>
 
-            <BurgerMenu />
+            <BurgerMenu/>
             <div>
               <Link to={"/homepage"} className="navbar-brand">
                 <img className='header-logo' src={shortlogo}></img>
