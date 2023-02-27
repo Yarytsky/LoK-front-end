@@ -39,7 +39,7 @@ function BurgerMenu(props) {
             </div>
             <div className='bur-acc'>
               <div className='bur-name'>
-                Diana Barabash
+                Lake of Knowledge 
               </div>
               <div className='bur-email'>
               </div>
