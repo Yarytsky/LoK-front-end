@@ -19,7 +19,7 @@ import EditGroup from "./adminboard/EditGroup/EditGroup";
 import Subjects from "./adminboard/subjects/subjects"
 import Header from "./components/header/header";
 
-const API_URL = "https://localhost:7203/";
+const API_URL = "https://lokserver.azurewebsites.net/";
 
 class App extends Component {
   constructor(props) {
