@@ -22,13 +22,13 @@ function Search() {
     
     const itemList = [
       "Data storage",
-      "Orange",
-      "Banana",
-      "Cherry",
-      "Milk",
-      "Peanuts",
-      "Butter",
-      "Tomato"
+      "English",
+      "Business English",
+      "Mathematical analysis",
+      "Mobile Design",
+      "Java",
+      "Python",
+      "Critical thinking"
     ];
   
     const [filteredList, setFilteredList] = new useState(itemList);
@@ -51,14 +51,25 @@ function Search() {
         let unverifiedTeachers = document.getElementsByClassName("unverified-teachers")[0];
         let userDetailsAdmin = document.getElementsByClassName("subjectDetailsAdmin")[0];
         let editStudentMenuAdmin = document.getElementsByClassName("editStudentMenuAdmin")[0];
+        let options = document.getElementsByClassName("studentbox");
+        let subjectTitleAdmin = document.getElementsByClassName("subjectTitleAdmin")[0];
         target = e.target;
         if (x % 2 === 1) {
+            for(let i = 0; i < options.length; i++){
+                if(target === options[i]){
+                    subjectTitleAdmin.innerHTML = target.innerHTML;
+                }
+                options[i].style  = "background-color: #D2D3F9; border: none";
+            }
             verifiedTeachers.style = "flex-grow: 0; width: 35vw";
             unverifiedTeachers.style.display = "none";
             userDetailsAdmin.style.display = "flex";
             target.style = "background-color: #A5A6F3; border: 3px solid #A5A6F3";
         }
         else {
+            for(let i = 0; i < options.length; i++){
+                options[i].style  = "background-color: #D2D3F9; border: none";
+            }
             verifiedTeachers.style = "flex-grow: 1;";
             unverifiedTeachers.style.display = "flex";
             userDetailsAdmin.style.display = "none";
@@ -83,16 +94,16 @@ function Search() {
   }
 
 let courseSelect = [
-    { id: 1, name: "1" },
-    { id: 2, name: "2" },
-    { id: 3, name: "3" },
-    { id: 4, name: "4" }
+    { id: 1, name: "Soloviy Anna" },
+    { id: 2, name: "Soloviy Anna" },
+    { id: 3, name: "Soloviy Anna" },
+    { id: 4, name: "Soloviy Anna" }
 ]
 
 let mainGroup = [
-    { id: 1, name: "3CS-21" },
-    { id: 2, name: "4CS-21" },
-    { id: 3, name: "4CS-22" }
+    { id: 1, name: "DS" },
+    { id: 2, name: "DS" },
+    { id: 3, name: "DS" }
 ]
 
 let x = 0;
@@ -189,8 +200,8 @@ class Subjects extends React.Component {
     }
 
     saveGroups = (e) => {
-        let course = document.getElementsByClassName("selected-textAdmin")[0].innerHTML;
-        let mainGroup = document.getElementsByClassName("selected-textAdmin")[1].innerHTML;
+        let course = document.getElementsByClassName("selected-textSubject")[0].innerHTML;
+        let mainGroup = document.getElementsByClassName("selected-textSubject")[1].innerHTML;
         let allOptionsSub = document.getElementsByClassName("tableOptionAdmin");
         let subgroup;
         for (var i = 0; i < allOptionsSub.length; i++) {
@@ -199,12 +210,11 @@ class Subjects extends React.Component {
             }
         }
 
-        let studentDetailAdmin = document.getElementsByClassName("subjectDetailsAdmin");
-        studentDetailAdmin[3].innerHTML = 'Course: <div>' + course + '</div>';
-        studentDetailAdmin[4].innerHTML = 'Main group: <div>' + mainGroup + '</div>';
-        studentDetailAdmin[5].innerHTML = 'Subgroup: <div>' + subgroup + '</div>';
-        let editStudentMenuAdmin = document.getElementsByClassName("editStudentMenuAdmin")[0];
-        editStudentMenuAdmin.style.display = "none";
+        let studentDetailAdmin = document.getElementsByClassName("subjectDetailAdmin");
+        studentDetailAdmin[0].innerHTML = 'Teacher: <div><img src= ' + profilePic + '></img>' + course + '</div>';
+        studentDetailAdmin[1].innerHTML = 'Group name: <div>' + mainGroup + '</div>';
+        studentDetailAdmin[2].innerHTML = 'Groups: <div>' + subgroup + '</div>';
+        document.getElementsByClassName("editStudentMenuAdmin")[0].style.display = "none"
     }
 
     cancelEditing = (e) => {
@@ -243,7 +253,7 @@ class Subjects extends React.Component {
                                     <div className='studentDetailsTitleAdmin'>Details</div>
                                     <div>
                                         <div className='contSubAdmin'>
-                                            <div className="subjectDetailAdmin">Teacher: <div><img src={profilePic}></img>Anna Soloviy</div></div>
+                                            <div className="subjectDetailAdmin">Teacher: <div><img src={profilePic}></img>Soloviy Anna</div></div>
                                         </div>
                                         <div className='contSubAdmin'>
                                             <div className="subjectDetailAdmin groupNameSubjectAdmin">Group name: <div>DS</div></div></div>
@@ -256,8 +266,8 @@ class Subjects extends React.Component {
                             <div className='editStudentMenuAdmin'>
                                 <div className='editMenuTitle'>Edit details</div>
                                 <div className='editMenuChoicesAdmin'>
-                                    <div className='editMenuChoiceAdmin'>Course: <div className='editStudentDropdown courseDropdown'><CustomSelectSubject defaultText="1" optionsList={courseSelect}></CustomSelectSubject></div></div>
-                                    <div className='editMenuChoiceAdmin'>Main group: <div className='editStudentDropdown groupDropdown'><CustomSelectSubject defaultText="3CS-21" optionsList={mainGroup}></CustomSelectSubject></div></div>
+                                    <div className='editMenuChoiceAdmin'>Course: <div className='editStudentDropdown courseDropdown'><CustomSelectSubject defaultText="Soloviy Anna" optionsList={courseSelect}></CustomSelectSubject></div></div>
+                                    <div className='editMenuChoiceAdmin'>Main group: <div className='editStudentDropdown groupDropdown'><CustomSelectSubject defaultText="DS" optionsList={mainGroup}></CustomSelectSubject></div></div>
 
                                     <div className='editMenuChoiceAdmin subgroupsMenu'>Subgroups: <div className='subgroupTypeChoice'><div className='subgroupType' onClick={this.changeSubgroupType}>Design</div><div className='subgroupType' onClick={this.changeSubgroupType}>Management</div><div className='subgroupType' onClick={this.changeSubgroupType}>Programming</div><div className='subgroupType' onClick={this.changeSubgroupType}>Other</div></div>
                                         <div className='subgroupChoiceTable subChoiceDesign'>

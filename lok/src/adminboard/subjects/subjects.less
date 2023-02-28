@@ -1,19 +1,19 @@
-.subjectInfoAdmin{
+.subjectInfoAdmin {
     display: flex;
     flex-direction: column;
 }
 
-.subjectsListAdmin{
+.subjectsListAdmin {
     height: fit-content;
 }
 
-.search-header{
+.search-header {
     width: 90%;
     margin-left: 40px;
     padding-right: 40px;
 }
 
-#search-box{
+#search-box {
     font-family: Source Sans Pro;
     font-size: 1.3em;
     font-weight: 600;
@@ -24,26 +24,27 @@
     height: 7vh;
     min-height: 63px;
     width: 100%;
-}
-
-#search-box::placeholder{
-    text-align: left;
-    font-size: 0.8em;
     padding-left: 1vw;
 }
 
-.searchSubject{
+#search-box::placeholder {
+    text-align: left;
+    font-size: 0.9em;
+
+}
+
+.searchSubject {
     width: 100%;
 }
 
-.editSubjectAdmin{
+.editSubjectAdmin {
     justify-content: end !important;
     position: relative;
     align-items: flex-end;
     bottom: 2vh;
 }
 
-.contSubAdmin{
+.contSubAdmin {
     border-bottom: 2px solid #A5A6F3;
     margin-left: 2.7vw;
     margin-right: 2.7vw;
@@ -96,6 +97,7 @@
         width: 16vw;
         padding-bottom: 1vh;
         padding-top: 1vh;
+
         img {
             width: 3vw;
             height: 3vw;
@@ -107,7 +109,7 @@
 
 .groupNameSubjectAdmin {
     width: 10vw !important;
-    
+
 }
 
 .groupsSubjectAdmin {
@@ -115,8 +117,82 @@
     flex-wrap: wrap;
     border: 0px !important;
     margin-left: 2.7vw;
-    div{
+
+    div {
         margin-right: 1vw;
         margin-left: auto;
     }
+}
+
+.selected-textSubject:hover {
+    cursor: pointer;
+}
+
+.selected-textSubject::after {
+    content: "";
+    position: absolute;
+    right: 0.4vw;
+    top: 1.5vh;
+    border: 7px solid transparent;
+    border-color: #2c2c2c transparent transparent transparent;
+}
+
+.selected-textSubject.active::after {
+    top: 0.5vh;
+    border-color: transparent transparent #2c2c2c transparent;
+}
+
+.select-optionsSubject {
+    position: absolute;
+    width: 100%;
+    border-collapse: separate;
+    top: 3.1vh;
+    z-index: 100;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    min-height: 185px;
+}
+
+.custom-select-optionSubject {
+    font-size: 1em;
+    list-style-type: none;
+    padding: 6px 20px;
+    min-height: 30px;
+    background-color: #E8E8E8;
+    cursor: pointer;
+    border: 1px solid #888888;
+    height: 1vh;
+    padding-top: 0vh;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.custom-select-containerSubject {
+    display: inline-block;
+    min-width: 70px;
+    text-align: center;
+    position: relative;
+}
+
+.selected-textSubject {
+    background-color: #E8E8E8;
+    padding: 6px 20px;
+    height: 1vh;
+    padding-top: 0.3vh;
+    padding-left: 20px;
+    font-family: Source Sans Pro;
+    font-size: 1em;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    min-height: 30px;
+    border: 1px solid #2c2c2c;
+    width: 13vw;
+    min-width: max-content;
 }
