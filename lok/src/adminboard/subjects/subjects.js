@@ -267,7 +267,7 @@ class Subjects extends React.Component {
                                 <div className='editMenuTitle'>Edit details</div>
                                 <div className='editMenuChoicesAdmin'>
                                     <div className='editMenuChoiceAdmin'>Course: <div className='editStudentDropdown courseDropdown'><CustomSelectSubject defaultText="Soloviy Anna" optionsList={courseSelect}></CustomSelectSubject></div></div>
-                                    <div className='editMenuChoiceAdmin'>Main group: <div className='editStudentDropdown groupDropdown'><CustomSelectSubject defaultText="DS" optionsList={mainGroup}></CustomSelectSubject></div></div>
+                                    <div className='editMenuChoiceAdmin'>Group name: <div className='editStudentDropdown groupDropdown'><CustomSelectSubject defaultText="DS" optionsList={mainGroup}></CustomSelectSubject></div></div>
 
                                     <div className='editMenuChoiceAdmin subgroupsMenu'>Subgroups: <div className='subgroupTypeChoice'><div className='subgroupType' onClick={this.changeSubgroupType}>Design</div><div className='subgroupType' onClick={this.changeSubgroupType}>Management</div><div className='subgroupType' onClick={this.changeSubgroupType}>Programming</div><div className='subgroupType' onClick={this.changeSubgroupType}>Other</div></div>
                                         <div className='subgroupChoiceTable subChoiceDesign'>
