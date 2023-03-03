@@ -82,11 +82,7 @@
     height: 5vh;
 }
 .dropdown-reg{
-    min-width: 170px;
-    flex-shrink: 0 !important;
-    flex-grow: 0 !important; 
-    text-align: left;
-    width: 100% !important;
+
 }
 
 Select{
@@ -145,7 +141,10 @@ Select{
     position: absolute;
     transform: translateY(-50%);
   }
-
+.FirstnameValidator  div{
+width: 100% !important;
+max-width: 250px;
+}
   
 .PhoneValidator{
     position: relative;
@@ -223,7 +222,10 @@ Select{
     display: flex;
     justify-content: center;   
 }
-
+.input-group > div{
+    width: 70%;
+    max-width: 250px;
+}
 
 .logoRow{
     height: 15vh;
