@@ -1,0 +1,94 @@
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/barlow/v12/7cHpv4kjgoGqM7EPCw.ttf) format('truetype');
+}
+.emailConfirmBackground {
+  background: linear-gradient(180deg, #A5A6F3 0%, #A5A6F3 18.75%, rgba(173, 174, 244, 0.826902) 32.81%, rgba(193, 194, 247, 0.378129) 80.21%, rgba(202, 203, 248, 0.179013) 91.15%, rgba(210, 211, 249, 0) 99.98%, rgba(210, 211, 249, 0) 99.99%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.emailConfirmContainer {
+  background-color: #F8F8F8;
+  width: 40vw;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20px;
+  padding-bottom: 5vh;
+}
+.emailConfirmContainer .confirmLogo img {
+  height: 7vh;
+  margin-top: 3vh;
+}
+.verifyEmailBlock {
+  width: 35vw;
+  height: 50vh;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px 0px #00000040;
+}
+.verifyEmailBlock .verifyEmailPic {
+  background: #A5A6F3;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  height: 18vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.verifyEmailBlock .verifyEmailMain {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  height: 30vh;
+}
+.verifyEmailBlock .verifyEmailMain .verifyEmailTitle {
+  font-family: Source Sans Pro;
+  font-size: 2.5em;
+  font-weight: 600;
+  line-height: 31px;
+  letter-spacing: 0em;
+  text-align: left;
+  font-variant: small-caps;
+}
+.verifyEmailBlock .verifyEmailMain .verifyEmailText1 {
+  font-family: Barlow;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+.verifyEmailBlock .verifyEmailMain .verifyEmailText2 {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  text-align: center;
+  color: #333333;
+}
+.verifyEmailBlock .verifyEmailMain .verifyEmailButton {
+  height: 4vh;
+  width: 10vw;
+  background: #fee499;
+  font-family: Sniglet;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+.verifyEmailBlock .verifyEmailMain .verifyEmailButton:hover {
+  cursor: pointer;
+}
