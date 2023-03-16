@@ -6,7 +6,12 @@
   src: url(https://fonts.gstatic.com/s/barlow/v12/7cHpv4kjgoGqM7EPCw.ttf) format('truetype');
 }
 .emailConfirmBackground {
-  background: linear-gradient(180deg, #A5A6F3 0%, #A5A6F3 18.75%, rgba(173, 174, 244, 0.826902) 32.81%, rgba(193, 194, 247, 0.378129) 80.21%, rgba(202, 203, 248, 0.179013) 91.15%, rgba(210, 211, 249, 0) 99.98%, rgba(210, 211, 249, 0) 99.99%);
+  background-image: url('../../img/emailVerifyBack.png');
+  background-position: center;
+  /* Center the image */
+  background-repeat: no-repeat;
+  /* Do not repeat the image */
+  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,6 +46,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.verifyEmailBlock .verifyEmailPic img {
+  filter: drop-shadow(0px 32.54445648px 65.08891296px #E4E4E4);
 }
 .verifyEmailBlock .verifyEmailMain {
   display: flex;
@@ -91,4 +99,136 @@
 }
 .verifyEmailBlock .verifyEmailMain .verifyEmailButton:hover {
   cursor: pointer;
+}
+.activationCodeBlock {
+  width: 35vw;
+  height: 50vh;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px 0px #00000040;
+  display: none;
+  flex-direction: column;
+}
+.activationCodeBlock .activationCodePic {
+  background: #A5A6F3;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  height: 18vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-left: 15vw;
+  padding-right: 15vw;
+}
+.activationCodeBlock .activationCodePic img:nth-child(1) {
+  position: absolute;
+  top: 60px;
+  padding-left: 15vw;
+  left: -40px;
+  z-index: 100;
+}
+.activationCodeBlock .activationCodeMain {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  height: 30vh;
+}
+.activationCodeBlock .activationCodeMain .activationCodeTitle {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 2.5em;
+  font-variant: small-caps;
+  color: #000000;
+}
+.activationCodeBlock .activationCodeMain .activationCodeInput {
+  background: #FFFFFF;
+  border: 1px dashed #7678ED;
+  position: relative;
+  border-radius: 50px;
+  width: 20vw;
+  height: 5.5vh;
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  overflow: hidden;
+  text-align: center;
+  display: inline-flex;
+  color: #4B4DE7;
+}
+.activationCodeBlock .activationCodeMain .activationCodeInput:focus {
+  outline: none;
+  border: 1px dashed #7678ED;
+}
+.activationCodeBlock .activationCodeMain .activationCodeText {
+  font-family: Barlow;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: center;
+  margin-left: 5vw;
+  margin-right: 5vw;
+}
+.activationCodeBlock .activationCodeMain .activationCodeButton {
+  height: 4vh;
+  width: 10vw;
+  background: #fee499;
+  font-family: Sniglet;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  min-width: 160px;
+}
+.activationCodeBlock .activationCodeMain .activationCodeButton:hover {
+  cursor: pointer;
+}
+.confirmSuccessScreen {
+  display: none;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(48, 48, 48, 0.555);
+  z-index: 255;
+}
+.confirmSuccessScreen .confirmSuccessBlock {
+  width: 40vw;
+  height: 30vh;
+  background-color: #F8F8F8;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.confirmSuccessScreen .confirmSuccessBlock img {
+  width: 5vw;
+}
+.confirmSuccessScreen .confirmSuccessBlock p:nth-child(2) {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 50px;
+  color: #5AD767;
+  margin: 0px;
+}
+.confirmSuccessScreen .confirmSuccessBlock p:nth-child(3) {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 35px;
+  line-height: 44px;
+  color: #2F2F2F;
+  margin: 0px;
 }
