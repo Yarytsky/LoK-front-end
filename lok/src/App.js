@@ -19,6 +19,7 @@ import EditGroup from "./adminboard/EditGroup/EditGroup";
 import Subjects from "./adminboard/subjects/subjects"
 import Header from "./components/header/header";
 import EmailConfirm from "./components/emailConfirm/emailConfirm";
+import TeacherHomepage from "./components/teacherHomepage/teacherHomepage";
 
 const API_URL = "https://lokserver.azurewebsites.net/";
 
@@ -77,6 +78,7 @@ class App extends Component {
             <Route path='/admin/subjects' element={<Subjects />} />
             <Route path='/admin/groups/editgroup' element={<EditGroup />} />
             <Route path='/emailConfirm' element={<EmailConfirm />} />
+            <Route path='/teacherHomepage' element={<TeacherHomepage/>}/>
           </Routes>
         </div>
       </div>
