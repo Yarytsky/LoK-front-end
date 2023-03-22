@@ -18,7 +18,6 @@
     flex-grow: 3;
     justify-content: center;
     flex-direction: column;
-    gap: 20px;
 }
 
 .students-sidebar{
@@ -95,3 +94,89 @@ font-size: 32px;
     font-size: 24px;
 }
 
+.nav{
+    width: 90%;
+    display: flex;
+    border: none;
+}
+
+.nav-item{
+    flex-grow: 1;
+    color: #fff;
+}
+
+.nav-link{
+    color: #fff;
+}
+.nav-link:hover{
+    color: #fff;
+}
+.nav-link::after{
+    color: #fff;
+}
+.active-term{
+    background-color: #A5A6F3;
+}
+
+.disable-term{
+  background-color:   #B3B3B3;
+}
+
+.main-item1{
+    border: 3px solid #A5A6F3;
+    border-radius: 5px;
+    width: 90%;
+    padding-left: 30px;
+}
+
+.active-group{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inactive-group{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+}
+
+.actbutcourse1{
+    background: #A5A6F3;
+    border: 3px solid #A5A6F3;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.inactbutcourse1{
+background: #FCFCFC;
+border: 3px solid #A5A6F3;
+border-radius: 0px 0px 10px 10px;
+}
+.all-groups-act{
+    width: 100%;
+}
+
+.all-groups-inact{
+    width: 100%;
+    display: none;
+}
+.coursecolapsebtn{
+    display: flex;
+    flex-direction: column;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+
+.act-img{
+    transform: rotate(0);
+}
+
+.inact-img{
+    transform: rotate(180deg);
+}
