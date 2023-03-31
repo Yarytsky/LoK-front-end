@@ -9,7 +9,7 @@ import Footer from "../footer/footer";
 import profilePic from "../../img/profilePic.jpg";
 import age from "../../img/age.png";
 import phone from "../../img/blackPhone.png";
-import envelope from "../../img/blackPhone.png";
+import envelope from "../../img/blackEnvelope.png";
 import door from "../../img/door.png";
 import CustomSelectGroup from './CustomSelectGroup';
 import { chosenGroup } from './CustomSelectGroup';
@@ -65,8 +65,7 @@ function Search() {
 
     return (
         <div className="searchStudent">
-            <div className="search-header">
-                <input id="search-box" onChange={filterBySearch} placeholder="Search" />
+            <div className="searchHeader">
                 <CustomSelectGroup
                     defaultText="All Groups"
                     optionsList={[
@@ -77,6 +76,7 @@ function Search() {
                     ]}
                     onClick={filterByGroup}
                 />
+                <input class="studentSearch" onChange={filterBySearch} placeholder="Student search" />
             </div>
             <div className="studentList">
                 {filteredList.map((item, index) => (
@@ -91,8 +91,8 @@ function Search() {
                                 <div className='studentSubject'>Web programming</div>
                             </div>
                         </div>
-                        <div className='studentAverageScore'>{item.averageScore} Average score</div>
-                        <div className='studentAttendance'>{item.attendance} Attendance</div>
+                        <div className='studentAverageScore'><div>{item.averageScore}</div> Average score</div>
+                        <div className='studentAttendance'><div>{item.attendance}</div> Attendance</div>
                         <div className='studentSubInfo'><img src={age}></img>Age: {item.age} years</div>
                         <div className='studentSubInfo'><img src={envelope}></img>{item.email}</div>
                         <div className='studentSubInfo'><img src={phone}></img>{item.phoneNumber}</div>

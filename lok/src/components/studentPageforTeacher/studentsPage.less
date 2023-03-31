@@ -23,23 +23,172 @@
     margin: 0px;
 }
 
+.searchHeader {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 15px;
+
+    .studentSearch {
+        background: #FFE599;
+        border: 1.5px solid #000000;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        margin-left: 20px;
+        font-size: 1.3em;
+        width: 15vw;
+        padding-left: 1vw;
+    }
+
+    .studentSearch::placeholder {
+        text-align: left;
+        font-size: 1.2em;
+        font-family: 'Source Sans Pro';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 31px;
+
+        color: #000000;
+
+    }
+}
+
+.custom-select-containerStudent {
+    display: inline-block;
+    min-width: 70px;
+    text-align: center;
+    position: relative;
+    width: 15vw;
+}
+
+.selected-textStudent {
+    background: #FED867;
+    border: 1.5px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    padding-right: 20px;
+    height: 5vh;
+    padding-top: 0.3vh;
+    text-align: left;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid #2c2c2c;
+    width: 15vw;
+    min-width: 112px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.3em;
+}
+
+.courseDropdown {
+    width: 9vw !important;
+}
+
+.groupDropdown {
+    width: 9vw;
+}
+
+.selected-textStudent:hover {
+    cursor: pointer;
+}
+
+.selected-textStudent::after {
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 2.5vh;
+    border: 7px solid transparent;
+    border-color: #2c2c2c transparent transparent transparent;
+}
+
+.selected-textStudent.active::after {
+    top: 1.5vh;
+    border-color: transparent transparent #2c2c2c transparent;
+}
+
+.select-optionsStudent {
+    position: absolute;
+    width: 100%;
+    border-collapse: separate;
+    top: 5.2vh;
+    z-index: 100;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    border-radius: 5px;
+    border: 1.5px solid #000000;
+}
+
+.custom-select-optionStudent {
+    font-size: 1em;
+    list-style-type: none;
+    min-height: 30px;
+    cursor: pointer;
+    height: 1vh;
+    padding-top: 0vh;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background: #FFF4D5;
+    border-bottom: 1.5px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 600;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-select-optionStudent:first-child {
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.custom-select-optionStudent:last-child {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+
 .searchStudent {
     margin-top: 5vh;
 }
 
 .studentList {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
     width: 80vw;
+    margin-top: 5vh;
+}
+
+.studentCard:nth-child(3n) {
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.studentCard:nth-child(3n+1) {
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.studentCard:nth-child(3n+2) {
+    margin-right: 15px;
+    margin-left: 15px;
 }
 
 .studentCard {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    width: 22vw;
     background-color: #FFFFFF;
     height: 40vh;
     min-width: 320px;
@@ -47,6 +196,7 @@
     padding: 2vh;
     border: 2px solid #A5A6F3;
     border-radius: 10px;
+    flex-basis: calc(33.33% - 30px);
 
     .mainStudentInfo {
         display: flex;
@@ -95,10 +245,44 @@
     .studentAverageScore {
         background: #D2D3F9;
         border-radius: 5px;
+        height: 4vh;
+        display: flex;
+        align-items: center;
+        padding-left: 1vw;
+
+        div {
+            font-family: 'Source Sans Pro';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 1.9em;
+            color: #414141;
+            margin-right: 1vw;
+        }
     }
 
     .studentAttendance {
         background: #A5A6F3;
         border-radius: 5px;
+        height: 4vh;
+        display: flex;
+        align-items: center;
+        padding-left: 1vw;
+
+        div {
+            font-family: 'Source Sans Pro';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 1.9em;
+            color: #414141;
+            margin-right: 1vw;
+        }
+    }
+
+    .studentSubInfo{
+        display: flex;
+        align-items: center;
+        img{
+            margin-right: 1vw;
+        }
     }
 }
