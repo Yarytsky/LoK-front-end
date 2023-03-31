@@ -1,0 +1,92 @@
+.studentPageContainer {
+  background: linear-gradient(180deg, rgba(210, 211, 249, 0.58) 24.48%, rgba(210, 211, 249, 0) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100%;
+}
+.studentPageTitle {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 3em;
+  line-height: 60px;
+  font-variant: all-small-caps;
+  width: 40vw;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid #A5A6F3;
+  margin: 0px;
+}
+.searchStudent {
+  margin-top: 5vh;
+}
+.studentList {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 80vw;
+}
+.studentCard {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 22vw;
+  background-color: #FFFFFF;
+  height: 40vh;
+  min-width: 320px;
+  margin-bottom: 5vh;
+  padding: 2vh;
+  border: 2px solid #A5A6F3;
+  border-radius: 10px;
+}
+.studentCard .mainStudentInfo {
+  display: flex;
+  width: 100%;
+}
+.studentCard .mainStudentInfo img {
+  width: 6vw;
+  height: 6vw;
+  border-radius: 50%;
+  object-fit: cover;
+  max-width: 88px;
+  max-height: 88px;
+}
+.studentCard .mainStudentInfo .mainStudentInfoText {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2vw;
+}
+.studentCard .mainStudentInfo .mainStudentInfoText .studentName {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.4em;
+  color: #2C2C2C;
+}
+.studentCard .mainStudentInfo .mainStudentInfoText .studentGroup {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.3em;
+  color: #414141;
+}
+.studentCard .mainStudentInfo .mainStudentInfoText .studentSubject {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.3em;
+  color: #414141;
+}
+.studentCard .studentAverageScore {
+  background: #D2D3F9;
+  border-radius: 5px;
+}
+.studentCard .studentAttendance {
+  background: #A5A6F3;
+  border-radius: 5px;
+}
