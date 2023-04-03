@@ -30,7 +30,9 @@ class AuthService {
     
   }
 
-
+  updateUser(){
+    
+  }
   logout() {
     localStorage.removeItem("user");
   }
