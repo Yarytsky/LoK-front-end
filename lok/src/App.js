@@ -40,7 +40,12 @@ class App extends Component {
 
   async componentDidMount() {
     const user = AuthService.getCurrentUser();
-    const response = await axios.get(API_URL + "user/getuser/" + user.id);
+    const response = await axios.get(API_URL + 'user/getstudents', {
+      headers: {
+        'accept': '*/*',
+        'Authorization': user.id
+      }
+    });
     if (response) {
       console.log(response);
       this.setState({
@@ -83,7 +88,7 @@ class App extends Component {
             <Route path='/email-confirm' element={<EmailConfirm />} />
             <Route path='/teacherHomepage' element={<TeacherHomepage/>}/>
             <Route path='/timetable' element={<Timetable/>}/>
-            <Route path="/settingspage" element={<SettingPage />} />
+            <Route path="/settingspage" element={<SettingPage/>} />
             <Route path="/studentspage" element={<StudentsPage />} />
           </Routes>
         </div>

@@ -48,10 +48,12 @@ function EditGroup(props) {
   }
 
   const [groupName, setgroupName] = useState("");
+  const [term, setTerm] = useState("");
+
   async function postGroup(){
     return await axios.post(API_URL+"group/creategroup",{
       name:groupName,
-      id:''
+      id:term
     }
     )
     .then(response=>response.data)
@@ -79,11 +81,16 @@ function EditGroup(props) {
                 <button  id='sub-btn' onClick={chooseSub}>Sub</button>
               </div>
             </div>
-            <div>Choose the subject: </div>
-            <select className='modal-select'>
-              <option>123</option>
-              <option>123</option>
-              <option>123</option>
+            <div>Choose the Term: </div>
+            <select className='modal-select' onChange={e=>setTerm(e.target.value)}>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="3">4</option>
+              <option value="3">5</option>
+              <option value="3">6</option>
+              <option value="3">7</option>
+              <option value="3">8</option>
             </select>
             <div>Choose the main groups: </div>
             <div className='course-box'>
@@ -102,7 +109,7 @@ function EditGroup(props) {
 
             </div>
             <div className='modal-group-footer'>
-              <button variant="secondary" className='mod-f-btn save-btn' onClick={handleClose}>
+              <button variant="secondary" className='mod-f-btn save-btn' onClick={postGroup}>
                 Save
               </button>
               <button variant="primary" className='mod-f-btn cansel-btn'  onClick={handleClose}>

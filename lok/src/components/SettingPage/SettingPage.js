@@ -29,14 +29,12 @@ class SettingPage extends React.Component {
     this.onChangeEmail = this.onChangeEmail.bind(this);
 
     this.state = {
-      phoneNumber: "",
-      firstName: "",
-      lastname: "",
-      Country: "",
-      Gender: "",
-      email: "",
-
-
+      phoneNumber:this.props.userdata.phoneNumber,
+      firstName: this.props.userdata.firstName,
+      lastname:this.props.userdata.lastname,
+      Country:this.props.userdata.Country,
+      Gender:this.props.userdata.Gender,
+      email: this.props.userdata.email,
     }
   }
   onChangeEmail(e) {

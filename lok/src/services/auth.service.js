@@ -13,6 +13,7 @@ class AuthService {
       })
       .then(response => {
         if (response.data.accessToken) {
+          localStorage.setItem("token",response)
           var decoded = jwt_decode(response.data.accessToken)
           localStorage.setItem("user", JSON.stringify(decoded))
 
