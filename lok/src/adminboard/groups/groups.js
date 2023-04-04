@@ -8,9 +8,12 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import { Link } from 'react-router-dom';
+import axios from "axios";
 
-
+const API_URL = "https://lokserver.azurewebsites.net/";
 function EditGroup(props) {
+
+
 
   const [show, setShow] = useState(false)
 
@@ -44,7 +47,16 @@ function EditGroup(props) {
     document.getElementById("sub-btn").style.paddingLeft="0px"
   }
 
-
+  const [groupName, setgroupName] = useState("");
+  async function postGroup(){
+    return await axios.post(API_URL+"group/creategroup",{
+      name:groupName,
+      id:''
+    }
+    )
+    .then(response=>response.data)
+    
+  }
   return (
     <>
       <button className='add-group-btn' onClick={handleShow}>
@@ -61,7 +73,7 @@ function EditGroup(props) {
           <div className='editgroupcontainer'>
             <div>Group name:</div>
             <div className='input-box'>
-              <input className='edit-input' />
+              <input className='edit-input' onChange={e=>setgroupName(e.target.value)}/>
               <div className='button-group'>
                 <button id='main-btn' onClick={chooseMain}>Main</button>
                 <button  id='sub-btn' onClick={chooseSub}>Sub</button>
@@ -108,6 +120,7 @@ function EditGroup(props) {
 
 
 class Groups extends React.Component {
+
 
 
 
