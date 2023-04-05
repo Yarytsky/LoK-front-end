@@ -1,6 +1,6 @@
 import axios from "axios";
 import jwt_decode from "jwt-decode"; 
-
+import { Routes, Route, Link, Navigate } from "react-router-dom";
 
 
 const API_URL = "https://lokserver.azurewebsites.net/";
@@ -13,7 +13,10 @@ class AuthService {
       })
       .then(response => {
         if (response.data.accessToken) {
-          localStorage.setItem("token",response)
+          var token = response.data.accessToken
+          localStorage.setItem("Btoken","Bearer " + token)
+          localStorage.setItem("atoken",response.data.accessToken)
+          localStorage.setItem("rtoken",response.data.refreshToken)
           var decoded = jwt_decode(response.data.accessToken)
           localStorage.setItem("user", JSON.stringify(decoded))
 
@@ -36,6 +39,9 @@ class AuthService {
   }
   logout() {
     localStorage.removeItem("user");
+    localStorage.removeItem("Btoken");
+    localStorage.removeItem("atoken");
+    localStorage.removeItem("rtoken");
   }
 
   async register(email, password,phoneNumber,firstName,lastname,Gender,Country,role) {
@@ -64,7 +70,11 @@ class AuthService {
   getCurrentUser() {
    return JSON.parse(localStorage.getItem('user'));    
   }
+
+  
   
 }
+
+
 
 export default new AuthService();

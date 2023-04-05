@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component,useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
@@ -23,10 +23,11 @@ import TeacherHomepage from "./components/teacherHomepage/teacherHomepage";
 import Timetable from "./components/timetable/timetable";
 import SettingPage from "./components/SettingPage/SettingPage";
 import StudentsPage from "./components/studentPageforTeacher/studentsPage"
+import startRefreshTokenTimer from "./services/refresh";
 
 const API_URL = "https://lokserver.azurewebsites.net/";
-
 class App extends Component {
+
   constructor(props) {
     super(props);
     this.logOut = this.logOut.bind(this);
@@ -40,10 +41,10 @@ class App extends Component {
 
   async componentDidMount() {
     const user = AuthService.getCurrentUser();
-    const response = await axios.get(API_URL + 'user/getstudents', {
+    const response = await axios.get(API_URL + 'user/getuser/'+user.id, {
       headers: {
         'accept': '*/*',
-        'Authorization': user.id
+        'Authorization':localStorage.getItem('Btoken')
       }
     });
     if (response) {
@@ -70,7 +71,7 @@ class App extends Component {
 
     return (
       <div>
-        <div>
+        <div onMouseMove={startRefreshTokenTimer}>
           <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/admin/*" element={<Mainmenu />} />

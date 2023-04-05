@@ -11,6 +11,7 @@ import AuthService from "../../services/auth.service";
 import logo from "../../img/Bobrlogo.png"
 import { withRouter } from '../../common/with-router';
 import "./login.css"
+import startRefreshTokenTimer from "../../services/refresh";
 
 import avatar from "../../img/icons/Vector.png"
 import password from "../../img/icons/password.png"
@@ -72,6 +73,7 @@ class Login extends Component {
           if (!(e === undefined)) {
             this.props.router.navigate("/homepage");
             window.location.reload();
+            
           }
           else{
             window.location.reload();

@@ -9,7 +9,6 @@ import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import { Link } from 'react-router-dom';
 import axios from "axios";
-
 const API_URL = "https://lokserver.azurewebsites.net/";
 function EditGroup(props) {
 
@@ -49,13 +48,16 @@ function EditGroup(props) {
 
   const [groupName, setgroupName] = useState("");
   const [term, setTerm] = useState("");
-
   async function postGroup(){
     return await axios.post(API_URL+"group/creategroup",{
       name:groupName,
-      id:term
-    }
-    )
+      id:parseInt(term)
+    }, {
+      headers: {
+        'accept': '*/*',
+        'Authorization':localStorage.getItem('Btoken')
+      }
+    })
     .then(response=>response.data)
     
   }

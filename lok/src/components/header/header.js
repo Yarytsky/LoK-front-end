@@ -21,6 +21,7 @@ import subject from "../../img/burger/Vectorsubject.png"
 import settings from "../../img/burger/Vectorsettings.png"
 import logout from "../../img/burger/Vectorlogout.png"
 import profilePic from "../../img/profilePic.jpg";
+import authService from '../../services/auth.service';
 
 function BurgerMenu(props) {
   const [show, setShow] = useState(false);
@@ -58,7 +59,7 @@ function BurgerMenu(props) {
           </div>
           <div className='bur-foot'>
             <div className='bur-itm home-link'><img className='bur-icons' src={settings} /><div className="itm-text">Settings</div></div>
-            <div className='bur-itm home-link'><img className='bur-icons' src={logout} /><div className="itm-text">Logout</div></div>
+            <Link to={"/"} onClick={authService.logout} className='bur-itm home-link'><img className='bur-icons' src={logout} /><div className="itm-text">Logout</div></Link>
 
           </div>
         </Offcanvas.Body>
