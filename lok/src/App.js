@@ -22,7 +22,8 @@ import EmailConfirm from "./components/emailConfirm/emailConfirm";
 import TeacherHomepage from "./components/teacherHomepage/teacherHomepage";
 import Timetable from "./components/timetable/timetable";
 import SettingPage from "./components/SettingPage/SettingPage";
-import StudentsPage from "./components/studentPageforTeacher/studentsPage"
+import StudentsPage from "./components/studentPageforTeacher/studentsPage";
+import GroupMarks from "./components/groupMarks/groupMarks";
 import startRefreshTokenTimer from "./services/refresh";
 
 const API_URL = "https://lokserver.azurewebsites.net/";
@@ -91,6 +92,7 @@ class App extends Component {
             <Route path='/timetable' element={<Timetable/>}/>
             <Route path="/settingspage" element={<SettingPage/>} />
             <Route path="/studentspage" element={<StudentsPage />} />
+            <Route path="/groupMarks" element={<GroupMarks />} />
           </Routes>
         </div>
       </div>
