@@ -10,6 +10,7 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import { Link } from 'react-router-dom';
 import axios from "axios";
 const API_URL = "https://lokserver.azurewebsites.net/";
+
 function EditGroup(props) {
 
 
@@ -20,46 +21,45 @@ function EditGroup(props) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  function chooseMain(){
-    document.getElementById("main-btn").style.background="#D2D3F9"
-    document.getElementById("main-btn").style.border="2px solid #000000"
-    document.getElementById("main-btn").style.zIndex="9"
-    document.getElementById("main-btn").style.paddingRight="10px"
-    document.getElementById("sub-btn").style.marginLeft="0px"
-    document.getElementById("sub-btn").style.backgroundColor="#E8E8E8"
-    document.getElementById("sub-btn").style.border="1px solid #000000"
-    document.getElementById("sub-btn").style.marginLeft="50px"
-    document.getElementById("sub-btn").style.zIndex="0"
-    document.getElementById("sub-btn").style.paddingLeft="20px"
+  function chooseMain() {
+    document.getElementById("main-btn").style.background = "#D2D3F9"
+    document.getElementById("main-btn").style.border = "2px solid #000000"
+    document.getElementById("main-btn").style.zIndex = "9"
+    document.getElementById("main-btn").style.paddingRight = "10px"
+    document.getElementById("sub-btn").style.marginLeft = "0px"
+    document.getElementById("sub-btn").style.backgroundColor = "#E8E8E8"
+    document.getElementById("sub-btn").style.border = "1px solid #000000"
+    document.getElementById("sub-btn").style.marginLeft = "50px"
+    document.getElementById("sub-btn").style.zIndex = "0"
+    document.getElementById("sub-btn").style.paddingLeft = "20px"
   }
 
-  function chooseSub(){
-    document.getElementById("main-btn").style.background="#E8E8E8"
-    document.getElementById("main-btn").style.border="1px solid #000000"
-    document.getElementById("main-btn").style.zIndex="0"
-    document.getElementById("main-btn").style.paddingRight="50px"
-    document.getElementById("sub-btn").style.marginLeft="50px"
-    document.getElementById("sub-btn").style.backgroundColor="#D2D3F9"
-    document.getElementById("sub-btn").style.border="2px solid #000000"
-    document.getElementById("sub-btn").style.marginLeft="50px"
-    document.getElementById("sub-btn").style.zIndex="9"
-    document.getElementById("sub-btn").style.paddingLeft="0px"
+  function chooseSub() {
+    document.getElementById("main-btn").style.background = "#E8E8E8"
+    document.getElementById("main-btn").style.border = "1px solid #000000"
+    document.getElementById("main-btn").style.zIndex = "0"
+    document.getElementById("main-btn").style.paddingRight = "50px"
+    document.getElementById("sub-btn").style.marginLeft = "50px"
+    document.getElementById("sub-btn").style.backgroundColor = "#D2D3F9"
+    document.getElementById("sub-btn").style.border = "2px solid #000000"
+    document.getElementById("sub-btn").style.marginLeft = "50px"
+    document.getElementById("sub-btn").style.zIndex = "9"
+    document.getElementById("sub-btn").style.paddingLeft = "0px"
   }
 
   const [groupName, setgroupName] = useState("");
   const [term, setTerm] = useState("");
-  async function postGroup(){
-    return await axios.post(API_URL+"group/creategroup",{
-      name:groupName,
-      id:parseInt(term)
+  async function postGroup() {
+    return await axios.post(API_URL + "group/creategroup", {
+      name: groupName,
+      semesterId: parseInt(term)
     }, {
       headers: {
         'accept': '*/*',
-        'Authorization':localStorage.getItem('Btoken')
+        'Authorization': localStorage.getItem('Btoken')
       }
     })
-    .then(response=>response.data)
-    
+      .then(response => response.data)
   }
   return (
     <>
@@ -77,14 +77,14 @@ function EditGroup(props) {
           <div className='editgroupcontainer'>
             <div>Group name:</div>
             <div className='input-box'>
-              <input className='edit-input' onChange={e=>setgroupName(e.target.value)}/>
+              <input className='edit-input' onChange={e => setgroupName(e.target.value)} />
               <div className='button-group'>
                 <button id='main-btn' onClick={chooseMain}>Main</button>
-                <button  id='sub-btn' onClick={chooseSub}>Sub</button>
+                <button id='sub-btn' onClick={chooseSub}>Sub</button>
               </div>
             </div>
             <div>Choose the Term: </div>
-            <select className='modal-select' onChange={e=>setTerm(e.target.value)}>
+            <select className='modal-select' onChange={e => setTerm(e.target.value)}>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -114,7 +114,7 @@ function EditGroup(props) {
               <button variant="secondary" className='mod-f-btn save-btn' onClick={postGroup}>
                 Save
               </button>
-              <button variant="primary" className='mod-f-btn cansel-btn'  onClick={handleClose}>
+              <button variant="primary" className='mod-f-btn cansel-btn' onClick={handleClose}>
                 Cancel
               </button>
             </div>
@@ -128,13 +128,41 @@ function EditGroup(props) {
 }
 
 
+
 class Groups extends React.Component {
 
+  constructor(props) {
+    super(props)
 
+    this.state = {
+      groups: []
+    }
 
+  }
+
+  async componentDidMount() {
+    const response = await axios.get(API_URL + "group/getgroups", {
+      headers: {
+        'accept': '*/*',
+        'Authorization': localStorage.getItem('Btoken')
+      }
+    })
+    if (response) {
+      this.setState({
+        groups:response
+      })
+      console.log(this.state.groups)
+    }
+
+  }
 
 
   render() {
+    let listGr=this.state && this.state.groups.length>0?
+      this.state.groups.map(g=>
+        <div className='main-item' key={g.id}><p className='group-text'>{g.name}</p></div>
+        ):<>no</>
+    
     return (
       <div>
         <Header />
@@ -157,10 +185,15 @@ class Groups extends React.Component {
             <hr className='admin-underline'></hr>
             <div className='groups-container'>
               <div className='main-groups'>
-                <Link to={"/admin/groups/editgroup"} className='main-item admin-link'><p className='group-text'>4cs - 11</p></Link>
+                {/* {groups.map(group => (
+                  <div className='main-item' key={group.id}><p className='group-text'>{group.name}</p></div>
+                ))} */}
+                {listGr}
+                {/* <Link to={"/admin/groups/editgroup"} className='main-item admin-link'><p className='group-text'>4cs - 11</p></Link>
+
                 <div className='main-item'><p className='group-text'>4cs - 11</p></div>
                 <div className='main-item'><p className='group-text'>4cs - 11</p></div>
-                <div className='main-item'><p className='group-text'>4cs - 11</p></div>
+                <div className='main-item'><p className='group-text'>4cs - 11</p></div> */}
 
               </div>
               <div className='sub-groups'>
