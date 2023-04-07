@@ -1,5 +1,6 @@
 import React from "react";
-export let chosenGroup = "";
+export let chosenGroup = "All groups";
+export let chosenSubject = "Web Programming";
 class CustomSelectGroup extends React.Component {
   constructor(props) {
     super(props);
@@ -48,7 +49,7 @@ class CustomSelectGroup extends React.Component {
         showOptionList: !prevState.showOptionList
       };
     });
-    
+
   };
 
   // This method handles the setting of name in select text area
@@ -58,7 +59,12 @@ class CustomSelectGroup extends React.Component {
       defaultSelectText: e.target.getAttribute("data-name"),
       showOptionList: false
     });
-    chosenGroup = e.target.getAttribute("data-name");
+    if (this.props.context === "Group") {
+      chosenGroup = e.target.getAttribute("data-name");
+    }
+    if (this.props.context === "Subject"){
+      chosenSubject = e.target.getAttribute("data-name");
+    }
     this.props.onClick();
   };
 
