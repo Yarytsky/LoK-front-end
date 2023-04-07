@@ -28,10 +28,10 @@ const refreshToken = async () => {
     }
 };
 
-const startRefreshTokenTimer = () => {
+const componentDidMount = () => {
     setInterval(() => {
         refreshToken();
     }, refreshInterval);
 };
 
-export default startRefreshTokenTimer;
+export default componentDidMount;

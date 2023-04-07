@@ -4,7 +4,7 @@ import Header from '../../components/header/header';
 import Footer from '../../components/footer/footer';
 import { Link, Navigate, Route, Routes } from 'react-router-dom';
 import Termspage from '../termspage/termspage';
-
+import Groups from '../groups/groups';
 class Mainmenu extends Component {
 
   render() {

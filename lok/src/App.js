@@ -25,6 +25,8 @@ import SettingPage from "./components/SettingPage/SettingPage";
 import StudentsPage from "./components/studentPageforTeacher/studentsPage";
 import GroupMarks from "./components/groupMarks/groupMarks";
 import startRefreshTokenTimer from "./services/refresh";
+import StudentsPage from "./components/studentPageforTeacher/studentsPage"
+import componentDidMount from "./services/refresh";
 
 const API_URL = "https://lokserver.azurewebsites.net/";
 class App extends Component {
@@ -39,6 +41,7 @@ class App extends Component {
       currentUser: undefined,
     };
   }
+  
 
   async componentDidMount() {
     const user = AuthService.getCurrentUser();
@@ -71,8 +74,8 @@ class App extends Component {
   render() {
 
     return (
-      <div>
-        <div onMouseMove={startRefreshTokenTimer}>
+      <div onMouseMove={componentDidMount}>
+        <div>
           <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/admin/*" element={<Mainmenu />} />
