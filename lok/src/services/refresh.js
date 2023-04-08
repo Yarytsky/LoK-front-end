@@ -28,10 +28,11 @@ const refreshToken = async () => {
     }
 };
 
-const componentDidMount = () => {
+const setref = () => {
     setInterval(() => {
         refreshToken();
     }, refreshInterval);
 };
 
-export default componentDidMount;
+export default setref;
+

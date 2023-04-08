@@ -17,18 +17,19 @@ import Teachers from "./adminboard/teachers/teachers";
 import Students from "./adminboard/students/students";
 import EditGroup from "./adminboard/EditGroup/EditGroup";
 import Subjects from "./adminboard/subjects/subjects"
-import Header from "./components/header/header";
 import EmailConfirm from "./components/emailConfirm/emailConfirm";
 import TeacherHomepage from "./components/teacherHomepage/teacherHomepage";
 import Timetable from "./components/timetable/timetable";
 import SettingPage from "./components/SettingPage/SettingPage";
 import StudentsPage from "./components/studentPageforTeacher/studentsPage";
 import GroupMarks from "./components/groupMarks/groupMarks";
-import startRefreshTokenTimer from "./services/refresh";
-import StudentsPage from "./components/studentPageforTeacher/studentsPage"
-import componentDidMount from "./services/refresh";
+import setref from "./services/refresh";
+
 
 const API_URL = "https://lokserver.azurewebsites.net/";
+const refreshInterval = 4 * 60 * 1000
+
+
 class App extends Component {
 
   constructor(props) {
@@ -41,7 +42,6 @@ class App extends Component {
       currentUser: undefined,
     };
   }
-  
 
   async componentDidMount() {
     const user = AuthService.getCurrentUser();
@@ -74,7 +74,7 @@ class App extends Component {
   render() {
 
     return (
-      <div onMouseMove={componentDidMount}>
+      <div onMouseMove={setref}>
         <div>
           <Routes>
             <Route path="/" element={<Login />} />

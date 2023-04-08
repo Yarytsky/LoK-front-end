@@ -81,6 +81,7 @@ function Search() {
       <div className="searchSubject">
         <div className="search-header">
           <input id="search-box" onChange={filterBySearch} placeholder = "Search"/>
+          
         </div>
         <div id="item-list">
           <ol>

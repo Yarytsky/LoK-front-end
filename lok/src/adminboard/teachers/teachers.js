@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './teachers.css';
-import {Route, Link, Routes, useNavigate} from 'react-router-dom';
+import { Route, Link, Routes, useNavigate } from 'react-router-dom';
 import Header from '../../components/header/header';
 import profilePic from "../../img/profilePic.jpg";
 import calendar from "../../img/Calendar.png";
@@ -13,7 +13,9 @@ import backArrow from "../../img/backArrow.png"
 import cross from "../../img/cross.png"
 import TeacherDetail from './toasts';
 import Footer from "../../components/footer/footer";
+import axios from "axios";
 
+const API_URL = "https://lokserver.azurewebsites.net/";
 let x = 0;
 let y = 0;
 let target;
@@ -22,6 +24,27 @@ const GoBack = () => {
   navigate(-1);
 }
 class Teachers extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      Steachers: {}
+    }
+
+  }
+  async componentDidMount() {
+    const responseteachers = await axios.get(API_URL + "user/getunverificatedteachers", {
+      headers: {
+        'accept': '*/*',
+        'Authorization': localStorage.getItem('Btoken')
+      }
+    })
+    this.setState({
+      Sgroups: responseteachers.data.teachers
+    })
+    console.log(this.state.Steachers)
+    console.log(responseteachers.data)
+  }
 
   showDetailsVerified = (e) => {
     x += 1;
@@ -96,6 +119,10 @@ class Teachers extends React.Component {
   }
 
   render() {
+    let listTeachers = this.state && this.state.Steachers.length > 0 ?  //{t.lastname} {t.firstname}
+      this.state.Steachers.map(t =>
+        <div className='unverified-box' key={t.id} onClick={this.showDetailsUnverified}><img src={profilePic} className="picAdmin"></img>{t.lastname} {t.firstname}</div>
+      ) : <>no</>
     return (
       <div>
         <Header />
@@ -141,9 +168,7 @@ class Teachers extends React.Component {
             </div>
             <div className='unverified-teachers'>
               <div className='titleterms'>Unverified users</div>
-              <div className='unverified-box' onClick={this.showDetailsUnverified}><img src={profilePic} className="picAdmin"></img>Meshkova Inna</div>
-              <div className='unverified-box' onClick={this.showDetailsUnverified}><img src={profilePic} className="picAdmin"></img>Meshkova Inna</div>
-
+              {listTeachers}
             </div>
             <div className='userDetailsAdmin'>
               <div className='profileInfoAdmin'>

@@ -9,6 +9,8 @@ import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import { Link } from 'react-router-dom';
 import axios from "axios";
+import { students } from '../../components/groupMarks/studentsListExample';
+
 const API_URL = "https://lokserver.azurewebsites.net/";
 
 function EditGroup(props) {
@@ -135,34 +137,45 @@ class Groups extends React.Component {
     super(props)
 
     this.state = {
-      groups: []
+      Sgroups:{},
+      Sstudents:{}
     }
 
   }
 
   async componentDidMount() {
-    const response = await axios.get(API_URL + "group/getgroups", {
+    const responsegrops = await axios.get(API_URL + "group/getgroups", {
       headers: {
         'accept': '*/*',
         'Authorization': localStorage.getItem('Btoken')
       }
     })
-    if (response) {
+    const responseStud = await axios.get(API_URL + "user/getunverificatedstudents", {
+      headers: {
+        'accept': '*/*',
+        'Authorization': localStorage.getItem('Btoken')
+      }
+    })
+    
       this.setState({
-        groups:response
+        Sgroups:responsegrops.data.groups,
+        Sstudents:responseStud.data.students
       })
-      console.log(this.state.groups)
-    }
-
+      console.log(this.state.Sgroups)
+      console.log(responseStud.data)
   }
 
 
   render() {
-    let listGr=this.state && this.state.groups.length>0?
-      this.state.groups.map(g=>
+    let listGr=this.state && this.state.Sgroups.length>0?
+      this.state.Sgroups.map(g=>
         <div className='main-item' key={g.id}><p className='group-text'>{g.name}</p></div>
         ):<>no</>
-    
+    let listStudents=this.state && this.state.Sstudents.length>0?
+        this.state.Sstudents.map(s=>
+          <div className='studentbox' key={s.id}><img src={profilePic} className="pic"></img><p>{s.lastname} {s.firstname}</p></div>
+
+          ):<>no</>
     return (
       <div>
         <Header />
@@ -185,33 +198,16 @@ class Groups extends React.Component {
             <hr className='admin-underline'></hr>
             <div className='groups-container'>
               <div className='main-groups'>
-                {/* {groups.map(group => (
-                  <div className='main-item' key={group.id}><p className='group-text'>{group.name}</p></div>
-                ))} */}
                 {listGr}
-                {/* <Link to={"/admin/groups/editgroup"} className='main-item admin-link'><p className='group-text'>4cs - 11</p></Link>
-
-                <div className='main-item'><p className='group-text'>4cs - 11</p></div>
-                <div className='main-item'><p className='group-text'>4cs - 11</p></div>
-                <div className='main-item'><p className='group-text'>4cs - 11</p></div> */}
-
               </div>
               <div className='sub-groups'>
                 <div className='sub-item'><p className='group-text'>AT</p></div>
-                <div className='sub-item'><p className='group-text'>AT</p></div>
-                <div className='sub-item'><p className='group-text'>AT</p></div>
-                <div className='sub-item'><p className='group-text'>AT</p></div>
-
               </div>
             </div>
-
-
           </div>
           <div className='students-sidebar'>
             <div className='titlestudents'>Students</div>
-            <div className='studentbox'><img src={profilePic} className="pic"></img><p>Meshkova Inna</p></div>
-            <div className='studentbox'><img src={profilePic} className="pic"></img><p>Meshkova Inna</p></div>
-
+              {listStudents}
           </div>
 
 
