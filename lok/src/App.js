@@ -23,6 +23,7 @@ import Timetable from "./components/timetable/timetable";
 import SettingPage from "./components/SettingPage/SettingPage";
 import StudentsPage from "./components/studentPageforTeacher/studentsPage";
 import GroupMarks from "./components/groupMarks/groupMarks";
+import Attendance from "./components/attendance/attendance";
 import setref from "./services/refresh";
 
 
@@ -96,6 +97,7 @@ class App extends Component {
             <Route path="/settingspage" element={<SettingPage/>} />
             <Route path="/studentspage" element={<StudentsPage />} />
             <Route path="/groupMarks" element={<GroupMarks />} />
+            <Route path="/attendance" element={<Attendance/>}/>
           </Routes>
         </div>
       </div>
