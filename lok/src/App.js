@@ -26,7 +26,7 @@ import GroupMarks from "./components/groupMarks/groupMarks";
 import setref from "./services/refresh";
 
 
-const API_URL = "https://lokserver.azurewebsites.net/";
+const API_URL = "https://localhost:7203/";
 const refreshInterval = 4 * 60 * 1000
 
 

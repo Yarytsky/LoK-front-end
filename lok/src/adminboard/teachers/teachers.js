@@ -15,7 +15,7 @@ import TeacherDetail from './toasts';
 import Footer from "../../components/footer/footer";
 import axios from "axios";
 
-const API_URL = "https://lokserver.azurewebsites.net/";
+const API_URL = "https://localhost:7203/";
 let x = 0;
 let y = 0;
 let target;
@@ -43,7 +43,7 @@ class Teachers extends React.Component {
       Sgroups: responseteachers.data.teachers
     })
     console.log(this.state.Steachers)
-    console.log(responseteachers.data)
+    console.log(responseteachers.data.teachers.teachers)
   }
 
   showDetailsVerified = (e) => {
@@ -121,7 +121,7 @@ class Teachers extends React.Component {
   render() {
     let listTeachers = this.state && this.state.Steachers.length > 0 ?  //{t.lastname} {t.firstname}
       this.state.Steachers.map(t =>
-        <div className='unverified-box' key={t.id} onClick={this.showDetailsUnverified}><img src={profilePic} className="picAdmin"></img>{t.lastname} {t.firstname}</div>
+        <div className='unverified-box' key={t.id} onClick={this.showDetailsUnverified}><img src={profilePic} className="picAdmin"></img>{t.lastname} {t.firstName}</div>
       ) : <>no</>
     return (
       <div>

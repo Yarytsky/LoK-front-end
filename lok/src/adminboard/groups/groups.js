@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 import axios from "axios";
 import { students } from '../../components/groupMarks/studentsListExample';
 
-const API_URL = "https://lokserver.azurewebsites.net/";
+const API_URL = "https://localhost:7203/";
 
 function EditGroup(props) {
 
@@ -173,7 +173,7 @@ class Groups extends React.Component {
         ):<>no</>
     let listStudents=this.state && this.state.Sstudents.length>0?
         this.state.Sstudents.map(s=>
-          <div className='studentbox' key={s.id}><img src={profilePic} className="pic"></img><p>{s.lastname} {s.firstname}</p></div>
+          <div className='studentbox' key={s.id}><img src={profilePic} className="pic"></img><p>{s.lastname} {s.firstName}</p></div>
 
           ):<>no</>
     return (
