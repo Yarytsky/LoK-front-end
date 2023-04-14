@@ -1,0 +1,19 @@
+.fullPageMarks {
+  min-height: 100vh;
+}
+.studentPageContainer {
+  background: linear-gradient(180deg, rgba(210, 211, 249, 0.58) 24.48%, rgba(210, 211, 249, 0) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 76.3vh;
+}
+.attendanceBlock {
+  width: 80vw;
+}
+.attendanceLabels {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
