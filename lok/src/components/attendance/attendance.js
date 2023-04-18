@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import './attendance.css';
 import { Route, Link, Routes, useNavigate } from 'react-router-dom';
@@ -21,8 +21,11 @@ import comment from "../../img/comment.png";
 
 
 function Search() {
+    let indexDot = 2;
+    let row = 0;
 
     const [filteredList, setFilteredList] = new useState(students);
+
 
 
     const filter = (event) => {
@@ -34,7 +37,6 @@ function Search() {
             const isSubjectPresent = item.subjects.some((subject) => {
                 return subject.name.includes(querySubject);
             });
-            console.log(item);
             return isSubjectPresent;
 
         });
@@ -53,13 +55,23 @@ function Search() {
         filter();
     }, []);
 
-    const getMarks = (student, subjectName, lessonNumber) => {
-        const subject = student.subjects.find((subject) => subject.name === subjectName);
-        if (!subject) return null;
-        const lesson = subject.lessons.find((lesson) => lesson.number === lessonNumber);
-        if (!lesson) return null;
-        return lesson.marks;
-    };
+    const selectRow = (e) => {
+        row = e.currentTarget;
+        const dots = row.children;
+        for (let i = 0; i < dots.length; i++) {
+            if (i === indexDot) {
+                dots[i].classList.add("activeDot");
+            } else {
+                dots[i].classList.remove("activeDot");
+            }
+        }
+    }
+
+
+    const changeDot = (index) => {
+        indexDot = index;
+    }
+
 
 
     return (
@@ -87,16 +99,6 @@ function Search() {
                     onClick={filter}
                     context="Subject"
                 />
-            </div>
-            <div className='studentMarksLegend'>
-                <div className='studentMarksExp'>
-                    <img src={purple}></img>
-                    <div>Homework Assignments</div>
-                </div>
-                <div className='studentMarksExp'>
-                    <img src={orange}></img>
-                    <div>Classwork</div>
-                </div>
             </div>
             <div className="attendanceLabels">
                 <div className='attandanceLabel'>Full name</div>
@@ -128,13 +130,13 @@ function Search() {
                         <option>2</option>
                         <option>1</option>
                     </select>
-                    <div className='attendanceDots'>
-                        <div className='attendanceDot green'></div>
-                        <div className='attendanceDot yellow'></div>
-                        <div className='attendanceDot red activeDot'></div>
+                    <div className='attendanceDots' onClick={selectRow}>
+                        <div className={`attendanceDot green`} onClick={() => changeDot(0)}></div>
+                        <div className={`attendanceDot yellow`} onClick={() => changeDot(1)}></div>
+                        <div className={`attendanceDot red activeDot`} onClick={() => changeDot(2)}></div>
                     </div>
                     <div className='commentAttendance'>
-                        <img src = {comment}></img>
+                        <img src={comment}></img>
                     </div>
                 </div>
             ))}
@@ -145,6 +147,8 @@ function Search() {
 
 
 class Attendance extends React.Component {
+
+
 
 
     render() {

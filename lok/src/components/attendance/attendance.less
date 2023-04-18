@@ -11,12 +11,61 @@
     min-height: 76.3vh;
 }
 
-.attendanceBlock{
+.attendanceBlock {
     width: 80vw;
 }
 
-.attendanceLabels{
+.attendanceLabels {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
+    background: #A5A6F3;
+    border-radius: 5px;
+    height: 5vh;
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.2em;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.attendanceMark {
+    width: 5vw;
+    height: 3vh;
+    border-radius: 5px;
+}
+
+.attendanceDots {
+    display: flex;
+
+    .attendanceDot {
+        height: 1.5vw;
+        width: 1.5vw;
+        border-radius: 50%;
+    }
+
+    .green {
+        border: 2px solid #12B200;
+    }
+    .green.activeDot{
+        background-color: #12B200;
+    }
+
+    .yellow {
+        border: 2px solid #F7B801;
+    }
+    .yellow.activeDot{
+        background-color: #F7B801;
+    }
+
+    .red {
+        border: 2px solid #F33D04;
+    }
+    .red.activeDot{
+        background-color: #F33D04;
+    }
 }

@@ -31,8 +31,7 @@
 
 .end{
     display: flex;
-    justify-content: end;
-    margin-right: 80px;
+    justify-content: center;
 }
 .formLogin {
     border-top: 0ch;

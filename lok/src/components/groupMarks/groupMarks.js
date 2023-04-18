@@ -33,7 +33,6 @@ function Search() {
             const isSubjectPresent = item.subjects.some((subject) => {
                 return subject.name.includes(querySubject);
             });
-            console.log(item);
             return isSubjectPresent;
 
         });
