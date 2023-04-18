@@ -25,6 +25,7 @@ import StudentsPage from "./components/studentPageforTeacher/studentsPage"
 import componentDidMount from "./services/refresh";
 import GroupMarks from "./components/groupMarks/groupMarks";
 import Attendance from "./components/attendance/attendance";
+import Homework from "./components/homework/homework";
 import setref from "./services/refresh";
 import { withRouter} from 'react-router-dom';
 import { redirect } from "react-router-dom";
@@ -99,6 +100,7 @@ class App extends Component {
             <Route path="/studentspage" element={<StudentsPage />} />
             <Route path="/groupMarks" element={<GroupMarks />} />
             <Route path="/attendance" element={<Attendance/>}/>
+            <Route path="/homework" element={<Homework/>}/>
           </Routes>
         </div>
       </div>
