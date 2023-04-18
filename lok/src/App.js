@@ -24,8 +24,15 @@ import Timetable from "./components/timetable/timetable";
 import SettingPage from "./components/SettingPage/SettingPage";
 import StudentsPage from "./components/studentPageforTeacher/studentsPage"
 import componentDidMount from "./services/refresh";
+import GroupMarks from "./components/groupMarks/groupMarks";
+import Attendance from "./components/attendance/attendance";
+import setref from "./services/refresh";
+import { withRouter} from 'react-router-dom';
+import { redirect } from "react-router-dom";
 
-const API_URL = "https://lokserver.azurewebsites.net/";
+
+const API_URL = "https://localhost:7203/";
+const refreshInterval = 4 * 60 * 1000
 class App extends Component {
 
   constructor(props) {
@@ -35,7 +42,7 @@ class App extends Component {
     this.state = {
       showModeratorBoard: false,
       showAdminBoard: false,
-      currentUser: undefined,
+      currentUser: {},
     };
   }
   
@@ -52,11 +59,11 @@ class App extends Component {
       console.log(response);
       this.setState({
         currentUser: response.data
-        
-      });
-
+      })
     }
-    
+    if(response.data.user.role=="Teacher"){
+      redirect("/teacherHomepage")
+    }
   }
 
   logOut() {
@@ -76,7 +83,7 @@ class App extends Component {
           <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/admin/*" element={<Mainmenu />} />
-            <Route path="/homepage" element={<HomePage />} />
+            <Route path="/homepage/*" element={<HomePage />} />
             <Route path="/register" element={<Register />} />
             <Route path="/diary" element={<Diary />} />
             <Route path="/proposals" element={<ProposalsPage />} />

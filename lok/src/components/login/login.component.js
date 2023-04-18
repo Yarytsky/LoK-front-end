@@ -6,7 +6,7 @@ import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
 import { Routes, Route, Link, Navigate } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 import AuthService from "../../services/auth.service";
 import logo from "../../img/Bobrlogo.png"
 import { withRouter } from '../../common/with-router';
@@ -18,7 +18,6 @@ import password from "../../img/icons/password.png"
 import books1 from "../../img/img1.png"
 import books2 from "../../img/img2.png"
 import facebookLogo from "../../img/facebookLogo.png"
-
 
 
 const required = value => {

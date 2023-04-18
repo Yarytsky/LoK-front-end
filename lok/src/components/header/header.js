@@ -58,7 +58,7 @@ function BurgerMenu(props) {
             <div className='bur-itm home-link'><img className='bur-icons' src={subject} /><div className="itm-text">Your subjects</div></div>
           </div>
           <div className='bur-foot'>
-            <div className='bur-itm home-link'><img className='bur-icons' src={settings} /><div className="itm-text">Settings</div></div>
+            <Link to={"/settingspage"} className='bur-itm home-link'><img className='bur-icons' src={settings} /><div className="itm-text">Settings</div></Link>
             <Link to={"/"} onClick={authService.logout} className='bur-itm home-link'><img className='bur-icons' src={logout} /><div className="itm-text">Logout</div></Link>
 
           </div>

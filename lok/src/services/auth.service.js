@@ -19,9 +19,7 @@ class AuthService {
           localStorage.setItem("rtoken", response.data.refreshToken)
           var decoded = jwt_decode(response.data.accessToken)
           localStorage.setItem("user", JSON.stringify(decoded))
-
         }
-
         return response.data;
       }).catch(error => {
         if (!error.response) {
