@@ -17,7 +17,6 @@ import Teachers from "./adminboard/teachers/teachers";
 import Students from "./adminboard/students/students";
 import EditGroup from "./adminboard/EditGroup/EditGroup";
 import Subjects from "./adminboard/subjects/subjects"
-import Header from "./components/header/header";
 import EmailConfirm from "./components/emailConfirm/emailConfirm";
 import TeacherHomepage from "./components/teacherHomepage/teacherHomepage";
 import Timetable from "./components/timetable/timetable";
@@ -45,7 +44,6 @@ class App extends Component {
       currentUser: {},
     };
   }
-  
 
   async componentDidMount() {
     const user = AuthService.getCurrentUser();
@@ -78,7 +76,7 @@ class App extends Component {
   render() {
 
     return (
-      <div onMouseMove={componentDidMount}>
+      <div onMouseMove={setref}>
         <div>
           <Routes>
             <Route path="/" element={<Login />} />
@@ -99,6 +97,8 @@ class App extends Component {
             <Route path='/timetable' element={<Timetable/>}/>
             <Route path="/settingspage" element={<SettingPage/>} />
             <Route path="/studentspage" element={<StudentsPage />} />
+            <Route path="/groupMarks" element={<GroupMarks />} />
+            <Route path="/attendance" element={<Attendance/>}/>
           </Routes>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import axios from "axios";
-const API_URL = "https://lokserver.azurewebsites.net/";
+const API_URL = "https://localhost:7203/";
 const refreshInterval = 4 * 60 * 1000
 const refreshToken = async () => {
     localStorage.setItem('expirationTime', refreshInterval);
@@ -28,10 +28,11 @@ const refreshToken = async () => {
     }
 };
 
-const componentDidMount = () => {
+const setref = () => {
     setInterval(() => {
         refreshToken();
     }, refreshInterval);
 };
 
-export default componentDidMount;
+export default setref;
+

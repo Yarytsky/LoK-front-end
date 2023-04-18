@@ -1,0 +1,62 @@
+.fullPageMarks {
+  min-height: 100vh;
+}
+.studentPageContainer {
+  background: linear-gradient(180deg, rgba(210, 211, 249, 0.58) 24.48%, rgba(210, 211, 249, 0) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 76.3vh;
+}
+.attendanceBlock {
+  width: 80vw;
+}
+.attendanceLabels {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: #A5A6F3;
+  border-radius: 5px;
+  height: 5vh;
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.2em;
+  text-transform: capitalize;
+  color: #FFFFFF;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.attendanceMark {
+  width: 5vw;
+  height: 3vh;
+  border-radius: 5px;
+}
+.attendanceDots {
+  display: flex;
+}
+.attendanceDots .attendanceDot {
+  height: 1.5vw;
+  width: 1.5vw;
+  border-radius: 50%;
+}
+.attendanceDots .green {
+  border: 2px solid #12B200;
+}
+.attendanceDots .green.activeDot {
+  background-color: #12B200;
+}
+.attendanceDots .yellow {
+  border: 2px solid #F7B801;
+}
+.attendanceDots .yellow.activeDot {
+  background-color: #F7B801;
+}
+.attendanceDots .red {
+  border: 2px solid #F33D04;
+}
+.attendanceDots .red.activeDot {
+  background-color: #F33D04;
+}
