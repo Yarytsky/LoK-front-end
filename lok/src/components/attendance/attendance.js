@@ -18,41 +18,16 @@ import { students } from './studentsListExample';
 import purple from "../../img/purple.png";
 import orange from "../../img/orange.png";
 import comment from "../../img/comment.png";
+import pencil from "../../img/pencil.png";
 
 
 function Search() {
     let indexDot = 2;
     let row = 0;
 
-    const [filteredList, setFilteredList] = new useState(students);
 
-
-
-    const filter = (event) => {
-        const querySubject = chosenSubject;
-        const queryGroup = chosenGroup;
-        console.log(chosenSubject);
-        const updatedList = [...students];
-        const filteredList = updatedList.filter((item) => {
-            const isSubjectPresent = item.subjects.some((subject) => {
-                return subject.name.includes(querySubject);
-            });
-            return isSubjectPresent;
-
-        });
-        const filteredList2 = filteredList.filter((item) => {
-            if (queryGroup === "All groups") {
-                return item.group.toUpperCase() !== queryGroup;
-            }
-            else {
-                return item.group.toUpperCase() === queryGroup;
-            }
-        });
-        setFilteredList(filteredList2);
-    }
 
     useEffect(() => {
-        filter();
     }, []);
 
     const selectRow = (e) => {
@@ -72,44 +47,57 @@ function Search() {
         indexDot = index;
     }
 
+    const changeTab = (e) => {
+        let selectedTab = e.target;
+        let allTabs = document.getElementsByClassName("lessonTab");
+        for (let i = 0; i < allTabs.length; i++) {
+            allTabs[i].classList.remove("activeTab");
+        }
+        selectedTab.classList.add("activeTab");
+    }
+
 
 
     return (
         <div className="searchStudent">
-            <div className="searchHeader">
-                <CustomSelectGroup
-                    defaultText="All groups"
-                    optionsList={[
-                        { id: "", name: "All groups" },
-                        { id: "3cs-21", name: "3CS-21" },
-                        { id: "3cs-22", name: "3CS-22" },
-                        { id: "3cs-23", name: "3CS-23" },
-                    ]}
-                    onClick={filter}
-                    context="Group"
-                />
-                <CustomSelectGroup
-                    defaultText="Web Programming"
-                    optionsList={[
-                        { id: "Web Programming", name: "Web Programming" },
-                        { id: "Math", name: "Math" },
-                        { id: "Web Design", name: "Web Design" },
-                        { id: "English", name: "English" },
-                    ]}
-                    onClick={filter}
-                    context="Subject"
-                />
+            <div className="searchHeaderAttendance">
+                <div className='buttonsAttendance'>
+                    <CustomSelectGroup
+                        defaultText="April 20, 2023"
+                        optionsList={[
+                            { id: "", name: "April 17, 2023" },
+                            { id: "", name: "April 18, 2023" },
+                            { id: "", name: "April 19, 2023" },
+                            { id: "", name: "April 20, 2023" },
+                        ]}
+                    />
+                    <div className="addTaskAttendance">
+                        Add a task
+                    </div>
+                </div>
+                <div className='lessonTopicAttendance'>
+                    <img src={pencil}></img>
+                    <input className='lessonTopicInput' type="text" placeholder='Topic Of The Lesson'></input>
+                </div>
+            </div>
+            <div className='lessonTabsAttendance'>
+                <div className='lessonTab activeTab' onClick={changeTab}>1 lesson</div>
+                <div className='lessonTab' onClick={changeTab}>2 lesson</div>
+                <div className='lessonTab' onClick={changeTab}>3 lesson</div>
+                <div className='lessonTab' onClick={changeTab}>4 lesson</div>
+                <div className='lessonTab' onClick={changeTab}>5 lesson</div>
+                <div className='lessonTab' onClick={changeTab}>6 lesson</div>
             </div>
             <div className="attendanceLabels">
-                <div className='attandanceLabel'>Full name</div>
-                <div className='attandanceLabel'>Visited last time</div>
-                <div className='attandanceLabel'>Class work</div>
-                <div className='attandanceLabel'>Attendance</div>
-                <div className='attandanceLabel'>Comments</div>
+                <div className='attendanceLabel'>Full name</div>
+                <div className='attendanceLabel'>Visited last time</div>
+                <div className='attendanceLabel'>Class work</div>
+                <div className='attendanceLabel'>Attendance</div>
+                <div className='attendanceLabel'>Comments</div>
             </div>
-            {filteredList.map((item, index) => (
-                <div className='studentMarks'>
-                    <div className='studentInfoMarks'>
+            {students.map((item, index) => (
+                <div className='studentAttendance'>
+                    <div className='studentInfoAttendance'>
                         <img className='studentMarksPic' src={profilePic}></img>
                         <div className='studentName'>
                             {item.firstName} {item.lastname}
@@ -118,18 +106,21 @@ function Search() {
                     <div className='lastVisitAttendance'>
                         {item.lastVisit}
                     </div>
-                    <select className='attendanceMark'>
-                        <option>10</option>
-                        <option>9</option>
-                        <option>8</option>
-                        <option>7</option>
-                        <option>6</option>
-                        <option>5</option>
-                        <option>4</option>
-                        <option>3</option>
-                        <option>2</option>
-                        <option>1</option>
-                    </select>
+                    <div className='attendanceMarkContainer'>
+                        <select className='attendanceMark'>
+                            <option>10</option>
+                            <option>9</option>
+                            <option>8</option>
+                            <option>7</option>
+                            <option>6</option>
+                            <option>5</option>
+                            <option>4</option>
+                            <option>3</option>
+                            <option>2</option>
+                            <option>1</option>
+                        </select>
+                    </div>
+
                     <div className='attendanceDots' onClick={selectRow}>
                         <div className={`attendanceDot green`} onClick={() => changeDot(0)}></div>
                         <div className={`attendanceDot yellow`} onClick={() => changeDot(1)}></div>
@@ -157,7 +148,7 @@ class Attendance extends React.Component {
                 <Header />
                 <div className='studentPageContainer'>
                     <div className="studentPageTitle">
-                        Group marks
+                        attendance
                     </div>
                     <div className='attendanceBlock'>
                         <div className='studentGroupSelect'></div>
