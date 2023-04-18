@@ -15,8 +15,6 @@ import AuthService from "../../services/auth.service";
 const API_URL = "https://localhost:7203/";
 
 
-
-
 class SettingPage extends React.Component {
 
   constructor(props) {
@@ -29,12 +27,12 @@ class SettingPage extends React.Component {
     this.onChangeEmail = this.onChangeEmail.bind(this);
 
     this.state = {
-      phoneNumber:this.props.userdata.phoneNumber,
-      firstName: this.props.userdata.firstName,
-      lastname:this.props.userdata.lastname,
-      Country:this.props.userdata.Country,
-      Gender:this.props.userdata.Gender,
-      email: this.props.userdata.email,
+      phoneNumber:this.props.userdata.user.phoneNumber,
+      firstName:this.props.userdata.user.firstName,
+      lastname: this.props.userdata.user.lastname,
+      Country: this.props.userdata.user.Country,
+      Gender: this.props.userdata.user.Gender,
+      email: this.props.userdata.user.email
     }
   }
   onChangeEmail(e) {
@@ -79,15 +77,16 @@ class SettingPage extends React.Component {
   }
 
 
-   handleupdateUser() {
-    AuthService.updateUser(
-      this.state.email,
-      this.state.phoneNumber,
-      this.state.firstName,
-      this.state.lastname,
-      this.state.Gender,
-      this.state.Country
-    )
+  handleupdateUser() {
+    // AuthService.updateUser(
+    //   this.state.email,
+    //   this.state.phoneNumber,
+    //   this.state.firstName,
+    //   this.state.lastname,
+    //   this.state.Gender,
+    //   this.state.Country
+    // )
+    console.log(this.state)
   }
 
   chooseWomen() {
@@ -161,7 +160,7 @@ class SettingPage extends React.Component {
               <div className='gender-checkboxes'>
                 <div className='choose-gender-ch' onClick={this.chooseWomen}><img id='womench' src={check}></img><label className='gender-label'>Female</label><img src={women}></img></div>
                 <div className='choose-gender-ch' onClick={this.chooseMen}><img id='mench' src={check}></img><label className='gender-label'>Male</label><img src={men}></img></div>
-                <div className='choose-gender-ch'><img id='anotherch' src={check}></img><label id='gender-label-an'>Another gender</label><input id='sett-gend-input' value={this.state.Gender} onChange={this.onChangeAnotherGender}></input></div>
+                <div className='choose-gender-ch' onClick={this.chooseAnother}><img id='anotherch' src={check}></img><label id='gender-label-an'>Another gender</label><input id='sett-gend-input' value={this.state.Gender} onChange={this.onChangeAnotherGender}></input></div>
 
               </div>
               <button className='sett-but' onClick={this.handleupdateUser}>Save</button>

@@ -95,7 +95,7 @@ class App extends Component {
             <Route path='/email-confirm' element={<EmailConfirm />} />
             <Route path='/teacherHomepage' element={<TeacherHomepage/>}/>
             <Route path='/timetable' element={<Timetable/>}/>
-            <Route path="/settingspage" element={<SettingPage/>} />
+            <Route path="/settingspage"  element={<SettingPage userdata={this.state.currentUser}/>} />
             <Route path="/studentspage" element={<StudentsPage />} />
             <Route path="/groupMarks" element={<GroupMarks />} />
             <Route path="/attendance" element={<Attendance/>}/>

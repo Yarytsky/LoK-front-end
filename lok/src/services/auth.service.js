@@ -32,8 +32,21 @@ class AuthService {
 
   }
 
-  updateUser() {
-
+  async updateUser(email, phoneNumber, firstName, lastname, Gender, Country) {
+    const user = AuthService.getCurrentUser();
+    const id =user.id
+    let userdata={id,
+      email, phoneNumber, firstName, lastname, Gender, Country}
+    return await axios.patch(API_URL+"user/updateuser", userdata)
+    .then(response => response.data)
+      .catch(error => {
+        if (!error.response) {
+          // network error
+          this.errorStatus = 'Error: Network Error';
+        } else {
+          this.errorStatus = error.response.data.message;
+        }
+      })
   }
   logout() {
     localStorage.removeItem("user");
