@@ -156,6 +156,8 @@
   height: 1.5vw;
   width: 1.5vw;
   border-radius: 50%;
+  min-height: 20px;
+  min-width: 20px;
 }
 .attendanceDots .green {
   border: 2px solid #12B200;
@@ -165,6 +167,8 @@
 }
 .attendanceDots .yellow {
   border: 2px solid #F7B801;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 .attendanceDots .yellow.activeDot {
   background-color: #F7B801;
