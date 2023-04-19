@@ -40,6 +40,8 @@
 }
 .addTaskAttendance:hover {
   cursor: pointer;
+  text-decoration: none;
+  color: #000000;
 }
 .lessonTopicAttendance {
   border-bottom: #000000 1px solid;

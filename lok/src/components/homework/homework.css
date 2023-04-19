@@ -288,10 +288,11 @@
 }
 .homeworkModal .homeworkModalMain {
   width: 40vw;
-  height: 40vh;
+  height: fit-content;
   background-color: #ffffff;
 }
 .homeworkModal .homeworkModalMain .homeworkModalTitle {
+  padding-left: 20px;
   display: flex;
   align-items: center;
   font-family: 'Source Sans Pro';
@@ -303,6 +304,7 @@
   border-bottom: #8E8E8E solid 1px;
 }
 .homeworkModal .homeworkModalMain .homeworkModalFile {
+  padding-left: 20px;
   display: flex;
   align-items: center;
   font-family: 'Source Sans Pro';
@@ -312,4 +314,43 @@
   color: #000000;
   height: 5vh;
   border-bottom: #8E8E8E solid 1px;
+}
+.homeworkModal .homeworkModalMain .homeworkModalMark {
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.3em;
+  color: #000000;
+  height: 5vh;
+  border-bottom: #8E8E8E solid 1px;
+}
+.homeworkModal .homeworkModalMain .homeworkModalMark .markSelectHomework {
+  margin-left: 10px;
+  width: 5vw;
+  text-align: center;
+}
+.homeworkModal .homeworkModalMain .homeworkModalComment {
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.3em;
+  color: #000000;
+  height: 5vh;
+  border-bottom: #8E8E8E solid 1px;
+}
+.homeworkModal .homeworkModalMain .homeworkModalSubtext {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.1em;
+  border-top: #8E8E8E solid 1px;
 }

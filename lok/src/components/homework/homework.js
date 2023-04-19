@@ -20,7 +20,8 @@ import pdfIcon from "../../img/pdfIcon.png";
 
 
 function Search() {
-
+    let selectedValue = 0;
+    let lastHomework = 0;
     let indexHomework = -1;
     const [filteredList, setFilteredList] = new useState(students);
 
@@ -28,7 +29,6 @@ function Search() {
     const filter = (event) => {
         const querySubject = chosenSubject;
         const queryGroup = chosenGroup;
-        console.log(chosenSubject);
         const updatedList = [...students];
         const filteredList = updatedList.filter((item) => {
             const isSubjectPresent = item.subjects.some((subject) => {
@@ -55,6 +55,7 @@ function Search() {
     const showModalHomework = (e) => {
         let row = e.currentTarget;
         let homeworkButtons = row.children;
+        lastHomework = homeworkButtons[0];
         homeworkButtons[1].style.display = "flex";
     }
 
@@ -70,7 +71,13 @@ function Search() {
             for (let i = 0; i < allModals.length; i++) {
                 allModals[i].style.display = "none";
             }
+            lastHomework.children[1].innerHTML = selectedValue;
         }
+        
+    }
+
+    const handleSelectChange = (e) => {
+        selectedValue = e.target.value;
     }
 
     return (
@@ -141,10 +148,19 @@ function Search() {
                                                             <div className='homeworkModalTitle'>Homework</div>
                                                             <div className='homeworkModalFile'>Downloaded file: <img src={pdfIcon}></img></div>
                                                             <div className='homeworkModalMark'>Mark:
-                                                                <select>
-                                                                    
-                                                                </select>
-                                                                {lesson.marks[0]}</div>
+                                                                <select defaultValue={0} className='markSelectHomework' onChange={handleSelectChange}>
+                                                                    <option value={0}>0</option>
+                                                                    <option value={1}>1</option>
+                                                                    <option value={2}>2</option>
+                                                                    <option value={3}>3</option>
+                                                                    <option value={4}>4</option>
+                                                                    <option value={5}>5</option>
+                                                                    <option value={6}>6</option>
+                                                                    <option value={7}>7</option>
+                                                                    <option value={8}>8</option>
+                                                                    <option value={9}>9</option>
+                                                                    <option value={10}>10</option>
+                                                                </select></div>
                                                             <div className='homeworkModalComment'>Comment: Task description...</div>
                                                             <div className='homeworkModalSubtext'>
                                                                 <div>Task added date: Tuesday 21 January 2023  02:00 AM</div>
@@ -166,7 +182,21 @@ function Search() {
                                                         <div className='homeworkModalMain'>
                                                             <div className='homeworkModalTitle'>Homework</div>
                                                             <div className='homeworkModalFile'>Downloaded file: <img src={pdfIcon}></img></div>
-                                                            <div className='homeworkModalMark'>Mark: {lesson.marks[0]}</div>
+                                                            <div className='homeworkModalMark'>Mark:
+                                                                <select defaultValue={lesson.marks[0]} className='markSelectHomework' onChange={handleSelectChange}>
+                                                                    <option value={0}>0</option>
+                                                                    <option value={1}>1</option>
+                                                                    <option value={2}>2</option>
+                                                                    <option value={3}>3</option>
+                                                                    <option value={4}>4</option>
+                                                                    <option value={5}>5</option>
+                                                                    <option value={6}>6</option>
+                                                                    <option value={7}>7</option>
+                                                                    <option value={8}>8</option>
+                                                                    <option value={9}>9</option>
+                                                                    <option value={10}>10</option>
+                                                                </select>
+                                                            </div>
                                                             <div className='homeworkModalComment'>Comment: Task description...</div>
                                                             <div className='homeworkModalSubtext'>
                                                                 <div>Task added date: Tuesday 21 January 2023  02:00 AM</div>

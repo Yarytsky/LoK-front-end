@@ -27,7 +27,6 @@ function Search() {
     const filter = (event) => {
         const querySubject = chosenSubject;
         const queryGroup = chosenGroup;
-        console.log(chosenSubject);
         const updatedList = [...students];
         const filteredList = updatedList.filter((item) => {
             const isSubjectPresent = item.subjects.some((subject) => {

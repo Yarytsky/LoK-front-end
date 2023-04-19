@@ -71,9 +71,9 @@ function Search() {
                             { id: "", name: "April 20, 2023" },
                         ]}
                     />
-                    <div className="addTaskAttendance">
+                    <Link className="addTaskAttendance" to="/homework">
                         Add a task
-                    </div>
+                    </Link>
                 </div>
                 <div className='lessonTopicAttendance'>
                     <img src={pencil}></img>
