@@ -13,6 +13,7 @@ import envelope from "../../img/blackEnvelope.png";
 import door from "../../img/door.png";
 import CustomSelectGroup from './CustomSelectGroup';
 import { chosenGroup } from './CustomSelectGroup';
+import TeacherHeader from '../TeacherHeader/TeacherHeader';
 
 function Search() {
 
@@ -112,7 +113,7 @@ class StudentsPage extends React.Component {
     render() {
         return (
             <div>
-                <Header />
+                <TeacherHeader />
                 <div className='studentPageContainer'>
                     <div className="studentPageTitle">
                         Students

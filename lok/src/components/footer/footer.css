@@ -1,5 +1,5 @@
 .footer-bg{
-    background: #A5A6F3;
+    background: #F2F2FF;
     padding-bottom: 20px;
     padding-top: 10px;
 }
@@ -19,12 +19,14 @@ letter-spacing: 0em;
     z-index: 0 !important;
 }
 .footer-font-color{
-    color: #2C2564;
+    color: #6A5FC3;
 }
 .contact-phone{
-    color: #ECECEE;
+    font-family: 'Source Sans Pro';
+    color: #6A5FC3;
     font-size: 12px;
     margin-left: 10px;
+    margin-top: 4px;
 }
 
 .footer-creat{
@@ -33,7 +35,7 @@ letter-spacing: 0em;
 
 .year{
     font-size: 12px;
-    color: #ECECEE;
+    color: #6A5FC3;
 }
 
 .footer-margin{
@@ -48,8 +50,5 @@ letter-spacing: 0em;
 }
 .contacts{
     display: flex;
-    align-self: center;
-    justify-content: center;
-    align-content: center;
 
 }

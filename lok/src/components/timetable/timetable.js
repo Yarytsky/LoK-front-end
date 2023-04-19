@@ -8,6 +8,7 @@ import Header from '../../components/header/header';
 import Footer from "../../components/footer/footer";
 import arrowRight from "../../img/arrowRight.png";
 import arrowLeft from "../../img/arrowLeft.png"
+import TeacherHeader from '../TeacherHeader/TeacherHeader';
 
 let teacherSubjects = [
     { name: "WEB programming", description: "Something about the subject..." },
@@ -89,7 +90,7 @@ class Timetable extends React.Component {
     render() {
         return (
             <div>
-                <Header />
+                <TeacherHeader />
                 <div className='timetableContainer'>
                     <div className='timetableTitle'>
                         <div className='timetableToday'>
