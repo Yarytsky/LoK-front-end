@@ -16,10 +16,12 @@ import { chosenGroup } from './CustomSelectGroup';
 import { chosenSubject } from './CustomSelectGroup';
 import { students } from './studentsListExample';
 import loadFile from "../../img/loadFile.png";
+import pdfIcon from "../../img/pdfIcon.png";
 
 
 function Search() {
 
+    let indexHomework = -1;
     const [filteredList, setFilteredList] = new useState(students);
 
 
@@ -50,7 +52,26 @@ function Search() {
         filter();
     }, []);
 
+    const showModalHomework = (e) => {
+        let row = e.currentTarget;
+        let homeworkButtons = row.children;
+        homeworkButtons[1].style.display = "flex";
+    }
 
+    const getIndex = (index) => {
+        indexHomework = index;
+    }
+
+    const hideModal = (e) => {
+        e.stopPropagation();
+        let target = e.target;
+        if (target.className === "homeworkModal") {
+            let allModals = document.getElementsByClassName("homeworkModal");
+            for (let i = 0; i < allModals.length; i++) {
+                allModals[i].style.display = "none";
+            }
+        }
+    }
 
     return (
         <div className="searchStudent">
@@ -105,30 +126,63 @@ function Search() {
                             </div>
                         </div>
                         <div className='studentHomeworkRow'>
-                            <div className='homeworkContainer'>
-                                <div className='homeworkButton'>
-                                    <img className='homeworkIcon' src={loadFile}></img>
-                                    <div className='homeworkMark'>10</div>
-                                </div>
-                            </div>
-                            <div className='homeworkContainer'>
-                                <div className='homeworkButton'>
-                                    <img className='homeworkIcon' src={loadFile}></img>
-                                    <div className='homeworkMark'>9</div>
-                                </div>
-                            </div>
-                            <div className='homeworkContainer'>
-                                <div className='homeworkButton'>
-                                    <img className='homeworkIcon' src={loadFile}></img>
-                                    <div className='homeworkMark'>6</div>
-                                </div>
-                            </div>
-                            <div className='homeworkContainer'>
-                                <div className='homeworkButton'>
-                                    <img className='homeworkIcon' src={loadFile}></img>
-                                    <div className='homeworkMark'>10</div>
-                                </div>
-                            </div>
+                            {item.subjects.map((subject, index) => {
+                                if (subject.name === chosenSubject) {
+                                    return subject.lessons.map((lesson, index) => {
+                                        if (lesson.marks.length === 0) {
+                                            return (
+                                                <div className='homeworkContainer' onClick={showModalHomework}>
+                                                    <div className='homeworkButton' onClick={getIndex(index)}>
+                                                        <img className='homeworkIcon' src={loadFile}></img>
+                                                        <div className='homeworkMark'></div>
+                                                    </div>
+                                                    <div className='homeworkModal' onClick={hideModal}>
+                                                        <div className='homeworkModalMain'>
+                                                            <div className='homeworkModalTitle'>Homework</div>
+                                                            <div className='homeworkModalFile'>Downloaded file: <img src={pdfIcon}></img></div>
+                                                            <div className='homeworkModalMark'>Mark:
+                                                                <select>
+                                                                    
+                                                                </select>
+                                                                {lesson.marks[0]}</div>
+                                                            <div className='homeworkModalComment'>Comment: Task description...</div>
+                                                            <div className='homeworkModalSubtext'>
+                                                                <div>Task added date: Tuesday 21 January 2023  02:00 AM</div>
+                                                                <div>Deadline: Wednesday 27 January 2023 01:00 AM</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            )
+                                        }
+                                        else {
+                                            return (
+                                                <div className='homeworkContainer' onClick={showModalHomework}>
+                                                    <div className='homeworkButton' onClick={getIndex(index)}>
+                                                        <img className='homeworkIcon' src={loadFile}></img>
+                                                        <div className='homeworkMark'>{lesson.marks[0]}</div>
+                                                    </div>
+                                                    <div className='homeworkModal' onClick={hideModal}>
+                                                        <div className='homeworkModalMain'>
+                                                            <div className='homeworkModalTitle'>Homework</div>
+                                                            <div className='homeworkModalFile'>Downloaded file: <img src={pdfIcon}></img></div>
+                                                            <div className='homeworkModalMark'>Mark: {lesson.marks[0]}</div>
+                                                            <div className='homeworkModalComment'>Comment: Task description...</div>
+                                                            <div className='homeworkModalSubtext'>
+                                                                <div>Task added date: Tuesday 21 January 2023  02:00 AM</div>
+                                                                <div>Deadline: Wednesday 27 January 2023 01:00 AM</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            )
+                                        }
+
+                                    });
+                                }
+                                return null;
+                            })}
+
                         </div>
                     </div>
                 ))}
@@ -151,8 +205,6 @@ class Homework extends React.Component {
                         homework
                     </div>
                     <div className='studentsBlock'>
-                        <div className='studentGroupSelect'></div>
-                        <div className='studentSearch'></div>
                         <Search />
                     </div>
                 </div>
