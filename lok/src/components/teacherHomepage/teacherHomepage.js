@@ -6,6 +6,7 @@ import { Route, Link, Routes, useNavigate } from 'react-router-dom';
 import logo from "../../img/Bobrlogo.png";
 import Header from '../../components/header/header';
 import Footer from "../../components/footer/footer";
+import TeacherHeader from '../TeacherHeader/TeacherHeader';
 
 let teacherSubjects = [
     {name: "WEB programming", description: "Something about the subject..."},
@@ -28,7 +29,7 @@ class TeacherHomepage extends React.Component {
     render() {
         return (
             <div>
-                <Header />
+                <TeacherHeader />
                 <div className='teacherHomeContainer'>
                     <div className="teacherHomeTitle">
                         Teacher's subjects

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './HomePage.css';
 import Header from '../header/header';
 import Footer from '../footer/footer';
-
+import AuthService from '../../services/auth.service';
 
 class HomePage extends Component {
 
@@ -30,6 +30,12 @@ class HomePage extends Component {
   }
   leaveCourse3() {
     document.getElementById('course4').style.display = "block"
+  }
+  componentDidMount(){
+    const user = AuthService.getCurrentUser();
+    if (user.role === 'Teacher') {
+      window.location.href="/teacherHomepage"
+    }
   }
 
   render() {

@@ -1,5 +1,5 @@
 import React, { Component,useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import axios from "axios";
@@ -26,9 +26,7 @@ import componentDidMount from "./services/refresh";
 import GroupMarks from "./components/groupMarks/groupMarks";
 import Attendance from "./components/attendance/attendance";
 import setref from "./services/refresh";
-import { withRouter} from 'react-router-dom';
-import { redirect } from "react-router-dom";
-
+import { useNavigate } from 'react-router';
 
 const API_URL = "https://localhost:7203/";
 const refreshInterval = 4 * 60 * 1000
@@ -37,6 +35,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.logOut = this.logOut.bind(this);
+    this.componentDidMount = this.componentDidMount.bind(this);
 
     this.state = {
       showModeratorBoard: false,
@@ -44,6 +43,7 @@ class App extends Component {
       currentUser: {},
     };
   }
+  
 
   async componentDidMount() {
     const user = AuthService.getCurrentUser();
@@ -57,12 +57,11 @@ class App extends Component {
       console.log(response);
       this.setState({
         currentUser: response.data
-      })
+      }) 
     }
-    if(response.data.user.role=="Teacher"){
-      redirect("/teacherHomepage")
-    }
+  
   }
+  
 
   logOut() {
     AuthService.logout();

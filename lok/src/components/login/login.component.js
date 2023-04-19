@@ -72,7 +72,6 @@ class Login extends Component {
           if (!(e === undefined)) {
             this.props.router.navigate("/homepage");
             window.location.reload();
-            
           }
           else{
             window.location.reload();

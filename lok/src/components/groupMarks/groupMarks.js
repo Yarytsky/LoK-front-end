@@ -17,6 +17,7 @@ import { chosenSubject } from './CustomSelectGroup';
 import { students } from './studentsListExample';
 import purple from "../../img/purple.png";
 import orange from "../../img/orange.png";
+import TeacherHeader from '../TeacherHeader/TeacherHeader';
 
 
 function Search() {
@@ -173,7 +174,7 @@ class GroupMarks extends React.Component {
     render() {
         return (
             <div className='fullPageMarks'>
-                <Header />
+                <TeacherHeader />
                 <div className='studentPageContainer'>
                     <div className="studentPageTitle">
                         Group marks
