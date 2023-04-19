@@ -13,7 +13,7 @@ import AuthService from "../../services/auth.service";
 
 
 const API_URL = "https://localhost:7203/";
-
+let a = {}
 
 class SettingPage extends React.Component {
 
@@ -26,67 +26,59 @@ class SettingPage extends React.Component {
     this.onChangeGender = this.onChangeGenderMale.bind(this);
     this.onChangeEmail = this.onChangeEmail.bind(this);
 
+
+
+
     this.state = {
-      phoneNumber:this.props.userdata.user.phoneNumber,
-      firstName:this.props.userdata.user.firstName,
-      lastname: this.props.userdata.user.lastname,
+      phoneNumber: this.props.userdata.user.phoneNumber,
+      firstName: this.props.userdata.user.firstName,
+      lastname: this.props.userdata.user.lastname,// this.props.userdata.user.lastname
       Country: this.props.userdata.user.Country,
       Gender: this.props.userdata.user.Gender,
       email: this.props.userdata.user.email
     }
+
+    a = this.state
   }
   onChangeEmail(e) {
-    this.setState({
-      email: e.target.value
-    });
+    a.email = e.target.value
+    console.log(a.email)
   }
   onChangeCountry(e) {
-    this.setState({
-      Country: e.target.value
-    });
+    a.Country = e.target.value
+
   }
   onChangeGenderMale() {
-    this.setState({
-      Gender: "Male"
-    });
+    a.Gender = "Male"
   }
   onChangeGenderFemale() {
-    this.setState({
-      Gender: "Female"
-    });
+    a.Gender = "Female"
   }
   onChangeAnotherGender(e) {
-    this.setState({
-      Gender: e.target.value
-    });
+    a.Gender = e.target.value
   }
   onChangefirstName(e) {
-    this.setState({
-      firstName: e.target.value
-    });
+    a.firstName = e.target.value
+
   }
   onChangelastname(e) {
-    this.setState({
-      lastname: e.target.value
-    });
+    a.lastname = e.target.value
   }
   onChangephoneNumber(e) {
-    this.setState({
-      phoneNumber: e.target.value
-    });
+    a.phoneNumber = e.target.value
   }
 
 
   handleupdateUser() {
-    // AuthService.updateUser(
-    //   this.state.email,
-    //   this.state.phoneNumber,
-    //   this.state.firstName,
-    //   this.state.lastname,
-    //   this.state.Gender,
-    //   this.state.Country
-    // )
-    console.log(this.state)
+    AuthService.updateUser(
+      a.email,
+      a.phoneNumber,
+      a.firstName,
+      a.lastname,
+      a.Gender,
+      a.Country
+    )
+    console.log(a)
   }
 
   chooseWomen() {
@@ -128,11 +120,11 @@ class SettingPage extends React.Component {
               <div className='settings-inputs'>
                 <div>
                   <label className='lable-setting'>First name</label>
-                  <input className="set-input" value={this.state.firstName} onChange={this.onChangefirstName}></input>
+                  <input className="set-input" placeholder={a.firstName} onChange={this.onChangefirstName}></input>
                 </div>
                 <div>
                   <label className='lable-setting'>Gmail</label>
-                  <input className="set-input" value={this.state.email} onChange={this.onChangeEmail}></input>
+                  <input className="set-input" placeholder={a.email} onChange={this.onChangeEmail}></input>
                 </div>
                 <div>
                   <label className='lable-setting'>Language</label>
@@ -143,11 +135,11 @@ class SettingPage extends React.Component {
                 </div>
                 <div>
                   <label className='lable-setting'>Last name</label>
-                  <input className="set-input" value={this.state.lastname} onChange={this.onChangelastname}></input>
+                  <input className="set-input" placeholder={a.lastname} onChange={this.onChangelastname}></input>
                 </div>
                 <div>
                   <label className='lable-setting'>Phone</label>
-                  <input className="set-input" value={this.state.phoneNumber} onChange={this.onChangephoneNumber}></input>
+                  <input className="set-input" placeholder={a.phoneNumber} onChange={this.onChangephoneNumber}></input>
                 </div>
                 <div>
                   <label className='lable-setting' >Country</label>
@@ -160,7 +152,7 @@ class SettingPage extends React.Component {
               <div className='gender-checkboxes'>
                 <div className='choose-gender-ch' onClick={this.chooseWomen}><img id='womench' src={check}></img><label className='gender-label'>Female</label><img src={women}></img></div>
                 <div className='choose-gender-ch' onClick={this.chooseMen}><img id='mench' src={check}></img><label className='gender-label'>Male</label><img src={men}></img></div>
-                <div className='choose-gender-ch' onClick={this.chooseAnother}><img id='anotherch' src={check}></img><label id='gender-label-an'>Another gender</label><input id='sett-gend-input' value={this.state.Gender} onChange={this.onChangeAnotherGender}></input></div>
+                <div className='choose-gender-ch' onClick={this.chooseAnother}><img id='anotherch' src={check}></img><label id='gender-label-an'>Another gender</label><input id='sett-gend-input' onChange={this.onChangeAnotherGender}></input></div>
 
               </div>
               <button className='sett-but' onClick={this.handleupdateUser}>Save</button>
