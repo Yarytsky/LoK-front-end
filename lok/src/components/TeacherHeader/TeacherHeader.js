@@ -23,6 +23,13 @@ import logout from "../../img/burger/Vectorlogout.png"
 import profilePic from "../../img/profilePic.jpg";
 import authService from '../../services/auth.service';
 import dz from "../../img/dz.png"
+import time from "../../img/time.png"
+import attendanceic from "../../img/attend.png"
+import marks from "../../img/marks.png"
+import homework from "../../img/homework.png"
+import reports from "../../img/reports.png"
+import stud from "../../img/students.png"
+
 
 function BurgerMenu(props) {
   const [show, setShow] = useState(false);
@@ -52,14 +59,15 @@ function BurgerMenu(props) {
         <Offcanvas.Body className='bur-da'>
           <div className='bur-menu'>
             <Link to={"/teacherHomepage"} className='bur-itm home-link'><img className='bur-icons' src={home} /><div className="itm-text">Home</div></Link>
-            <Link to={"/account"} className='bur-itm home-link'><img className='bur-icons' src={acc} /><div className="itm-text">Account</div></Link>
-            <Link to={"/timetable"} className='bur-itm home-link'><div className="itm-text">Timetable</div></Link>
-            <Link to={"/studentspage"} className='bur-itm home-link'><div className="itm-text">Students</div></Link>
-            <Link to={"/groupMarks"} className='bur-itm home-link'><div className="itm-text">Group Marks</div></Link>
-
+            <Link to={"/teacheracc"} className='bur-itm home-link'><img className='bur-icons' src={acc} /><div className="itm-text">Account</div></Link>
+            <Link to={"/timetable"} className='bur-itm home-link'><img className='bur-icons' src={time} /><div className="itm-text">Timetable</div></Link>
+            <Link to={"/attendance"} className='bur-itm home-link'><img className='bur-icons' src={attendanceic} /><div className="itm-text">Attendance</div></Link>
+            <Link to={"/studentspage"} className='bur-itm home-link'><img className='bur-icons' src={stud} /><div className="itm-text">Students</div></Link>
+            <Link to={"/groupMarks"} className='bur-itm home-link'><img className='bur-icons' src={marks} /><div className="itm-text">Group Marks</div></Link>
+            <Link to={"/homework"} className='bur-itm home-link'><img className='bur-icons' src={homework} /><div className="itm-text">Homework</div></Link>
+            <Link to={"/teacherHomepage"} className='bur-itm home-link'><img className='bur-icons' src={reports} /><div className="itm-text">Group reports</div></Link>
           </div>
           <div className='bur-foot'>
-            <Link to={"/settingspage"} className='bur-itm home-link'><img className='bur-icons' src={settings} /><div className="itm-text">Settings</div></Link>
             <Link to={"/"} onClick={authService.logout} className='bur-itm home-link'><img className='bur-icons' src={logout} /><div className="itm-text">Logout</div></Link>
 
           </div>
@@ -84,15 +92,15 @@ class TeacherHeader extends Component {
 
               <BurgerMenu />
               <div>
-                <Link to={"/homepage"} className="navbar-brand">
+                <Link to={"/teacherHomepage"} className="navbar-brand">
                   <img className='header-logo' src={shortlogo}></img>
                 </Link>
               </div>
               <div className='home-con1'>
-                <Link to={"/homepage"} className="navbar-brand home-link hide home-con" ><img src={home} /><div>Home</div></Link>
+                <Link to={"/teacherHomepage"} className="navbar-brand home-link hide home-con" ><img src={home} /><div>Home</div></Link>
                 <div className='teach-icons'>
                   <Link ><img src={proposals} /></Link>
-                  <Link to={"/settingspage"} ><img src={settings}/></Link>
+                  <Link to={"/teacher-settings"} ><img src={settings}/></Link>
                   <Link ><img src={dz}/></Link>
                 </div>
               </div>
@@ -107,7 +115,7 @@ class TeacherHeader extends Component {
                 <option>En</option>
                 <option>Ua</option>
               </select>
-              <Link to={"/account"} className="profileLink"><img src={defaultavatar}></img></Link>
+              <Link to={"/teacheracc"} className="profileLink"><img src={defaultavatar}></img></Link>
 
             </div>
           </div>

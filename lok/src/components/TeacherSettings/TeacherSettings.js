@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './SettingPage.css';
+import './TeacherSettings.css';
 import Header from '../header/header';
 import Footer from '../footer/footer';
 import check from "../../img/Checkbox.png"
@@ -9,13 +9,14 @@ import women from "../../img/womenst.png"
 import men from "../../img/menst.png"
 import Form from 'react-bootstrap/Form';
 import AuthService from "../../services/auth.service";
+import TeacherHeader from '../TeacherHeader/TeacherHeader';
 
 
 
 const API_URL = "https://localhost:7203/";
 let a = {}
 
-class SettingPage extends React.Component {
+class TeachersSettingPage extends React.Component {
 
   constructor(props) {
     super(props)
@@ -37,6 +38,7 @@ class SettingPage extends React.Component {
       Gender: this.props.userdata.user.Gender,
       email: this.props.userdata.user.email
     }
+
     a = this.state
   }
   onChangeEmail(e) {
@@ -108,7 +110,7 @@ class SettingPage extends React.Component {
   render() {
     return (
       <>
-        <Header />
+        <TeacherHeader />
         <div className='setting-bg'>
           <div className='setting-title'>My profile</div>
           <div className='center'>
@@ -171,8 +173,4 @@ class SettingPage extends React.Component {
   }
 }
 
-SettingPage.propTypes = {};
-
-SettingPage.defaultProps = {};
-
-export default SettingPage;
+export default TeachersSettingPage;
