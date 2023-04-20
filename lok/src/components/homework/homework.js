@@ -73,7 +73,7 @@ function Search() {
             }
             lastHomework.children[1].innerHTML = selectedValue;
         }
-        
+
     }
 
     const handleSelectChange = (e) => {
@@ -83,17 +83,6 @@ function Search() {
     return (
         <div className="searchStudent">
             <div className="searchHeader">
-                <CustomSelectGroup
-                    defaultText="All groups"
-                    optionsList={[
-                        { id: "", name: "All groups" },
-                        { id: "3cs-21", name: "3CS-21" },
-                        { id: "3cs-22", name: "3CS-22" },
-                        { id: "3cs-23", name: "3CS-23" },
-                    ]}
-                    onClick={filter}
-                    context="Group"
-                />
                 <CustomSelectGroup
                     defaultText="Web Programming"
                     optionsList={[
@@ -105,6 +94,18 @@ function Search() {
                     onClick={filter}
                     context="Subject"
                 />
+                <CustomSelectGroup
+                    defaultText="All groups"
+                    optionsList={[
+                        { id: "", name: "All groups" },
+                        { id: "3cs-21", name: "3CS-21" },
+                        { id: "3cs-22", name: "3CS-22" },
+                        { id: "3cs-23", name: "3CS-23" },
+                    ]}
+                    onClick={filter}
+                    context="Group"
+                />
+
             </div>
             <div className="studentListMarks">
                 <div className='studentListLabelMarks'>

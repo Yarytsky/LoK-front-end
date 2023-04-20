@@ -63,7 +63,7 @@ const data = [
 const Slot = ({ value }) => {
     const style = {
         backgroundColor: value ? "#FFF4D4" : "#A5A6F3",
-        height: value ? "7vh" : "6.5vh",
+        height: value ? "fit-content" : "6.5vh",
     };
     return <div style={style} className="timetableWeekdaySlot">{value || ""}</div>;
 };

@@ -19,30 +19,23 @@
 .subjectBlock {
   display: flex;
   flex-direction: column;
+  position: relative;
+  justify-content: center;
+  height: 38vh;
   border-radius: 20px;
+  width: 60vw;
   background: #FFFFFF;
   margin-bottom: 5vh;
+  padding-top: 5vh;
   min-width: 720px;
   min-height: 360px;
 }
-
-@media screen and (max-width: 575px) {
-  .subjectBlock{
-    min-width: 330px;
-    max-width: 330px;
-
-  }
-}
-
-@media screen and (min-width: 575px) {
-  .subjectBlock{
-    height: 38vh;
-
-  }
-}
-
 .subjectBlockTitle {
+  width: 100%;
   background: #FED867;
+  position: absolute;
+  top: 0px;
+  height: 5vh;
   font-family: Source Sans Pro;
   font-size: 30px;
   font-weight: 600;
@@ -58,20 +51,16 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  height: 33vh;
   align-items: center;
   justify-content: center;
   margin-right: 2vw;
-  min-height: 300px;
+  min-height: 250px;
 }
 .subjectItem {
   display: flex;
   margin: 1vh;
 }
-
-.bot{
-  margin-bottom: 200px;
-}
-
 .subjectTitle {
   margin-right: 0.5vw;
   padding-top: 1vh;
@@ -144,15 +133,15 @@
   -ms-user-select: none;
   user-select: none;
 }
-.divOptions:hover .custom-select-option{
+.divOptions:hover .custom-select-option {
   background: #FFE599;
   color: #000000;
 }
-.divOptions:first-child{
+.divOptions:first-child {
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
 }
-.divOptions:first-child .custom-select-option{
+.divOptions:first-child .custom-select-option {
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
 }
@@ -190,7 +179,6 @@
   font-weight: 800;
   display: flex;
   margin: 0px;
-  align-items: baseline;
 }
 .modalBlock .modalPart .modalTitle .modalGrade {
   font-size: 0.75em;
