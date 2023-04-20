@@ -34,59 +34,47 @@ class SettingPage extends React.Component {
       Gender: this.props.userdata.user.Gender,
       email: this.props.userdata.user.email
     }
+
+    let a = this.state
   }
   onChangeEmail(e) {
-    this.setState({
-      email: e.target.value
-    });
+      this.a.email = e.target.value
   }
   onChangeCountry(e) {
-    this.setState({
-      Country: e.target.value
-    });
+   
+      a.Country= e.target.value
+
   }
   onChangeGenderMale() {
-    this.setState({
-      Gender: "Male"
-    });
+      a.Gender= "Male"
   }
   onChangeGenderFemale() {
-    this.setState({
-      Gender: "Female"
-    });
+      a.Gender= "Female"
   }
   onChangeAnotherGender(e) {
-    this.setState({
-      Gender: e.target.value
-    });
+      a.Gender= e.target.value
   }
   onChangefirstName(e) {
-    this.setState({
-      firstName: e.target.value
-    });
+      a.firstName= e.target.value
   }
   onChangelastname(e) {
-    this.setState({
-      lastname: e.target.value
-    });
+      a.lastname= e.target.value
   }
   onChangephoneNumber(e) {
-    this.setState({
-      phoneNumber: e.target.value
-    });
+      a.phoneNumber= e.target.value
   }
 
 
   handleupdateUser() {
-    // AuthService.updateUser(
-    //   this.state.email,
-    //   this.state.phoneNumber,
-    //   this.state.firstName,
-    //   this.state.lastname,
-    //   this.state.Gender,
-    //   this.state.Country
-    // )
-    console.log(this.state)
+    AuthService.updateUser(
+      a.email,
+      a.phoneNumber,
+      a.firstName,
+      a.lastname,
+      a.Gender,
+      a.Country
+    )
+    console.log(a)
   }
 
   chooseWomen() {
