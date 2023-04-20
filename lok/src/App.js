@@ -28,6 +28,8 @@ import Attendance from "./components/attendance/attendance";
 import Homework from "./components/homework/homework";
 import setref from "./services/refresh";
 import { useNavigate } from 'react-router';
+import TeacherAccount from "./components/TeacherAcc/TeacherAcc";
+import TeachersSettingPage from "./components/TeacherSettings/TeacherSettings";
 
 const API_URL = "https://localhost:7203/";
 const refreshInterval = 4 * 60 * 1000
@@ -100,6 +102,8 @@ class App extends Component {
             <Route path="/groupMarks" element={<GroupMarks />} />
             <Route path="/attendance" element={<Attendance/>}/>
             <Route path="/homework" element={<Homework/>}/>
+            <Route path="/teacheracc" element={<TeacherAccount userdata={this.state.currentUser}/>}/>
+            <Route path="/teacher-settings" element={<TeachersSettingPage  userdata={this.state.currentUser}/>}/>
           </Routes>
         </div>
       </div>
