@@ -9,6 +9,8 @@
   width: 90%;
   margin-left: 40px;
   padding-right: 40px;
+  display: flex;
+  flex-direction: row;
 }
 #search-box {
   font-family: Source Sans Pro;
@@ -20,7 +22,7 @@
   margin-bottom: 1.8vh;
   height: 7vh;
   min-height: 63px;
-  width: 100%;
+  width: 80%;
   padding-left: 1vw;
 }
 #search-box::placeholder {
@@ -171,4 +173,25 @@
   border: 1px solid #2c2c2c;
   width: 13vw;
   min-width: max-content;
+}
+.add-subject-btn{
+  background: #FED867;
+  border-radius: 5px;
+  font-family: 'Source Sans Pro';
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+line-height: 30px;
+
+/* Base/90 */
+margin-bottom: 1.8vh;
+  height: 7vh;
+  min-height: 63px;
+
+color: #4D4D4D;
+border: none;
+  margin-left: 20px;
+}
+.add-subj-con{
+  display: flex;
 }

@@ -3,7 +3,7 @@ import jwt_decode from "jwt-decode";
 import { Routes, Route, Link, Navigate } from "react-router-dom";
 
 
-const API_URL = "https://localhost:7203/";
+const API_URL = "https://lakeofknowledgeserver.azurewebsites.net/";
 class AuthService {
   async login(PhoneOrEmail, Password) {
     return await axios

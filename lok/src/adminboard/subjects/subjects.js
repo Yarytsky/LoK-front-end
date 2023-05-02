@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React, { useState } from "react";
+import React, { Component, useEffect, useState } from "react";
 
 import PropTypes from 'prop-types';
 import './subjects.css';
@@ -14,36 +14,145 @@ import backArrow from "../../img/backArrow.png"
 import cross from "../../img/cross.png"
 import Footer from "../../components/footer/footer";
 import CustomSelectSubject from './CustomSelectSubject';
+import Modal from 'react-bootstrap/Modal';
+import axios from "axios";
+
+const API_URL = "https://lakeofknowledgeserver.azurewebsites.net/";
+
+function AddSubject(props) {
 
 
 
+    const [show, setShow] = useState(false)
 
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+    const [subjectName, setsubjectName] = useState("");
+    const [term, setTerm] = useState("");
+    const [desc, setdesc] = useState("");
+    const [group, setgroup] = useState("");
+    const [groups, setgroups] = useState([]);
+
+
+    useEffect(() => {
+        async function getgrups() {
+            const responsegrops = await axios.get(API_URL + "group/getgroups", {
+                headers: {
+                    'accept': '*/*',
+                    'Authorization': localStorage.getItem('Btoken')
+                }
+            })
+            setgroups(responsegrops.data.groups)
+            console.log(responsegrops.data.groups)
+        }
+        getgrups()
+    }, [])
+    async function createsubject() {
+        return await axios.post(API_URL + "subject/createsubject", {
+            name: subjectName,
+            semesterId: parseInt(term),
+            description: desc,
+            groupId: parseInt(group)
+        }, {
+            headers: {
+                'accept': '*/*',
+                'Authorization': localStorage.getItem('Btoken')
+            }
+        })
+            .then(response => response.data)
+    }
+    return (
+        <>
+            <button className="add-subject-btn" onClick={handleShow}>
+                Add Subject
+            </button>
+            <Modal
+                {...props}
+                className='modal-add-group'
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+                show={show} onHide={handleClose}
+            >
+                <Modal.Body>
+                    <div>
+                        <center>Add Subject</center>
+                        <div className="add-subj-con">
+                            <div>subject name:</div>
+                            <input onChange={e => setsubjectName(e.target.value)}></input>
+                        </div>
+                        <div className="add-subj-con">
+                            <div>subject description:</div>
+                            <input onChange={e => setdesc(e.target.value)}></input>
+                        </div>
+                        <div className="add-subj-con">
+                            <div>Term:</div>
+                            <select onChange={e => setTerm(e.target.value)}>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                            </select>
+                            <div>Group:</div>
+                            <select onChange={e => setgroup(e.target.value)}>
+                                {groups.map(g => (
+                                    <option key={g.id} value={g.id}>{g.name}</option>
+                                ))}
+                            </select>
+                        </div>
+                    </div>
+                    <center onClick={createsubject}>ADD</center>
+                </Modal.Body>
+            </Modal>
+        </>)
+}
 function Search() {
     
+
     const itemList = [
-      "Data storage",
-      "English",
-      "Business English",
-      "Mathematical analysis",
-      "Mobile Design",
-      "Java",
-      "Python",
-      "Critical thinking"
+        "Data storage",
+        "English",
+        "Business English",
+        "Mathematical analysis",
+        "Mobile Design",
+        "Java",
+        "Python",
+        "Critical thinking"
     ];
-  
+
     const [filteredList, setFilteredList] = new useState(itemList);
-  
+    const [subjects, setsubjects] = new useState([]);
+
+    useEffect(() => {
+        async function getSub() {
+            const responsegrops = await axios.get(API_URL + "subject/getsubjects", {
+                headers: {
+                    'accept': '*/*',
+                    'Authorization': localStorage.getItem('Btoken')
+                }
+            })
+            setsubjects(responsegrops.data.subjects)
+            console.log(responsegrops.data.subjects)
+        }
+        getSub()
+    }, [])
+
     const filterBySearch = (event) => {
-      // Access input value
-      const query = event.target.value;
-      // Create copy of item list
-      var updatedList = [...itemList];
-      // Include all elements which includes the search query
-      updatedList = updatedList.filter((item) => {
-        return item.toLowerCase().indexOf(query.toLowerCase()) !== -1;
-      });
-      // Trigger render with updated values
-      setFilteredList(updatedList);
+        // Access input value
+        const query = event.target.value;
+        // Create copy of item list
+        var updatedList = [...itemList];
+        // Include all elements which includes the search query
+        updatedList = updatedList.filter((item) => {
+            return item.toLowerCase().indexOf(query.toLowerCase()) !== -1;
+        });
+        // Trigger render with updated values
+        setFilteredList(updatedList);
     };
     const showDetailsVerified = (e) => {
         x += 1;
@@ -55,11 +164,11 @@ function Search() {
         let subjectTitleAdmin = document.getElementsByClassName("subjectTitleAdmin")[0];
         target = e.target;
         if (x % 2 === 1) {
-            for(let i = 0; i < options.length; i++){
-                if(target === options[i]){
+            for (let i = 0; i < options.length; i++) {
+                if (target === options[i]) {
                     subjectTitleAdmin.innerHTML = target.innerHTML;
                 }
-                options[i].style  = "background-color: #D2D3F9; border: none";
+                options[i].style = "background-color: #D2D3F9; border: none";
             }
             verifiedTeachers.style = "flex-grow: 0; width: 35vw";
             unverifiedTeachers.style.display = "none";
@@ -67,8 +176,8 @@ function Search() {
             target.style = "background-color: #A5A6F3; border: 3px solid #A5A6F3";
         }
         else {
-            for(let i = 0; i < options.length; i++){
-                options[i].style  = "background-color: #D2D3F9; border: none";
+            for (let i = 0; i < options.length; i++) {
+                options[i].style = "background-color: #D2D3F9; border: none";
             }
             verifiedTeachers.style = "flex-grow: 1;";
             unverifiedTeachers.style.display = "flex";
@@ -78,21 +187,21 @@ function Search() {
         }
     }
     return (
-      <div className="searchSubject">
-        <div className="search-header">
-          <input id="search-box" onChange={filterBySearch} placeholder = "Search"/>
-          
+        <div className="searchSubject">
+            <div className="search-header">
+                <input id="search-box" onChange={filterBySearch} placeholder="Search" />
+                <AddSubject />
+            </div>
+            <div id="item-list">
+                <ol>
+                    {subjects.map((s) => (
+                        <div className='studentbox subjectNameAdmin' key={s.id} onClick={showDetailsVerified}>{s.name}</div>
+                    ))}
+                </ol>
+            </div>
         </div>
-        <div id="item-list">
-          <ol>
-            {filteredList.map((item, index) => (
-              <div className='studentbox subjectNameAdmin' key={index} onClick={showDetailsVerified}>{item}</div>
-            ))}
-          </ol>
-        </div>
-      </div>
     );
-  }
+}
 
 let courseSelect = [
     { id: 1, name: "Soloviy Anna" },
@@ -112,7 +221,7 @@ let y = 0;
 let target;
 class Subjects extends React.Component {
 
-    
+
     showDetailsUnverified = (e) => {
         y += 1;
         let verifiedTeachers = document.getElementsByClassName("verified-teachers")[0];
@@ -223,7 +332,7 @@ class Subjects extends React.Component {
         editStudentMenuAdmin.style.display = "none";
     }
 
-    
+
 
 
     render() {
@@ -243,7 +352,7 @@ class Subjects extends React.Component {
                                 <div className='titleterms'>Subjects</div>
                             </div>
                             <hr className='admin-underline'></hr>
-                            <Search/>
+                            <Search />
 
                         </div>
                         <div className='verticalLineAdmin'></div>

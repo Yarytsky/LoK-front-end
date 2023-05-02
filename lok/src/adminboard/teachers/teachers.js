@@ -15,7 +15,7 @@ import TeacherDetail from './toasts';
 import Footer from "../../components/footer/footer";
 import axios from "axios";
 
-const API_URL = "https://localhost:7203/";
+const API_URL = "https://lakeofknowledgeserver.azurewebsites.net/";
 let x = 0;
 let y = 0;
 let target;
