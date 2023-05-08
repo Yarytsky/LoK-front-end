@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 import axios from "axios";
 import { students } from '../../components/groupMarks/studentsListExample';
 
-const API_URL = "https://localhost:7203/";
+const API_URL = "https://lakeofknowledgeserver.azurewebsites.net/";
 
 function EditGroup(props) {
 

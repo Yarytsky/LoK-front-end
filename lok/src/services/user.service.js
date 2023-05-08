@@ -1,7 +1,7 @@
 import axios from 'axios';
 import authHeader from './auth-header';
 
-const API_URL = 'http://localhost:7203';
+const API_URL = 'https://lakeofknowledgeserver.azurewebsites.net/';
 
 class UserService {
   getPublicContent() {

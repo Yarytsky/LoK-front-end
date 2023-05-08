@@ -31,7 +31,7 @@ import { useNavigate } from 'react-router';
 import TeacherAccount from "./components/TeacherAcc/TeacherAcc";
 import TeachersSettingPage from "./components/TeacherSettings/TeacherSettings";
 
-const API_URL = "https://localhost:7203/";
+const API_URL = "https://lakeofknowledgeserver.azurewebsites.net/";
 const refreshInterval = 4 * 60 * 1000
 class App extends Component {
 
